@@ -1,0 +1,79 @@
+[
+    {
+        "title": "面向开集识别的稳健测试时适应方法",
+        "authors": [
+            "周植，张丁楚，李宇峰，张敏灵"
+        ],
+        "html_url": "jos/article/html/7009?st=article_issue"
+    },
+    {
+        "title": "局部一致性主动学习的源域无关开集域自适应",
+        "authors": [
+            "王帆，韩忠义，苏皖，尹义龙"
+        ],
+        "html_url": "jos/article/html/7010?st=article_issue"
+    },
+    {
+        "title": "元强化学习研究综述",
+        "authors": [
+            "陈奕宇，霍静，丁天雨，高阳"
+        ],
+        "html_url": "jos/article/html/7011?st=article_issue"
+    },
+    {
+        "title": "神经网络结构搜索在脑数据分析领域的研究进展",
+        "authors": [
+            "李晴，汪启昕，李子遇，祝志远，张诗皓，牟浩南，杨文婷，邬霞"
+        ],
+        "html_url": "jos/article/html/7012?st=article_issue"
+    },
+    {
+        "title": "一种分组并行的轻量化实时微观三维形貌重建方法",
+        "authors": [
+            "闫涛，高浩轩，张江峰，钱宇华，张临垣"
+        ],
+        "html_url": "jos/article/html/7013?st=article_issue"
+    },
+    {
+        "title": "基于多样真实任务生成的鲁棒小样本分类方法",
+        "authors": [
+            "刘鑫，景丽萍，于剑"
+        ],
+        "html_url": "jos/article/html/7014?st=article_issue"
+    },
+    {
+        "title": "基于自适应权重的多源部分域适应",
+        "authors": [
+            "田青，孙灿宇，储奕"
+        ],
+        "html_url": "jos/article/html/7015?st=article_issue"
+    },
+    {
+        "title": "基于多模态对比学习的代码表征增强预训练方法",
+        "authors": [
+            "杨宏宇，马建辉，侯旻，沈双宏，陈恩红"
+        ],
+        "html_url": "jos/article/html/7016?st=article_issue"
+    },
+    {
+        "title": "基于动态批量评估的绿色无梯度优化方法研究",
+        "authors": [
+            "钱鸿，舒翔，孙天祥，邱锡鹏，周爱民"
+        ],
+        "html_url": "jos/article/html/7017?st=article_issue"
+    },
+    {
+        "title": "多视角融合的时空动态图卷积网络城市交通流量预测",
+        "authors": [
+            "赵文竹，袁冠，张艳梅，乔少杰，王森章，张雷"
+        ],
+        "html_url": "jos/article/html/7018?st=article_issue"
+    },
+    {
+        "title": "基于强化联邦图神经网络的个性化公共安全突发事件检测方法",
+        "authors": [
+            "管泽礼，杜军平，薛哲，王沛文，潘圳辉，王晓阳"
+        ],
+        "html_url": "jos/article/html/7019?st=article_issue"
+    }
+]

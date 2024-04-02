@@ -1,0 +1,40 @@
+Title: AmazeMap: 一种基于多层次影响图的微服务故障定位方法
+Authors: 李亚晓，李青山，王璐，姜宇轩
+HTML URL: jos/article/html/7104?st=article_issue
+
+Title: 一种聚类分析驱动种子调度的模糊测试方法
+Authors: 张文，陈锦富，蔡赛华，张翅，刘一松
+HTML URL: jos/article/html/7105?st=article_issue
+
+Title: 基于多模态表征的移动应用GUI模糊测试框架
+Authors: 张少坤，李元春，雷瀚文，蒋鹏，李锭，郭耀，陈向群
+HTML URL: jos/article/html/7106?st=article_issue
+
+Title: 面向版本演化的APP软件缺陷跟踪分析方法
+Authors: 刘海毅，姜瑛，赵泽江
+HTML URL: jos/article/html/7107?st=article_issue
+
+Title: 基于程序约束的细粒度JVM测试程序约简方法
+Authors: 杜义恒，王赞，赵英全，陈俊洁，陈翔，侯德俊，郑开
+HTML URL: jos/article/html/7108?st=article_issue
+
+Title: 基于多源域适应的缺陷类别预测方法
+Authors: 邢颖，赵梦赐，杨斌，张俞炜，李文瑾，顾佳伟，袁军
+HTML URL: jos/article/html/7109?st=article_issue
+
+Title: 神经程序修复领域数据泄露问题的实证研究
+Authors: 李卿源，钟文康，李传艺，葛季栋，骆斌
+HTML URL: jos/article/html/7110?st=article_issue
+
+Title: 融合信息检索和深度模型特征的软件缺陷定位方法
+Authors: 申宗汶，牛菲菲，李传艺，陈翔，李奇，葛季栋，骆斌
+HTML URL: jos/article/html/7111?st=article_issue
+
+Title: 代码审查自动化研究综述
+Authors: 花子涵，杨立，陆俊逸，左春
+HTML URL: jos/article/html/7112?st=article_issue
+
+Title: 基于规则与学习的变异技术对比研究
+Authors: 贡志豪，陈逸洲，陈俊洁，郝丹
+HTML URL: jos/article/html/7113?st=article_issue
+

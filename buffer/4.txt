@@ -1,0 +1,395 @@
+1: 
+a: 主页
+href: /jos/home?id=20210909102755001&name=主页
+2: 
+a: 期刊介绍
+href: jos/site/menu/20071206155225001?id=20071206155225001&name=期刊介绍
+3: 
+a: 编委会
+href: jos/site/menu/20071206155306001?id=20071206155306001&name=编委会
+4: 
+a: 服务介绍
+href: jos/site/menu/20210909105053001?id=20210909105053001&name=服务介绍
+5: 
+a: 投稿指南
+href: jos/site/menu/20210909102616001?id=20210909102616001&name=投稿指南
+6: 
+a: 出版道德
+href: jos/site/menu/20171218034556834?id=20171218034556834&name=出版道德
+7: 
+a: 联系我们
+href: jos/site/menu/20071206155334001?id=20071206155334001&name=联系我们
+8: 
+a: E-mail Alert
+href: /jos/action/toc_alert?id=20210909102914001&name=E-mail Alert
+9: 
+a: English
+href: https://www.jos.org.cn/josen/home?id=20210909102939001&name=English
+10: 
+
+11: 
+
+12: 
+a: 领域软件工程专题前言
+href: jos/article/abstract/6562?st=article_issuea: 汤恩义，江贺，陈俊洁，李必信，唐滨
+href: http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=汤恩义，江贺，陈俊洁，李必信，唐滨a: 10.13328/j.cnki.jos.006562
+href: http://dx.doi.org/10.13328/j.cnki.jos.006562a: 摘要 (1588)
+href: jos/article/abstract/6562?st=article_issuea: HTML (1138)
+href: jos/article/html/6562?st=article_issuea: PDF 6.06 M (2065)
+href: jos/article/pdf/6562?st=article_issuea: 评论 (0)
+href: jos/article/abstract/6562?st=article_issuea: 收藏
+href: jos/article/add_favorites/6562p: 
+汤恩义，江贺，陈俊洁，李必信，唐滨
+p: 2022, 33(5):1527-1528. 
+						DOI: 10.13328/j.cnki.jos.006562
+p: 摘要:
+13: 
+a: 面向航空航天领域的工业CFD软件研发设计
+href: jos/article/abstract/6547?st=article_issuea: 张健，周乃春，李明，刘杰，陈江涛，向栋，金韬
+href: http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=张健，周乃春，李明，刘杰，陈江涛，向栋，金韬a: 10.13328/j.cnki.jos.006547
+href: http://dx.doi.org/10.13328/j.cnki.jos.006547a: 摘要 (1659)
+href: jos/article/abstract/6547?st=article_issuea: HTML (3635)
+href: jos/article/html/6547?st=article_issuea: PDF 9.96 M (3463)
+href: jos/article/pdf/6547?st=article_issuea: 评论 (0)
+href: jos/article/abstract/6547?st=article_issuea: 收藏
+href: jos/article/add_favorites/6547p: 
+张健，周乃春，李明，刘杰，陈江涛，向栋，金韬
+p: 2022, 33(5):1529-1550. 
+						DOI: 10.13328/j.cnki.jos.006547
+p: 摘要:工业CFD (computational fluid dynamics)软件属于计算机辅助工程(computer-aided  engineering, CAE)软件的一种, 在航空航天等领域有着广泛的应用. 其开发过程强烈依赖于流体力学、数学、计算机以及其他领域学科知识模型, 涉及大量理论推导、模型构建、算法优化、验证与确认等专业性、基础性科学研究, 导致软件系统构成复杂, 研发难度巨大. 通过引入软件工程的方法和实践, 能够对软件开发进行更有效的组织与管理, 达到缩短开发周期、提升软件质量的目的. 分析了工业CFD软件的特点和发展趋势, 提出了适合于工业CFD软件的增量与迭代结合的开发模型. 自主研发了面向CFD仿真软件的自动化持续集成平台. 从软件交互、封装与效率、功能扩展性及高性能集群环境部署等方面给出了工业CFD软件的设计建议. 针对性建立了适用于科学计算软件的验证与确认方法. 最后给出了一款国产自主CFD软件示范性案例, 以期为相关研究者和实践者提供参考.
+14: 
+a: 基于预训练模型和多层次信息的代码坏味检测方法
+href: jos/article/abstract/6548?st=article_issuea: 张杨，东春浩，刘辉，葛楚妍
+href: http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=张杨，东春浩，刘辉，葛楚妍a: 10.13328/j.cnki.jos.006548
+href: http://dx.doi.org/10.13328/j.cnki.jos.006548a: 摘要 (1577)
+href: jos/article/abstract/6548?st=article_issuea: HTML (1551)
+href: jos/article/html/6548?st=article_issuea: PDF 6.41 M (3189)
+href: jos/article/pdf/6548?st=article_issuea: 评论 (0)
+href: jos/article/abstract/6548?st=article_issuea: 收藏
+href: jos/article/add_favorites/6548p: 
+张杨，东春浩，刘辉，葛楚妍
+p: 2022, 33(5):1551-1568. 
+						DOI: 10.13328/j.cnki.jos.006548
+p: 摘要:目前已有的代码坏味检测方法仅依赖于代码结构信息和启发式规则, 对嵌入在不同层次代码中的语义信息关注不够, 而且现有的代码坏味检测方法准确率还有进一步提升的空间. 针对该问题, 提出一种基于预训练模型和多层次信息的代码坏味检测方法DeepSmell, 首先采用静态分析工具提取程序中的代码坏味实例和多层次代码度量信息, 并对代码坏味实例进行标记; 然后通过抽象语法树解析并获取源代码中与代码坏味相关的层次信息, 将其中的文本信息与度量信息相结合生成数据样本; 最后使用BERT预训练模型将文本信息转化为词向量, 应用GRU-LSTM模型获取层次信息之间潜在的语义关系, 并结合CNN模型与注意力机制检测代码坏味. 在实验中, 选取JUnit、Xalan和SPECjbb2005等24个大型实际应用程序构建训练集和测试集, 并对特征依恋、长方法、数据类和上帝类等4种代码坏味进行检测. 实验结果表明, DeepSmell与目前已有的检测方法相比在平均查全率和F1值上分别提高了9.3%和10.44%, 同时保持了较高的查准率, DeepSmell可以有效地实现代码坏味检测.
+15: 
+a: 针对黑盒智能语音软件的对抗样本生成方法
+href: jos/article/abstract/6549?st=article_issuea: 袁天昊，吉顺慧，张鹏程，蔡涵博，戴启印，叶仕俊，任彬
+href: http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=袁天昊，吉顺慧，张鹏程，蔡涵博，戴启印，叶仕俊，任彬a: 10.13328/j.cnki.jos.006549
+href: http://dx.doi.org/10.13328/j.cnki.jos.006549a: 摘要 (1553)
+href: jos/article/abstract/6549?st=article_issuea: HTML (1726)
+href: jos/article/html/6549?st=article_issuea: PDF 9.95 M (2617)
+href: jos/article/pdf/6549?st=article_issuea: 评论 (0)
+href: jos/article/abstract/6549?st=article_issuea: 收藏
+href: jos/article/add_favorites/6549p: 
+袁天昊，吉顺慧，张鹏程，蔡涵博，戴启印，叶仕俊，任彬
+p: 2022, 33(5):1569-1586. 
+						DOI: 10.13328/j.cnki.jos.006549
+p: 摘要:随着深度学习技术的成熟, 智能语音识别软件获得了广泛的应用, 存在于智能软件内部的各种深度神经网络发挥了关键性的作用. 然而, 最近的研究表明: 含有微小扰动的对抗样本会对深度神经网络的安全性和鲁棒性构成极大威胁. 研究人员通常将生成的对抗样本作为测试用例输入到智能语音识别软件中, 观察对抗样本是否会让软件产生错误判断, 从而采取防御方法来提高智能软件安全性和鲁棒性. 在对抗样本的生成中, 黑盒智能语音软件在生活中较为常见, 具有实际的研究价值, 而现有的生成方法却存在一定的局限性. 为此, 针对黑盒智能语音软件, 提出了一种基于萤火虫算法和梯度评估方法的目标对抗样本生成方法, 即萤火虫-梯度对抗样本生成方法. 针对设定的目标文本, 在原始的音频样本中不断加入干扰, 根据当前对抗样本的文本内容与目标文本之间的编辑距离, 选择使用萤火虫算法或梯度评估方法来优化对抗样本, 最终生成目标对抗样本. 为了验证方法的效果, 在常用的语音识别软件上, 使用公共语音数据集、谷歌命令数据集和LibriSpeech数据集这3种不同类型的语音数据集进行了实验评估, 并寻找志愿者进行对抗样本的质量评估. 实验表明, 提出的方法能有效提高目标对抗样本生成的成功率, 例如针对DeepSpeech语音识别软件, 在公共语音数据集上生成对抗样本的成功率相比对比方法提升了13%.
+16: 
+a: 基于软件度量的Solidity智能合约缺陷预测方法
+href: jos/article/abstract/6550?st=article_issuea: 杨慧文，崔展齐，陈翔，贾明华，郑丽伟，刘建宾
+href: http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=杨慧文，崔展齐，陈翔，贾明华，郑丽伟，刘建宾a: 10.13328/j.cnki.jos.006550
+href: http://dx.doi.org/10.13328/j.cnki.jos.006550a: 摘要 (1603)
+href: jos/article/abstract/6550?st=article_issuea: HTML (1944)
+href: jos/article/html/6550?st=article_issuea: PDF 10.59 M (3359)
+href: jos/article/pdf/6550?st=article_issuea: 评论 (0)
+href: jos/article/abstract/6550?st=article_issuea: 收藏
+href: jos/article/add_favorites/6550p: 
+杨慧文，崔展齐，陈翔，贾明华，郑丽伟，刘建宾
+p: 2022, 33(5):1587-1611. 
+						DOI: 10.13328/j.cnki.jos.006550
+p: 摘要:随着区块链技术的兴起, 智能合约安全问题被越来越多的研究者和企业重视, 目前已有一些针对智能合约缺陷检测技术的研究. 软件缺陷预测技术是软件缺陷检测技术的有效补充, 能够优化测试资源分配, 提高软件测试效率. 然而, 目前还没有针对智能合约的软件缺陷预测研究. 针对这一问题, 提出了面向Solidity智能合约的缺陷预测方法. 首先, 设计了一组针对Solidity智能合约特有的变量、函数、结构和Solidity语言特性的度量元集(smart contract-Solidity, SC-Sol度量元集), 并将其与重点考虑面向对象特征的度量元集(code complexity and features of object-oriented program, COOP度量元集)组合为COOP-SC-Sol度量元集. 然后, 从Solidity智能合约代码中提取相关度量元信息, 并结合缺陷检测结果, 构建Solidity智能合约缺陷数据集. 在此基础上, 应用了7种回归模型和6种分类模型进行Solidity智能合约的缺陷预测, 以验证不同度量元集和不同模型在缺陷数量和倾向性预测上的性能差异. 实验结果表明, 相对于COOP度量元集, COOP-SC-Sol能够让缺陷预测模型的F1-score指标提升8%. 此外, 进一步研究了智能合约缺陷预测中的类不平衡问题, 实验结果表明, 通过采样技术对数据集进行预处理能够提升缺陷预测模型的性能, 其中随机欠采样技术能够使模型的F1-score指标提升9%. 在特定缺陷倾向性预测问题上, 模型的预测性能受到数据集类不平衡的影响, 在缺陷模块百分比大于10%的数据集中能取得较好的预测性能.
+17: 
+
+18: 
+a: 基于GUI事件的安卓应用录制重放关键技术综述
+href: jos/article/abstract/6551?st=article_issuea: 李聪，蒋炎岩，许畅
+href: http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=李聪，蒋炎岩，许畅a: 10.13328/j.cnki.jos.006551
+href: http://dx.doi.org/10.13328/j.cnki.jos.006551a: 摘要 (1397)
+href: jos/article/abstract/6551?st=article_issuea: HTML (2509)
+href: jos/article/html/6551?st=article_issuea: PDF 7.02 M (3012)
+href: jos/article/pdf/6551?st=article_issuea: 评论 (0)
+href: jos/article/abstract/6551?st=article_issuea: 收藏
+href: jos/article/add_favorites/6551p: 
+李聪，蒋炎岩，许畅
+p: 2022, 33(5):1612-1634. 
+						DOI: 10.13328/j.cnki.jos.006551
+p: 摘要:基于GUI事件的安卓应用录制重放技术致力于以自动化的方式捕捉和回放人类和移动应用的交互轨迹, 达到降低测试成本、提高测试用例复用率的目的. 录制重放技术面临的挑战来源于应用、版本和设备3个维度. 试图从人类录制重放的角度, 将录制重放建模为一个搜索问题, 并提出模拟人类录制重放行为的通用框架. 框架包含3部分: 组件表示与录制技术、事件等价策略和局部搜索策略. 通过对已有技术进行总结和分析, 以全新的视角更好地认识了已有工作的优势和不足, 并提出未来可行的研究方向.
+19: 
+
+20: 
+a: 一种结合显式特征和隐式特征的开发者混合推荐算法
+href: jos/article/abstract/6553?st=article_issuea: 于旭，何亚东，杜军威，王昭哲，江峰，巩敦卫
+href: http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=于旭，何亚东，杜军威，王昭哲，江峰，巩敦卫a: 10.13328/j.cnki.jos.006553
+href: http://dx.doi.org/10.13328/j.cnki.jos.006553a: 摘要 (1350)
+href: jos/article/abstract/6553?st=article_issuea: HTML (1582)
+href: jos/article/html/6553?st=article_issuea: PDF 9.81 M (2894)
+href: jos/article/pdf/6553?st=article_issuea: 评论 (0)
+href: jos/article/abstract/6553?st=article_issuea: 收藏
+href: jos/article/add_favorites/6553p: 
+于旭，何亚东，杜军威，王昭哲，江峰，巩敦卫
+p: 2022, 33(5):1635-1651. 
+						DOI: 10.13328/j.cnki.jos.006553
+p: 摘要:现有开发者推荐算法通过对任务和开发者的显式信息进行挖掘, 抽取任务和开发者的显式特征, 完成针对任务的开发者推荐. 然而, 由于显式信息中的描述信息是主观的, 往往是不精确的, 现有基于显式特征的开发者推荐算法性能不够理想. 众包软件开发平台除包含大量不精确的描述信息外, 还包含客观的、较准确的“任务—开发者”成绩信息, 可以有效地推断任务和开发者的隐式特征. 考虑到隐式特征作为显式特征的补充, 将有效缓解描述信息不精确的难题, 提出一种结合显式特征和隐式特征的开发者混合推荐算法. 首先, 利用任务和开发者的平台可见信息充分提取显式特征, 提出面向显式特征的因子分解机(FM)推荐模型建模任务、开发者显式特征和相应评分的映射关系. 然后, 利用“任务—开发者”成绩矩阵提取隐式特征, 提出面向隐式特征的矩阵分解(MF)推荐模型. 最后, 融合面向显式特征的FM推荐模型和面向隐式特征的MF推荐模型, 提出多层感知器融合算法. 进一步, 针对冷启动问题, 首先, 基于历史数据, 构建多层感知器模型建模显式特征到隐式特征的映射关系. 然后, 针对冷启动任务或冷启动开发者, 通过任务或开发者的显式特征求解相应的隐式特征. 最后, 基于已训练好的多层感知器融合算法预测评分. 在Topcoder软件众包平台的仿真实验表明本文算法相对于对比算法在4种不同测试指标上具有明显的优势.
+21: 
+a: 一个机载软件需求形式化建模与分析实例研究
+href: jos/article/abstract/6554?st=article_issuea: 胡军，吕佳润，王立松，康介祥，王辉，高忠杰
+href: http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=胡军，吕佳润，王立松，康介祥，王辉，高忠杰a: 10.13328/j.cnki.jos.006554
+href: http://dx.doi.org/10.13328/j.cnki.jos.006554a: 摘要 (935)
+href: jos/article/abstract/6554?st=article_issuea: HTML (1595)
+href: jos/article/html/6554?st=article_issuea: PDF 10.86 M (3123)
+href: jos/article/pdf/6554?st=article_issuea: 评论 (0)
+href: jos/article/abstract/6554?st=article_issuea: 收藏
+href: jos/article/add_favorites/6554p: 
+胡军，吕佳润，王立松，康介祥，王辉，高忠杰
+p: 2022, 33(5):1652-1673. 
+						DOI: 10.13328/j.cnki.jos.006554
+p: 摘要:现代民机机载软件系统的功能与复杂度在快速增长的同时还必须满足更严格的安全标准, 使得在机载软件需求层级必须进行诸如一致性、完整性等分析与验证成为重要的挑战. 工作基于一个自主设计实现的面向机载软件自然语言需求形式化建模与分析工具平台(ART)展开对座舱显控软件子系统(EICAS)需求的建模与分析, 包括: ART工具平台所采用的变量关系(VRM)理论模型、平台架构和平台工具链, 基于多范式的需求一致性、完整性形式化分析方法, EICAS系统的条目化初始自然语言需求的形式化建模和需求模型的自动化分析过程, 如: 需求条目的预处理、规范化处理、需求模型自动生成以及多范式分析等; 给出了工程需求实例研究的经验总结和思考.
+22: 
+a: 面向类集成测试序列生成的强化学习研究
+href: jos/article/abstract/6555?st=article_issuea: 丁艳茹，张艳梅，姜淑娟，袁冠，王荣存，钱俊彦
+href: http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=丁艳茹，张艳梅，姜淑娟，袁冠，王荣存，钱俊彦a: 10.13328/j.cnki.jos.006555
+href: http://dx.doi.org/10.13328/j.cnki.jos.006555a: 摘要 (1163)
+href: jos/article/abstract/6555?st=article_issuea: HTML (1761)
+href: jos/article/html/6555?st=article_issuea: PDF 9.80 M (2447)
+href: jos/article/pdf/6555?st=article_issuea: 评论 (0)
+href: jos/article/abstract/6555?st=article_issuea: 收藏
+href: jos/article/add_favorites/6555p: 
+丁艳茹，张艳梅，姜淑娟，袁冠，王荣存，钱俊彦
+p: 2022, 33(5):1674-1698. 
+						DOI: 10.13328/j.cnki.jos.006555
+p: 摘要:集成测试是软件测试过程中不可缺少的步骤, 针对在集成测试中如何对系统中的类合理排序的问题, 国内外研究者提出了多种生成类集成测试序列的方法, 然而他们大多没有将测试桩复杂度作为评估测试代价的指标. 针对该问题, 提出面向类集成测试序列生成的强化学习研究方法, 以总体测试桩复杂度为评价测试代价的指标, 生成测试代价尽可能低的类集成测试序列. 首先, 定义强化学习任务, 根据任务设定算法的追求目标; 其次, 进行程序的静态分析, 根据分析得到的结果计算测试桩复杂度; 然后, 将测试桩复杂度的计算融入奖励函数的设计中, 为选择下一步动作提供信息和依据; 最后, 通过奖励函数反馈值函数, 通过值函数的设定保证累计奖励最大化. 当智能体完成规定训练次数, 系统会选择获得最大累计奖励值的类集成测试序列进行输出, 即为我们追求的测试代价尽可能低的结果. 实验结果表明, 与现有方法相比, 在以总体测试桩复杂度为评价指标时, 提出的方法结果更优.
+23: 
+a: 软件问答社区的问题删除预测方法
+href: jos/article/abstract/6556?st=article_issuea: 蒋竞，苗萌，赵丽娴，张莉
+href: http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=蒋竞，苗萌，赵丽娴，张莉a: 10.13328/j.cnki.jos.006556
+href: http://dx.doi.org/10.13328/j.cnki.jos.006556a: 摘要 (881)
+href: jos/article/abstract/6556?st=article_issuea: HTML (1414)
+href: jos/article/html/6556?st=article_issuea: PDF 5.48 M (2244)
+href: jos/article/pdf/6556?st=article_issuea: 评论 (0)
+href: jos/article/abstract/6556?st=article_issuea: 收藏
+href: jos/article/add_favorites/6556p: 
+蒋竞，苗萌，赵丽娴，张莉
+p: 2022, 33(5):1699-1710. 
+						DOI: 10.13328/j.cnki.jos.006556
+p: 摘要:Stack Overflow是最受欢迎的软件问答社区之一, 用户可以在该网站发布问题并得到其他用户的回答. 为了保证问题质量, 网站需要尽快发现并删除低质量或者不符合社区主题的问题. 当前, Stack Overflow主要采用人工检查的方式发现需要被删除的问题. 然而这种方式往往不能保证问题被及时发现、删除, 而且加重了社区管理员的负担. 为了快速发现需要删除的问题, 提出了自动化预测问题删除的方法MulPredictor. 该方法提取问题的语义内容特征、语义统计特征和元特征, 使用随机森林分类器计算问题会被删除的概率. 实验结果表明: 与现有方法DelPredictor和NLPPredictor相比, MulPredictor的准确率在平衡测试集上分别提升了16.34%和12.78%, 在随机测试集上分别提升了12.38%和14.14%. 此外, 分析了影响问题删除的重要特征, 发现代码段、问题的标题和正文第1段的特征对问题删除有重要的影响.
+24: 
+a: 基于场景模型的DDS架构一体化舰船任务系统测试
+href: jos/article/abstract/6557?st=article_issuea: 钱巨，王寅，程浩，韦正现
+href: http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=钱巨，王寅，程浩，韦正现a: 10.13328/j.cnki.jos.006557
+href: http://dx.doi.org/10.13328/j.cnki.jos.006557a: 摘要 (781)
+href: jos/article/abstract/6557?st=article_issuea: HTML (1389)
+href: jos/article/html/6557?st=article_issuea: PDF 7.06 M (2325)
+href: jos/article/pdf/6557?st=article_issuea: 评论 (0)
+href: jos/article/abstract/6557?st=article_issuea: 收藏
+href: jos/article/add_favorites/6557p: 
+钱巨，王寅，程浩，韦正现
+p: 2022, 33(5):1711-1735. 
+						DOI: 10.13328/j.cnki.jos.006557
+p: 摘要:以数据分发服务(data-distribution service, DDS)为基础架构的新型一体化舰船任务系统在研发模式、结构和应用方面具有特殊特点, 使得其测试相当具有挑战. 基于模型的测试(model-based testing, MBT)是工业系统测试的一种有效方法. 然而, 对于类舰船任务系统, 由于其自身的高度复杂性和协同开发方式, 传统需要建立完整模型以表达系统内部行为的MBT技术极难应用. 为此, 提出了一种基于场景模型的类舰船任务系统MBT方法. 方法从外部角度构建模型来表达DDS架构系统中的交互场景. 模型使用扩展正则表达式来建模交互序列, 使用基本数据元素限制、约束公式和计算函数来建模交互数据, 能够在保留抽象性的同时便捷并相对完整地表达交互过程. 基于场景模型, 进一步提出算法生成直接可执行的测试用例. 在某真实舰船任务系统上的实验表明, 方法能够测试从一族舰船任务系统历史失效中总结出的21种常见风险场景, 对类舰船任务系统的DDS架构工业系统测试具有潜在应用价值.
+25: 
+a: 基于对象类型的API补全方法
+href: jos/article/abstract/6559?st=article_issuea: 唐泽，李传艺，葛季栋，骆斌
+href: http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=唐泽，李传艺，葛季栋，骆斌a: 10.13328/j.cnki.jos.006559
+href: http://dx.doi.org/10.13328/j.cnki.jos.006559a: 摘要 (1019)
+href: jos/article/abstract/6559?st=article_issuea: HTML (1580)
+href: jos/article/html/6559?st=article_issuea: PDF 8.03 M (2253)
+href: jos/article/pdf/6559?st=article_issuea: 评论 (0)
+href: jos/article/abstract/6559?st=article_issuea: 收藏
+href: jos/article/add_favorites/6559p: 
+唐泽，李传艺，葛季栋，骆斌
+p: 2022, 33(5):1736-1757. 
+						DOI: 10.13328/j.cnki.jos.006559
+p: 摘要:近年来, 随着软件技术在各行各业、不同领域的应用不断扩展与深入, 同时伴随着软件架构、服务计算等技术的不断发展, 软件行业涌现出了功能丰富且规模庞大的第三方API或库, 软件开发者在实现软件功能的时候也越来越依赖这些API. 但学习这些API的使用是非常困难且耗时的, 主要有两方面的原因: 1)相关文档的缺失和错误; 2)相关API用法的示例代码较少. 因此, 研究自动的API补全方法以帮助开发人员在开发过程中正确且快速的使用API, 具有很大的应用价值. 然而, 现有API自动补全方案多数将待补全代码段看作纯文本, 忽略了API所属对象类型对预测API的影响. 为此, 探究了对象类型对补全API的作用, 并且在对象状态图的启发下, 设计了一种使用API所属对象的类型作为特征的补全方法. 具体而言, 首先从API调用序列中先抽取同一对象类型的子序列, 利用深度学习模型编码出每个对象的状态, 再利用对象状态生成整个方法块的状态表示进行补全. 为了验证提出的补全方法, 在6个流行Java项目上进行了验证. 实验结果证明, 提出的考虑对象类型的API补全方法在预测准确率上明显高于基线模型.
+26: 
+a: 预训练增强的代码克隆检测技术
+href: jos/article/abstract/6560?st=article_issuea: 冷林珊，刘爽，田承霖，窦淑洁，王赞，张梅山
+href: http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=冷林珊，刘爽，田承霖，窦淑洁，王赞，张梅山a: 10.13328/j.cnki.jos.006560
+href: http://dx.doi.org/10.13328/j.cnki.jos.006560a: 摘要 (1225)
+href: jos/article/abstract/6560?st=article_issuea: HTML (1658)
+href: jos/article/html/6560?st=article_issuea: PDF 8.20 M (2672)
+href: jos/article/pdf/6560?st=article_issuea: 评论 (0)
+href: jos/article/abstract/6560?st=article_issuea: 收藏
+href: jos/article/add_favorites/6560p: 
+冷林珊，刘爽，田承霖，窦淑洁，王赞，张梅山
+p: 2022, 33(5):1758-1773. 
+						DOI: 10.13328/j.cnki.jos.006560
+p: 摘要:代码克隆检测是软件工程领域的一项重要任务, 对于语义相似但语法差距较大的四型代码克隆的检测尤为困难. 基于深度学习的方法在四型代码克隆的检测上已经取得了较好的效果, 但是使用人工标注的代码克隆对进行监督学习的成本较高. 提出了两种简单有效的预训练策略来增强基于深度学习的代码克隆检测模型的代码表示, 以减少监督学习模型中对大规模训练数据集的需求. 首先, 使用ngram子词丰富对词嵌入模型进行预训练, 以增强克隆检测模型对词表之外的词的表示. 同时, 采用函数名预测作为辅助任务对克隆检测模型参数进行预训练. 通过这两个预训练策略, 可以得到一个有更准确的代码表示能力的模型, 模型被用来作为克隆检测中的代码表示模型并在克隆检测任务上进行有监督训练. 在标准数据集BigCloneBench (BCB)和OJClone上进行实验. 结果表明采用两种预训练增强的模型仅仅使用极少量的训练样例(BCB上100个克隆对和100个非克隆对, OJClone上200个克隆对和200个非克隆对)就能达到现有方法使用超过6百万个训练样例得到的结果.
+27: 
+a: 基于并行搜索优化的指控系统自适应决策方法
+href: jos/article/abstract/6561?st=article_issuea: 王璐，霍其恩，李青山，王展，姜宇轩
+href: http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=王璐，霍其恩，李青山，王展，姜宇轩a: 10.13328/j.cnki.jos.006561
+href: http://dx.doi.org/10.13328/j.cnki.jos.006561a: 摘要 (1042)
+href: jos/article/abstract/6561?st=article_issuea: HTML (1647)
+href: jos/article/html/6561?st=article_issuea: PDF 8.21 M (2233)
+href: jos/article/pdf/6561?st=article_issuea: 评论 (0)
+href: jos/article/abstract/6561?st=article_issuea: 收藏
+href: jos/article/add_favorites/6561p: 
+王璐，霍其恩，李青山，王展，姜宇轩
+p: 2022, 33(5):1774-1799. 
+						DOI: 10.13328/j.cnki.jos.006561
+p: 摘要:指挥控制信息系统(指控系统)运行在动态变化的复杂环境中且任务需求时刻变更, 亟需一种自适应决策方法以动态产生调整系统的最优策略, 从而适应环境或任务变化, 确保系统长期稳定运行. 随着指控系统自身及其运行环境的持续复杂化, 自适应决策方法需具备应对多个非预期变化的在线权衡决策能力, 以避免造成冲突的调整后果或无法及时响应未知情况. 然而, 当前指控系统多采用基于先验知识、应对单一变化的自适应决策方法, 尚无法完全满足该能力需求. 因此, 提出了一种基于并行搜索优化的指控系统自适应决策方法. 方法采用基于搜索的软件工程思想, 将自适应决策问题建模为搜索优化问题, 并采用遗传粒子群算法, 实现针对同时发生的多个变化进行在线权衡的目标. 并且, 为解决该方法在指控系统中实际应用时存在的搜索效率保障、策略择优选择问题, 分别采用并行遗传算法和后优化理论, 对决策方法实现了并行化并建立了策略多指标排序法, 以确保方法的实用性.
+28: 
+
+29: 
+a: 密度峰值聚类算法研究进展
+href: jos/article/abstract/6122?st=article_issuea: 徐晓，丁世飞，丁玲
+href: http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=徐晓，丁世飞，丁玲a: 10.13328/j.cnki.jos.006122
+href: http://dx.doi.org/10.13328/j.cnki.jos.006122a: 摘要 (3867)
+href: jos/article/abstract/6122?st=article_issuea: HTML (3496)
+href: jos/article/html/6122?st=article_issuea: PDF 6.23 M (5107)
+href: jos/article/pdf/6122?st=article_issuea: 评论 (0)
+href: jos/article/abstract/6122?st=article_issuea: 收藏
+href: jos/article/add_favorites/6122p: 
+徐晓，丁世飞，丁玲
+p: 2022, 33(5):1800-1816. 
+						DOI: 10.13328/j.cnki.jos.006122
+p: 摘要:密度峰值聚类(density peaks clustering, DPC)算法是聚类分析中基于密度的一种新兴算法, 该算法考虑局部密度和相对距离绘制决策图, 快速识别簇中心, 完成聚类. DPC具有唯一的输入参数, 且无需先验知识, 也无需迭代. 自2014年提出以来, DPC引起了学者们的极大兴趣, 并得到了快速发展. 首先阐述DPC的基本理论, 并通过与经典聚类算法比较, 分析了DPC的特点; 其次, 分别从聚类精度和计算复杂度两个角度分析了DPC的弊端及其优化方法, 包括局部密度优化、分配策略优化、多密度峰优化以及计算复杂度优化, 并介绍了每个类别的主要代表算法; 最后介绍了DPC在不同领域中的相关应用研究. 对DPC的优缺点提供了全面的理论分析, 并对DPC的优化以及应用进行了全面阐述. 还试图找出进一步的挑战来促进DPC研究发展.
+30: 
+a: 基于局部梯度和二进制模式的时间序列分类算法
+href: jos/article/abstract/6208?st=article_issuea: 郝石磊，王志海，刘海洋
+href: http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=郝石磊，王志海，刘海洋a: 10.13328/j.cnki.jos.006208
+href: http://dx.doi.org/10.13328/j.cnki.jos.006208a: 摘要 (529)
+href: jos/article/abstract/6208?st=article_issuea: HTML (708)
+href: jos/article/html/6208?st=article_issuea: PDF 5.48 M (1532)
+href: jos/article/pdf/6208?st=article_issuea: 评论 (0)
+href: jos/article/abstract/6208?st=article_issuea: 收藏
+href: jos/article/add_favorites/6208p: 
+郝石磊，王志海，刘海洋
+p: 2022, 33(5):1817-1832. 
+						DOI: 10.13328/j.cnki.jos.006208
+p: 摘要:时间序列分类问题是时间序列数据挖掘中的一项重要任务, 近些年受到了越来越广泛的关注. 该问题的一个重要组成部分就是时间序列间的相似性度量. 在众多相似性度量算法中, 动态时间规整是一种非常有效的算法, 目前已经被广泛应用到视频、音频、手写体识别以及生物信息处理等众多领域. 动态时间规整本质上是一种在边界及时间一致性约束下的点对点的匹配算法, 能够获得两条序列间的全局最优匹配. 但该算法存在一个明显的不足, 即不一定能实现序列间的局部合理匹配. 具体的讲, 就是具有完全不同局部结构信息的时间点有可能被动态时间规整算法错误匹配. 为了解决这个问题, 提出了一种改进的基于局部梯度和二进制模式的动态时间规整算法LGBDTW (local gradient and binary pattern based dynamic time warping), 通过考虑时间序列点的局部结构信息来强化传统动态时间规整算法. 所提算法虽然实质上是一种动态时间规整算法, 但它通过考虑序列点的局部梯度和二进制模式值来进行相似性加权度量, 有效避免了具有相异局部结构的点匹配. 为了进行全面比较, 将所提出的算法应用到了最近邻分类算法的相似性度量中, 并在多个UCR时间序列数据集上进行了测试. 实验结果表明, 所提出的方法能有效提高时间序列分类的准确率. 此外, 实例分析验证了所提出算法的可解释性.
+31: 
+a: 基于回调函数的控制流深度模糊模型
+href: jos/article/abstract/6197?st=article_issuea: 沙子涵，舒辉，武成岗，熊小兵，康绯
+href: http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=沙子涵，舒辉，武成岗，熊小兵，康绯a: 10.13328/j.cnki.jos.006197
+href: http://dx.doi.org/10.13328/j.cnki.jos.006197a: 摘要 (792)
+href: jos/article/abstract/6197?st=article_issuea: HTML (789)
+href: jos/article/html/6197?st=article_issuea: PDF 7.28 M (1695)
+href: jos/article/pdf/6197?st=article_issuea: 评论 (0)
+href: jos/article/abstract/6197?st=article_issuea: 收藏
+href: jos/article/add_favorites/6197p: 
+沙子涵，舒辉，武成岗，熊小兵，康绯
+p: 2022, 33(5):1833-1848. 
+						DOI: 10.13328/j.cnki.jos.006197
+p: 摘要:控制流是程序过程的抽象表现, 对控制流进行混淆, 可有效提高代码抗逆向能力. 提出了控制流深度模糊思想:针对循环结构, 利用回调函数构造等价循环模型, 将过程内基本块跳转变更为过程间函数调用, 对抗逆向技术. 综合应用控制流分析和数据流依赖性分析, 建立了基于回调函数的控制流深度模糊模型, 并给出功能一致性证明. 为进一步增大混淆强度, 设计并实现了函数调用融合算法, 构造更为复杂的函数调用过程. 最后, 使用OpenSSL和SpecInt-2000标准测试套件作为测试集, 验证了模型的可行性和有效性.
+32: 
+a: 基于调用链控制流分析的大型微服务系统性能建模与异常定位
+href: jos/article/abstract/6209?st=article_issuea: 于庆洋，白晓颖，李明杰，李奇原，刘涛，刘泽胤，裴丹
+href: http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=于庆洋，白晓颖，李明杰，李奇原，刘涛，刘泽胤，裴丹a: 10.13328/j.cnki.jos.006209
+href: http://dx.doi.org/10.13328/j.cnki.jos.006209a: 摘要 (1242)
+href: jos/article/abstract/6209?st=article_issuea: HTML (982)
+href: jos/article/html/6209?st=article_issuea: PDF 8.90 M (1974)
+href: jos/article/pdf/6209?st=article_issuea: 评论 (0)
+href: jos/article/abstract/6209?st=article_issuea: 收藏
+href: jos/article/add_favorites/6209p: 
+于庆洋，白晓颖，李明杰，李奇原，刘涛，刘泽胤，裴丹
+p: 2022, 33(5):1849-1864. 
+						DOI: 10.13328/j.cnki.jos.006209
+p: 摘要:大型微服务系统中组件众多、依赖关系复杂, 由于故障传播的涟漪效应, 一个故障可能引起大规模服务异常, 快速识别异常并定位根因是服务质量保证的关键. 目前主要采用的调用链分析方法, 常常面临调用链结构复杂、实例数量庞大、存在大量小样本等问题, 因此提出基于调用链控制流分析, 将大量调用链结构聚合为少量方法调用模型; 并提出基于方法调用模型的执行时间分解模型及预测方法, 将实际值与预测值的相对误差超过设定阈值的待检测数据判定为异常. 采用百度凤巢广告业务系统某天超过17亿条调用链日志记录开展实验分析, 结果表明: 与数据驱动的调用序列分析方法相比, 提出的基于模型的方法可以大幅缩减调用链结构数量, 并有效分析和检测微服务性能异常及其根因.
+33: 
+a: Grenander时间结构学习与推理优化下的行为识别
+href: jos/article/abstract/6202?st=article_issuea: 吴克伟，高涛，谢昭，郭文斌
+href: http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=吴克伟，高涛，谢昭，郭文斌a: 10.13328/j.cnki.jos.006202
+href: http://dx.doi.org/10.13328/j.cnki.jos.006202a: 摘要 (516)
+href: jos/article/abstract/6202?st=article_issuea: HTML (617)
+href: jos/article/html/6202?st=article_issuea: PDF 6.57 M (1198)
+href: jos/article/pdf/6202?st=article_issuea: 评论 (0)
+href: jos/article/abstract/6202?st=article_issuea: 收藏
+href: jos/article/add_favorites/6202p: 
+吴克伟，高涛，谢昭，郭文斌
+p: 2022, 33(5):1865-1879. 
+						DOI: 10.13328/j.cnki.jos.006202
+p: 摘要:针对现有基于视频整体时间结构建模的行为识别方法中, 存在的时间噪声信息和歧义信息干扰现象, 从而引起行为类别识别错误的问题, 提出一种新型的Grenander推理优化下时间图模型(temporal graph model with Grenander inference, TGM-GI). 首先, 构建3D CNN-LSTM模块, 其中3D CNN用于行为的动态特征提取, LSTM模块用于该特征的时间依赖关系优化. 其次, 在深度模块基础上, 利用Grenander理论构建了行为识别的时间图模型, 并设计了两个模块分别处理慢行为时间冗余和异常行为干扰问题, 实现了时间噪声抑制下的时间结构提议. 随后, 设计融合特征约束和语义约束的Grenander测度, 并提出一种时序增量形式的Viterbi算法, 修正了行为时间模式中的歧义信息. 最后, 采用基于动态时间规划的模式匹配方法, 完成了基于时间模式的行为识别任务. 在UCF101和Olympic Sports两个公认数据集上, 与现有多种基于深度学习的行为识别方法进行比较, 该方法获得了最好的行为识别正确率. 该方法优于基准的3D CNN-LSTM方法, 在UCF101数据集上识别精度提高6.41%, 在 Olympic Sports数据集上识别精度提高5.67%.
+34: 
+a: 基于双向注意力语境关联建模的论辩关系预测
+href: jos/article/abstract/6320?st=article_issuea: 单华玮，路冬媛
+href: http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=单华玮，路冬媛a: 10.13328/j.cnki.jos.006320
+href: http://dx.doi.org/10.13328/j.cnki.jos.006320a: 摘要 (932)
+href: jos/article/abstract/6320?st=article_issuea: HTML (689)
+href: jos/article/html/6320?st=article_issuea: PDF 3.98 M (1990)
+href: jos/article/pdf/6320?st=article_issuea: 评论 (0)
+href: jos/article/abstract/6320?st=article_issuea: 收藏
+href: jos/article/add_favorites/6320p: 
+单华玮，路冬媛
+p: 2022, 33(5):1880-1892. 
+						DOI: 10.13328/j.cnki.jos.006320
+p: 摘要:在线讨论是当下公众表达意见和交流互动的主要方式之一. 参与者不仅发布评论来表述自己的观点, 还会回复已有的表述进行应答, 支持或反驳他人的观点. 识别表述-应答交互文本的论辩关系可以建模公众对话结构, 挖掘群体意见, 进而为企业产品营销、政府舆情监测等提供辅助. 现有的工作大多通过神经网络对交互文本的条件语义信息或者整体语义信息进行建模, 而忽略了交互文本的语境关联信息. 为此, 提出了一种挖掘语境关联的双向注意力网络模型(CCRnet). 该模型使用BERT分别对表述和应答进行文本语义表示, 并通过双向注意力机制建模交互文本的语境关联表示. 在此基础上, 模型将语境关联表示和交互文本的语义表示进行融合, 建模全局关系特征, 继而输出预测标签. 在CreateDebate数据集上的实验结果表明, 与目前主流的方法相比, CCRnet模型的整体性能表现更优. 此外, 可视化相似度矩阵证实, 双向注意力机制能够有效捕捉交互文本之间的语境关联信息并进一步服务于论辩关系预测.
+35: 
+a: 深度学习在分组密码差分区分器上的研究应用
+href: jos/article/abstract/6195?st=article_issuea: 侯泽洲，陈少真，任炯炯
+href: http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=侯泽洲，陈少真，任炯炯a: 10.13328/j.cnki.jos.006195
+href: http://dx.doi.org/10.13328/j.cnki.jos.006195a: 摘要 (769)
+href: jos/article/abstract/6195?st=article_issuea: HTML (966)
+href: jos/article/html/6195?st=article_issuea: PDF 4.97 M (1800)
+href: jos/article/pdf/6195?st=article_issuea: 评论 (0)
+href: jos/article/abstract/6195?st=article_issuea: 收藏
+href: jos/article/add_favorites/6195p: 
+侯泽洲，陈少真，任炯炯
+p: 2022, 33(5):1893-1906. 
+						DOI: 10.13328/j.cnki.jos.006195
+p: 摘要:差分分析在分组密码分析领域是一种重要的研究方法, 针对分组密码的差分分析的重点在于找到一个轮数或者概率更大的差分区分器. 首先描述了通过深度学习技术构造差分区分器时所需要的数据集的构造方法, 并且分别基于卷积神经网络(convolutional neural networks, CNN)和残差神经网络(residual neural network, ResNet)训练了两种轻量级分组密码算法SIMON32与SPECK32的差分区分器, 并对两种模型得到的差分区分器进行了比较, 发现综合考虑时间花销与精度的前提下, 在SIMON32的差分区分器构造上, ResNet训练得到的模型表现更好, 而CNN则在SPECK32的模型训练上表现的更好; 其次, 研究了网络模型中卷积运算个数对模型精度的影响, 发现在原有模型基础上增加CNN模型的卷积层数和ResNet模型的残差块数, 都会导致模型精度的下降. 最后, 给出在进行基于深度学习的差分区分器构造时的模型及参数选择建议, 即, 应该首要考虑低卷积层数的CNN模型和低残差块数的ResNet模型.
+36: 
+a: 向量等分量数的保密计算及应用
+href: jos/article/abstract/6206?st=article_issuea: 窦家维，陈明艳，成雯
+href: http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=窦家维，陈明艳，成雯a: 10.13328/j.cnki.jos.006206
+href: http://dx.doi.org/10.13328/j.cnki.jos.006206a: 摘要 (453)
+href: jos/article/abstract/6206?st=article_issuea: HTML (642)
+href: jos/article/html/6206?st=article_issuea: PDF 5.13 M (1461)
+href: jos/article/pdf/6206?st=article_issuea: 评论 (0)
+href: jos/article/abstract/6206?st=article_issuea: 收藏
+href: jos/article/add_favorites/6206p: 
+窦家维，陈明艳，成雯
+p: 2022, 33(5):1907-1921. 
+						DOI: 10.13328/j.cnki.jos.006206
+p: 摘要:随着信息技术的快速发展, 在保护数据隐私的条件下进行多方合作计算变得越来越普及, 安全多方计算已经成为解决这类保密计算问题的核心技术. 向量的保密计算是安全多方计算的重要研究方向, 目前有很多研究成果, 包括保密计算向量的点积, 保密的向量求和等. 但关于保密计算向量等分量数的研究成果还很少, 且主要研究向量分量在有全集限制下的两方保密计算问题. 主要研究多方参与者隐私向量的等分量数以及相关阈值的安全计算问题. 首先针对向量设计了分量-矩阵编码方法, 结合ElGamal门限加密系统, 构造了多方向量等分量数保密计算协议. 进一步以向量等分量数保密计算协议为基础, 研究设计了多方向量等分量数阈值问题保密计算协议. 所有向量分量没有全集的限制. 应用模拟范例方法对文中所有协议的安全性进行了严格证明. 效率分析和实验验证表明设计的协议是简单高效的. 最后, 将所设计的协议应用于解决一些实际安全计算问题.
+37: 
+a: 概率分布双向稀疏化下单一Tsallis熵阈值选取方法
+href: jos/article/abstract/6196?st=article_issuea: 邹耀斌，张进玉，臧兆祥，夏平，王俊英，龚国强，孙水发
+href: http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=邹耀斌，张进玉，臧兆祥，夏平，王俊英，龚国强，孙水发a: 10.13328/j.cnki.jos.006196
+href: http://dx.doi.org/10.13328/j.cnki.jos.006196a: 摘要 (834)
+href: jos/article/abstract/6196?st=article_issuea: HTML (873)
+href: jos/article/html/6196?st=article_issuea: PDF 12.16 M (1749)
+href: jos/article/pdf/6196?st=article_issuea: 评论 (0)
+href: jos/article/abstract/6196?st=article_issuea: 收藏
+href: jos/article/add_favorites/6196p: 
+邹耀斌，张进玉，臧兆祥，夏平，王俊英，龚国强，孙水发
+p: 2022, 33(5):1922-1946. 
+						DOI: 10.13328/j.cnki.jos.006196
+p: 摘要:现有基于熵最大准则选取阈值的方法涉及两个或两个以上的随机变量, 都忽视了一个约束条件而影响到它们的分割精度和适用范围: 参与随机系统整体熵计算的各随机变量应当相互独立. 提出了一种概率分布双向稀疏化下的单一Tsallis熵最大化导向的自动阈值选取方法, 可以自然规避多个随机变量需要相互独立的约束条件. 在多尺度卷积乘变换所得两幅图像上, 该方法先构建了一个具有双向稀疏概率分布特征的二维随机变量, 然后在该二维随机变量基础上定义了一个二维Tsallis熵. 在将二维Tsallis熵的计算简化到只涉及二维随机变量的边缘概率分布后, 选取单一Tsallis熵取最大值时对应的阈值作为最终分割阈值. 提出的方法和1个交互式阈值方法、4个自动阈值方法以及1个自动聚类分割方法进行了比较. 所用测试图像集由44幅合成图像和44幅真实世界图像组成, 这些测试图像具有单峰、双峰、多峰或无峰灰度直方图模式. 结果表明: 提出方法的计算效率虽然不优于5个自动分割方法, 但是它的分割适应性和分割精度有显著提高.
+38: 
+a: 基于双解码U型卷积神经网络的胰腺分割
+href: jos/article/abstract/6198?st=article_issuea: 毕秀丽，陆猛，肖斌，李伟生
+href: http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=毕秀丽，陆猛，肖斌，李伟生a: 10.13328/j.cnki.jos.006198
+href: http://dx.doi.org/10.13328/j.cnki.jos.006198a: 摘要 (741)
+href: jos/article/abstract/6198?st=article_issuea: HTML (1389)
+href: jos/article/html/6198?st=article_issuea: PDF 6.65 M (1975)
+href: jos/article/pdf/6198?st=article_issuea: 评论 (0)
+href: jos/article/abstract/6198?st=article_issuea: 收藏
+href: jos/article/add_favorites/6198p: 
+毕秀丽，陆猛，肖斌，李伟生
+p: 2022, 33(5):1947-1958. 
+						DOI: 10.13328/j.cnki.jos.006198
+p: 摘要:计算机断层成像(computed tomography, CT)中, 胰腺分割作为医学图像分析中最具挑战的任务之一, 由于其体积小、形状多变的特点, 导致传统的自动分割方法无法达到理想的分割精度. 利用高级语义特征指导低级特征的思想, 提出一种基于双解码U型卷积神经网络的单阶段胰腺分割模型. 模型由一个编码器和两个解码器构成, 两个解码器利用不同编码深度的特征将低级空间信息与高级语义信息有效结合, 加强分割网络对特征信息的高效利用, 能够对未裁剪、未降低分辨率的CT切片实现高精确度的分割. 实验结果表明, 方法能够在全尺寸的输入下实现较好的分割性能, 在公开胰腺数据集上的分割效果优于现有单阶段胰腺分割方法.
+39: 
+
+40: 
+
+41: 
+
+42: 
+
+43: 
+
+44: 
+a: jos@iscas.ac.cn
+href: mailto:JAP@buaa.edu.cn
+45: 
+a: https://www.jos.org.cn
+href: https://www.jos.org.cn
+46: 
+
+47: 
+
+48: 
+

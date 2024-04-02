@@ -1,0 +1,52 @@
+Title: 完备神经网络验证加速技术综述
+Authors: 刘宗鑫，杨鹏飞，张立军，吴志林，黄小炜
+HTML URL: jos/article/html/7127?st=article_issue
+
+Title: 舰载机弹药保障作业调度的形式化建模与验证
+Authors: 金钊，金璐，张博闻，吴庆顺，冯朔，李冠峰，徐明亮
+HTML URL: jos/article/html/7128?st=article_issue
+
+Title: 并发对象强可线性化性质的检测和验证研究
+Authors: 王超，贾巧雯，吕毅，吴鹏
+HTML URL: jos/article/html/7130?st=article_issue
+
+Title: 基于DH标定的机器人正向运动学形式化验证
+Authors: 谢果君，杨焕焕，石正璞，陈钢
+HTML URL: jos/article/html/7131?st=article_issue
+
+Title: 命令式动态规划类算法程序推导及机械化验证
+Authors: 左正康，孙欢，王昌晶，游珍，黄箐，王唱唱
+HTML URL: jos/article/html/7134?st=article_issue
+
+Title: Trie+结构函数式建模、机械化验证及其应用
+Authors: 左正康，柯雨含，黄箐，王玥坤，曾志城，王昌晶
+HTML URL: jos/article/html/7135?st=article_issue
+
+Title: 基于MTRDL的自动飞行系统模式需求建模与验证方法[1]
+Authors: 徐恒，黄志球，胡军，陶传奇，王金永，石帆
+HTML URL: jos/article/html/7136?st=article_issue
+
+Title: 基于AADL的混合关键系统随机错误与突发错误安全性分析
+Authors: 魏晓敏，董云卫，孙聪，李兴华，马建峰
+HTML URL: jos/article/html/7137?st=article_issue
+
+Title: 基于交互式定理证明的并发程序验证工作综述
+Authors: 王中烨，吴姝姝，曹钦翔
+HTML URL: jos/article/html/7138?st=article_issue
+
+Title: Büchi自动机确定化分析工具
+Authors: 马润哲，田聪，王文胜，段振华
+HTML URL: jos/article/html/7139?st=article_issue
+
+Title: 微内核操作系统互斥量模块功能正确性的形式化验证
+Authors: 张林雁，李希萌，施智平，关永，曹钦翔，张倩颖
+HTML URL: jos/article/html/7132?st=article_issue
+
+Title: 基于形式化方法的区块链系统漏洞检测模型
+Authors: 陈锦富，冯乔伟，蔡赛华，施登洲，RexfordNiiAyiteySOSU
+HTML URL: jos/article/html/7133?st=article_issue
+
+Title: 关于安全案例论证构建的综述
+Authors: 陈泽众，邓玉欣
+HTML URL: jos/article/html/7126?st=article_issue
+

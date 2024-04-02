@@ -1,0 +1,205 @@
+[
+    {
+        "title": "面向多模态数据的新型数据库技术专题前言",
+        "authors": [
+            "彭智勇，高云君，李国良，许建秋"
+        ],
+        "html_url": "jos/article/html/7079?st=article_issue"
+    },
+    {
+        "title": "基于邻域",
+        "authors": [
+            "张琦，程苗苗，李荣华，王国仁"
+        ],
+        "html_url": "jos/article/html/7071?st=article_issue"
+    },
+    {
+        "title": "基于细粒度特征融合的部分多模态哈希",
+        "authors": [
+            "殷崭祚，李博涵，王萌，黄瑞龙，吴文隆，王昊奋"
+        ],
+        "html_url": "jos/article/html/7076?st=article_issue"
+    },
+    {
+        "title": "GPPR：跨域分布式个性化PageRank算法",
+        "authors": [
+            "陈子俊，马德龙，王一舒，袁野"
+        ],
+        "html_url": "jos/article/html/7072?st=article_issue"
+    },
+    {
+        "title": "融合多模态数据的小样本命名实体识别方法",
+        "authors": [
+            "张天明，张杉，刘曦，曹斌，范菁"
+        ],
+        "html_url": "jos/article/html/7069?st=article_issue"
+    },
+    {
+        "title": "面向多模态模型训练的高效样本检索技术",
+        "authors": [
+            "唐秀，伍赛，侯捷，陈刚"
+        ],
+        "html_url": "jos/article/html/7073?st=article_issue"
+    },
+    {
+        "title": "面向视频的细粒度多模态实体链接",
+        "authors": [
+            "赵海全，王续武，李金亮，李直旭，肖仰华"
+        ],
+        "html_url": "jos/article/html/7078?st=article_issue"
+    },
+    {
+        "title": "面向云边端协同的多模态数据建模技术及其应用",
+        "authors": [
+            "崔双双，吴限，王宏志，吴昊"
+        ],
+        "html_url": "jos/article/html/7070?st=article_issue"
+    },
+    {
+        "title": "Apache IoTDB中的多模态数据编码压缩",
+        "authors": [
+            "贺文迪，夏天睿，宋韶旭，黄向东，王建民"
+        ],
+        "html_url": "jos/article/html/7077?st=article_issue"
+    },
+    {
+        "title": "Navi：基于自然语言交互的数据分析系统",
+        "authors": [
+            "谢宇鹏，骆昱宇，冯建华"
+        ],
+        "html_url": "jos/article/html/7074?st=article_issue"
+    },
+    {
+        "title": "支持深度学习的视觉数据库管理系统研究进展",
+        "authors": [
+            "丁光耀，徐辰，钱卫宁，周傲英"
+        ],
+        "html_url": "jos/article/html/7075?st=article_issue"
+    },
+    {
+        "title": "深度神经网络修复策略综述",
+        "authors": [
+            "梁震，刘万伟，吴陶然，薛白，王戟，杨文婧"
+        ],
+        "html_url": "jos/article/html/7061?st=article_issue"
+    },
+    {
+        "title": "基于知识图谱的跨项目安全缺陷报告预测方法",
+        "authors": [
+            "郑炜，刘程远，吴潇雪，陈翔，成婧源，孙小兵，孙瑞阳"
+        ],
+        "html_url": "jos/article/html/6812?st=article_issue"
+    },
+    {
+        "title": "MSA-Lab：模型驱动的微服务集成设计平台",
+        "authors": [
+            "熊靖浏，任秋蓉，Shmuel TYSZBEROWICZ，刘志明，刘波"
+        ],
+        "html_url": "jos/article/html/6813?st=article_issue"
+    },
+    {
+        "title": "单分支线性约束循环程序的终止性分析",
+        "authors": [
+            "李轶，唐桐"
+        ],
+        "html_url": "jos/article/html/6817?st=article_issue"
+    },
+    {
+        "title": "基于相关性反馈的开源系统跨层需求追踪方法",
+        "authors": [
+            "田家豪，张莉，连小利，赵倩慧"
+        ],
+        "html_url": "jos/article/html/6820?st=article_issue"
+    },
+    {
+        "title": "一种预测流程剩余时间的可解释特征分层方法",
+        "authors": [
+            "郭娜，刘聪，李彩虹，陆婷，闻立杰，曾庆田"
+        ],
+        "html_url": "jos/article/html/6824?st=article_issue"
+    },
+    {
+        "title": "混合云环境下面向数据生命周期的自适应访问控制",
+        "authors": [
+            "林莉，毛新雅，储振兴，解晓宇"
+        ],
+        "html_url": "jos/article/html/6809?st=article_issue"
+    },
+    {
+        "title": "情感对话技术综述",
+        "authors": [
+            "赵妍妍，陆鑫，赵伟翔，田一间，秦兵"
+        ],
+        "html_url": "jos/article/html/6807?st=article_issue"
+    },
+    {
+        "title": "基于精细神经元的类脑感知学习模型",
+        "authors": [
+            "张祎晨，何干，杜凯，黄铁军"
+        ],
+        "html_url": "jos/article/html/6816?st=article_issue"
+    },
+    {
+        "title": "理性与可验证的联邦学习框架",
+        "authors": [
+            "吴柿红，田有亮"
+        ],
+        "html_url": "jos/article/html/6819?st=article_issue"
+    },
+    {
+        "title": "一种基于算法机制设计的社会法则合成方法",
+        "authors": [
+            "吴骏，曹杰，王崇骏，谢俊元"
+        ],
+        "html_url": "jos/article/html/6825?st=article_issue"
+    },
+    {
+        "title": "移动边缘计算不确定性任务持续卸载及资源分配方法",
+        "authors": [
+            "许斌，赵云凯，朱剑鸣，刘一川，李烜焘，孙雁飞，季一木"
+        ],
+        "html_url": "jos/article/html/6805?st=article_issue"
+    },
+    {
+        "title": "基于深度强化学习的WRSN动态时空充电调度",
+        "authors": [
+            "王艺均，冯勇，刘明，刘念伯"
+        ],
+        "html_url": "jos/article/html/6814?st=article_issue"
+    },
+    {
+        "title": "基于注意力机制的高容量通用图像隐写模型",
+        "authors": [
+            "袁超，王宏霞，何沛松"
+        ],
+        "html_url": "jos/article/html/6815?st=article_issue"
+    },
+    {
+        "title": "WiFense：从衍射模型到边界监控",
+        "authors": [
+            "刘兆鹏，李晟洁，张越，曾有为，张大庆"
+        ],
+        "html_url": "jos/article/html/6826?st=article_issue"
+    },
+    {
+        "title": "引入智能虚拟讲解员的云展厅构建与交互反馈研究",
+        "authors": [
+            "刘舫，吕天，刘心阁，叶盛，郭锐，张烈，马翠霞，王庆伟，刘永进"
+        ],
+        "html_url": "jos/article/html/6801?st=article_issue"
+    },
+    {
+        "title": "联合吸收马尔可夫链和骨架映射的视频分割",
+        "authors": [
+            "梁云，张宇晴，郑晋图，张勇"
+        ],
+        "html_url": "jos/article/html/6821?st=article_issue"
+    },
+    {
+        "title": "国产SW26010-Pro处理器上3级BLAS函数众核并行优化",
+        "authors": [
+            "胡怡，陈道琨，杨超，马文静，刘芳芳，宋超博，孙强，史俊达"
+        ],
+        "html_url": "jos/article/html/6811?st=article_issue"
+    }
+]

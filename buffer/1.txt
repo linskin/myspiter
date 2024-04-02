@@ -1,0 +1,1229 @@
+
+<!DOCTYPE html>
+<html xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<head>
+<base href="/">
+    <meta charset="utf-8">
+    <title>2022年第33卷第5期文章目次</title>
+    <meta name="Keywords" content="软件学报"/><meta name="Description" content="软件学报"/>
+
+
+	<!-- 
+<link rel="stylesheet" type="text/css" href="template/011_csa/css/style_h5.css" media="all and (min-width: 1201px)">
+ -->
+    <link rel="stylesheet" type="text/css" href="template/011_csa/css/style_h5.css" >
+<link rel="stylesheet" type="text/css" href="template/011_csa/css/style_1000px_h5.css" media="all and (max-width: 1200px)">
+    <link rel="stylesheet" type="text/css" href="template/011_csa/css/right_footer_notice.css">
+    <link rel="stylesheet" type="text/css" href="template/css/font-awesome.min.css">
+    <script type="text/javascript" src="template/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="template/js/jquery.SuperSlide.2.1.3.js"></script>
+    <script type="text/javascript" src="template/011_csa/js/Tony_Tab.js"></script>
+    <script type="text/javascript" src="template/011_csa/js/baguettebox.min.js"></script>
+    <script type="text/javascript" src="template/js/et_website.js"></script>
+</head>
+<body>
+
+<div class="site_container">
+  <div class="index_m m-c">
+    
+     
+    <div class="navExt">
+      
+      <div class="index_lg">
+     <!-- <div class="index_left">
+         
+        <div class="top_logo"><img src="" width="500" height="80"></div>
+        <div class="top_txt">主办：中国科学院软件研究所 <br >                 中国计算机学会</div>
+        </div>-->
+        <div class="index_right">
+        <div class="index_wm">
+        <div class="wm_img">      
+        <div class="twmImg"><img src="/template/011_csa/images/fuwuhao.jpg" width="70%"></div>
+          <h2 style="background-color:transparent">微信服务号</h2>
+      </div>
+          <div class="wm_img">
+        
+        <div class="twmImg"><img src="/template/011_csa/images/dingyuehao.jpg" width="70px" style=""></div>
+        <h2 style="background-color:transparent">微信订阅号</h2>
+      </div>
+      
+          </div>
+        </div>
+      </div>
+     
+
+    
+      <div class="nav">
+          
+      <div class=" time">
+	  <script>
+    var   CalendarData=new   Array(20);
+    var   madd=new Array(12);
+    var   TheDate=new Date();
+    var   tgString="甲乙丙丁戊己庚辛壬癸";
+    var   dzString="子丑寅卯辰巳午未申酉戌亥";
+    var   numString="一二三四五六七八九十";
+    var   monString="正二三四五六七八九十冬腊";
+    var   weekString="日一二三四五六";
+    var   sx="鼠牛虎兔龙蛇马羊猴鸡狗猪";
+    var   cYear;
+    var   cMonth;
+    var   cDay;
+    var   cHour;
+    var   cDateString;
+    var   DateString;
+    var   Browser=navigator.appName; 
+    function   init()
+    {
+        CalendarData[0]=0x41A95;
+        CalendarData[1]=0xD4A;
+        CalendarData[2]=0xDA5;
+        CalendarData[3]=0x20B55;
+        CalendarData[4]=0x56A;
+        CalendarData[5]=0x7155B;
+        CalendarData[6]=0x25D;
+        CalendarData[7]=0x92D;
+        CalendarData[8]=0x5192B;
+        CalendarData[9]=0xA95;
+        CalendarData[10]=0xB4A;
+        CalendarData[11]=0x416AA;
+        CalendarData[12]=0xAD5;
+        CalendarData[13]=0x90AB5;
+        CalendarData[14]=0x4BA;
+        CalendarData[15]=0xA5B;
+        CalendarData[16]=0x60A57;
+        CalendarData[17]=0x52B;
+        CalendarData[18]=0xA93;
+        CalendarData[19]=0x40E95;
+        madd[0]=0;
+        madd[1]=31;
+        madd[2]=59;
+        madd[3]=90;
+        madd[4]=120;
+        madd[5]=151;
+        madd[6]=181;
+        madd[7]=212;
+        madd[8]=243;
+        madd[9]=273;
+        madd[10]=304;
+        madd[11]=334;
+    }
+    function   GetBit(m,n)
+    {
+        return   (m>>n)&1;
+    }
+
+    function   e2c()
+    {
+        var   totalmnk;
+        var   isEnd=false;
+        var   tmp=TheDate.getYear();
+        if   (tmp<1900)     tmp+=1900;
+        total=(tmp-2001)*365
+                +Math.floor((tmp-2001)/4)
+                +madd[TheDate.getMonth()]
+                +TheDate.getDate()
+                -23;
+        if   (TheDate.getYear()%4==0&&TheDate.getMonth()>1)
+            total++;
+        for(m=0;;m++)
+        {
+            k=(CalendarData[m]<0xfff)?11:12;
+            for(n=k;n>=0;n--)
+            {
+                if(total<=29+GetBit(CalendarData[m],n))
+                {
+                    isEnd=true;
+                    break;
+                }
+                total=total-29-GetBit(CalendarData[m],n);
+            }
+            if(isEnd)break;
+        }
+        cYear=2001   +   m;
+        cMonth=k-n+1;
+        cDay=total;
+        if(k==12)
+        {
+            if(cMonth==Math.floor(CalendarData[m]/0x10000)+1)
+                cMonth=1-cMonth;
+            if(cMonth>Math.floor(CalendarData[m]/0x10000)+1)
+                cMonth--;
+        }
+        cHour=Math.floor((TheDate.getHours()+3)/2);
+    }
+
+    function   GetcDateString()
+    {   var   tmp="";
+        tmp+=tgString.charAt((cYear-4)%10);       //年干
+        tmp+=dzString.charAt((cYear-4)%12);       //年支
+        tmp+="年(";
+        tmp+=sx.charAt((cYear-4)%12);
+        tmp+=")   ";
+        if(cMonth<1)
+        {
+            tmp+="闰";
+            tmp+=monString.charAt(-cMonth-1);
+        }
+        else
+            tmp+=monString.charAt(cMonth-1);
+        tmp+="月";
+        tmp+=(cDay<11)?"初":((cDay<20)?"十":((cDay<30)?"廿":"卅"));
+        if(cDay%10!=0||cDay==10)
+            tmp+=numString.charAt((cDay-1)%10);
+        tmp+="    ";
+        if(cHour==13)tmp+="夜";
+        tmp+=dzString.charAt((cHour-1)%12);
+        tmp+="时";
+        cDateString=tmp;
+        return   tmp;
+    }
+
+    function   GetDateString()
+    {
+        var   tmp="";
+        var   t1=TheDate.getYear();
+        if   (t1<1900){
+				t1+=1900;
+		}
+		
+		tmp+=t1
+		+"年"
+		+(TheDate.getMonth()+1)+"月"
+		+TheDate.getDate()+"日   "
+		+TheDate.getHours()+":"
+		+((TheDate.getMinutes()<10)?"0":"")
+		+TheDate.getMinutes()
+		+" 星期"+weekString.charAt(TheDate.getDay());
+		
+
+
+        DateString=tmp;
+        return   tmp;
+    }
+
+    init();
+    e2c();
+    GetDateString();
+    GetcDateString();
+    document.write(DateString);
+</script></div>
+        <ul>
+   
+           <li><A href='/jos/home?id=20210909102755001&name=主页'>主页<i class='navBotLine'></i></A></li><li><A href='jos/site/menu/20071206155225001?id=20071206155225001&name=期刊介绍'>期刊介绍<i class='navBotLine'></i></A></li><li><A href='jos/site/menu/20071206155306001?id=20071206155306001&name=编委会'>编委会<i class='navBotLine'></i></A></li><li><A href='jos/site/menu/20210909105053001?id=20210909105053001&name=服务介绍'>服务介绍<i class='navBotLine'></i></A></li><li><A href='jos/site/menu/20210909102616001?id=20210909102616001&name=投稿指南'>投稿指南<i class='navBotLine'></i></A></li><li><A href='jos/site/menu/20171218034556834?id=20171218034556834&name=出版道德'>出版道德<i class='navBotLine'></i></A></li><li><A href='jos/site/menu/20071206155334001?id=20071206155334001&name=联系我们'>联系我们<i class='navBotLine'></i></A></li><li><A href='/jos/action/toc_alert?id=20210909102914001&name=E-mail Alert'>E-mail Alert<i class='navBotLine'></i></A></li><li><A href='https://www.jos.org.cn/josen/home?id=20210909102939001&name=English'>English<i class='navBotLine'></i></A></li>
+        </ul>
+       <!-- <div class="share">
+<div class="bshare-custom"><a title="分享到QQ好友" class="bshare-qqim"></a><a title="分享到微信" class="bshare-weixin"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到电子邮件" class="bshare-email"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a></div><script type="text/javascript" charset="utf-8" src="https://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=3&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="https://static.bshare.cn/b/bshareC0.js"></script>
+      </div>-->  </div>
+      
+    </div>
+    
+
+  
+    <div class="index_c">
+<!--body begin-->
+<div class="index_info_left">
+	 <div class="index_info_c">
+           <div class="index_info_left">
+				
+<link type="text/css" href="template/common001/css/article_search_style_h5.css" rel="stylesheet">
+<div class="article_issue_container">  
+    <div class="article_issue_wrap article_issue_row">
+        <div class="article_issue_left"> 
+            <div class="article_issue_m">			
+                <div class="slideTxtBox">                    
+			 <div class="navigation">
+			    <a href="jos/home">首 页</a> &gt;
+			    <a href="jos/issue/browser">过刊浏览</a>
+			</div>
+		    <div class="article_issue_hd">
+                        <ul class="article_issue_fl">
+                            <li>2022年第33卷第5期文章目次</li>
+                        </ul>
+                    </div>
+                    <div class="article_issue_bd">
+                        <ul>
+                            <div class="choose_article_toolbar clearfix">
+                                <div class="article_issue_select_all_body article_issue_fl clearfix">
+                                    <input class="btnSelectAll" type="checkbox"><span class="btn_select_all">全 选</span>
+                                </div>
+                                <div class="article_issue_display_mode_body article_issue_fr">
+                                    <span class="display_mode">显示方式：</span>
+                                    <a id="pic_and_abstract_mode" class="pic_and_abstract_mode" title="图文模式" href="javascript:;"></a>
+                                    <a id="text_mode" class="text_mode on" title="简洁模式" href="javascript:;"></a>
+                                    <a id="text_and_abstract_mode" class="text_and_abstract_mode" title="摘要模式" href="javascript:;"></a>
+                                    <span class="btn_split_tag">|</span><a id='btn_data_export' class="btn_data_export" title="导出" href="javascript:;"></a>
+                                </div>
+                            </div>
+                            <div class="article_list">
+				<ul>
+						<li><h5><span>&gt</span>专刊文章</h5></li>
+                                    <li class="article_line">
+                                        <input class="article_issue_fl" name='FileNO' id='FileNO6562' value='6562' type='checkbox'>
+                                        <div class="article_des article_issue_fl">
+                                            <div class="article_title">
+					     <a href='jos/article/abstract/6562?st=article_issue' target='_blank'>领域软件工程专题前言</a>
+					    </div>
+                                            <p class="article_author">
+							<span><a href='http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=汤恩义，江贺，陈俊洁，李必信，唐滨' target='_blank'>汤恩义，江贺，陈俊洁，李必信，唐滨</a></span>
+					    </p>
+                                            <p class="article_position">2022, 33(5):1527-1528. 
+						<span>DOI: <a href='http://dx.doi.org/10.13328/j.cnki.jos.006562' target='_blank' >10.13328/j.cnki.jos.006562</a></span>
+					    </p>
+                                            <div class="article_toolbar">
+                                                <a class="btn_abstract" href='jos/article/abstract/6562?st=article_issue' target='_blank'>摘要 (<span id='ClickNum6562'>1588</span>)</a>
+						<a class="btn_html" href='jos/article/html/6562?st=article_issue' target='_blank'>HTML (<span id='HtmlClickNum6562'>1138</span>)</a>
+                                                <a class="btn_pdf" href='jos/article/pdf/6562?st=article_issue' target='_blank'>PDF 6.06 M (<span id='PDFClickNum6562'>2065</span>)</a>
+						<a class="btn_appraise" href='jos/article/abstract/6562?st=article_issue' target='_blank'>评论 (<span id='AppraiseNum6562'>0</span>)</a>
+                                                <a class="btn_collection" href="jos/article/add_favorites/6562" target='_blank'>收藏</a>
+                                            </div>
+                                            <div class="abstract_body">
+                                                <p><b>摘要:</b></p>
+                                            </div>
+                                        </div>
+                                    </li>    
+                                    <li class="article_line">
+                                        <input class="article_issue_fl" name='FileNO' id='FileNO6547' value='6547' type='checkbox'>
+                                        <div class="article_des article_issue_fl">
+                                            <div class="article_title">
+					     <a href='jos/article/abstract/6547?st=article_issue' target='_blank'>面向航空航天领域的工业CFD软件研发设计</a>
+					    </div>
+                                            <p class="article_author">
+							<span><a href='http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=张健，周乃春，李明，刘杰，陈江涛，向栋，金韬' target='_blank'>张健，周乃春，李明，刘杰，陈江涛，向栋，金韬</a></span>
+					    </p>
+                                            <p class="article_position">2022, 33(5):1529-1550. 
+						<span>DOI: <a href='http://dx.doi.org/10.13328/j.cnki.jos.006547' target='_blank' >10.13328/j.cnki.jos.006547</a></span>
+					    </p>
+                                            <div class="article_toolbar">
+                                                <a class="btn_abstract" href='jos/article/abstract/6547?st=article_issue' target='_blank'>摘要 (<span id='ClickNum6547'>1659</span>)</a>
+						<a class="btn_html" href='jos/article/html/6547?st=article_issue' target='_blank'>HTML (<span id='HtmlClickNum6547'>3635</span>)</a>
+                                                <a class="btn_pdf" href='jos/article/pdf/6547?st=article_issue' target='_blank'>PDF 9.96 M (<span id='PDFClickNum6547'>3463</span>)</a>
+						<a class="btn_appraise" href='jos/article/abstract/6547?st=article_issue' target='_blank'>评论 (<span id='AppraiseNum6547'>0</span>)</a>
+                                                <a class="btn_collection" href="jos/article/add_favorites/6547" target='_blank'>收藏</a>
+                                            </div>
+                                            <div class="abstract_body">
+                                                <p><b>摘要:</b>工业CFD (computational fluid dynamics)软件属于计算机辅助工程(computer-aided  engineering, CAE)软件的一种, 在航空航天等领域有着广泛的应用. 其开发过程强烈依赖于流体力学、数学、计算机以及其他领域学科知识模型, 涉及大量理论推导、模型构建、算法优化、验证与确认等专业性、基础性科学研究, 导致软件系统构成复杂, 研发难度巨大. 通过引入软件工程的方法和实践, 能够对软件开发进行更有效的组织与管理, 达到缩短开发周期、提升软件质量的目的. 分析了工业CFD软件的特点和发展趋势, 提出了适合于工业CFD软件的增量与迭代结合的开发模型. 自主研发了面向CFD仿真软件的自动化持续集成平台. 从软件交互、封装与效率、功能扩展性及高性能集群环境部署等方面给出了工业CFD软件的设计建议. 针对性建立了适用于科学计算软件的验证与确认方法. 最后给出了一款国产自主CFD软件示范性案例, 以期为相关研究者和实践者提供参考.</p>
+                                            </div>
+                                        </div>
+                                    </li>    
+                                    <li class="article_line">
+                                        <input class="article_issue_fl" name='FileNO' id='FileNO6548' value='6548' type='checkbox'>
+                                        <div class="article_des article_issue_fl">
+                                            <div class="article_title">
+					     <a href='jos/article/abstract/6548?st=article_issue' target='_blank'>基于预训练模型和多层次信息的代码坏味检测方法</a>
+					    </div>
+                                            <p class="article_author">
+							<span><a href='http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=张杨，东春浩，刘辉，葛楚妍' target='_blank'>张杨，东春浩，刘辉，葛楚妍</a></span>
+					    </p>
+                                            <p class="article_position">2022, 33(5):1551-1568. 
+						<span>DOI: <a href='http://dx.doi.org/10.13328/j.cnki.jos.006548' target='_blank' >10.13328/j.cnki.jos.006548</a></span>
+					    </p>
+                                            <div class="article_toolbar">
+                                                <a class="btn_abstract" href='jos/article/abstract/6548?st=article_issue' target='_blank'>摘要 (<span id='ClickNum6548'>1577</span>)</a>
+						<a class="btn_html" href='jos/article/html/6548?st=article_issue' target='_blank'>HTML (<span id='HtmlClickNum6548'>1551</span>)</a>
+                                                <a class="btn_pdf" href='jos/article/pdf/6548?st=article_issue' target='_blank'>PDF 6.41 M (<span id='PDFClickNum6548'>3189</span>)</a>
+						<a class="btn_appraise" href='jos/article/abstract/6548?st=article_issue' target='_blank'>评论 (<span id='AppraiseNum6548'>0</span>)</a>
+                                                <a class="btn_collection" href="jos/article/add_favorites/6548" target='_blank'>收藏</a>
+                                            </div>
+                                            <div class="abstract_body">
+                                                <p><b>摘要:</b>目前已有的代码坏味检测方法仅依赖于代码结构信息和启发式规则, 对嵌入在不同层次代码中的语义信息关注不够, 而且现有的代码坏味检测方法准确率还有进一步提升的空间. 针对该问题, 提出一种基于预训练模型和多层次信息的代码坏味检测方法DeepSmell, 首先采用静态分析工具提取程序中的代码坏味实例和多层次代码度量信息, 并对代码坏味实例进行标记; 然后通过抽象语法树解析并获取源代码中与代码坏味相关的层次信息, 将其中的文本信息与度量信息相结合生成数据样本; 最后使用BERT预训练模型将文本信息转化为词向量, 应用GRU-LSTM模型获取层次信息之间潜在的语义关系, 并结合CNN模型与注意力机制检测代码坏味. 在实验中, 选取JUnit、Xalan和SPECjbb2005等24个大型实际应用程序构建训练集和测试集, 并对特征依恋、长方法、数据类和上帝类等4种代码坏味进行检测. 实验结果表明, DeepSmell与目前已有的检测方法相比在平均查全率和<i>F</i>1值上分别提高了9.3%和10.44%, 同时保持了较高的查准率, DeepSmell可以有效地实现代码坏味检测.</p>
+                                            </div>
+                                        </div>
+                                    </li>    
+                                    <li class="article_line">
+                                        <input class="article_issue_fl" name='FileNO' id='FileNO6549' value='6549' type='checkbox'>
+                                        <div class="article_des article_issue_fl">
+                                            <div class="article_title">
+					     <a href='jos/article/abstract/6549?st=article_issue' target='_blank'>针对黑盒智能语音软件的对抗样本生成方法</a>
+					    </div>
+                                            <p class="article_author">
+							<span><a href='http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=袁天昊，吉顺慧，张鹏程，蔡涵博，戴启印，叶仕俊，任彬' target='_blank'>袁天昊，吉顺慧，张鹏程，蔡涵博，戴启印，叶仕俊，任彬</a></span>
+					    </p>
+                                            <p class="article_position">2022, 33(5):1569-1586. 
+						<span>DOI: <a href='http://dx.doi.org/10.13328/j.cnki.jos.006549' target='_blank' >10.13328/j.cnki.jos.006549</a></span>
+					    </p>
+                                            <div class="article_toolbar">
+                                                <a class="btn_abstract" href='jos/article/abstract/6549?st=article_issue' target='_blank'>摘要 (<span id='ClickNum6549'>1553</span>)</a>
+						<a class="btn_html" href='jos/article/html/6549?st=article_issue' target='_blank'>HTML (<span id='HtmlClickNum6549'>1726</span>)</a>
+                                                <a class="btn_pdf" href='jos/article/pdf/6549?st=article_issue' target='_blank'>PDF 9.95 M (<span id='PDFClickNum6549'>2617</span>)</a>
+						<a class="btn_appraise" href='jos/article/abstract/6549?st=article_issue' target='_blank'>评论 (<span id='AppraiseNum6549'>0</span>)</a>
+                                                <a class="btn_collection" href="jos/article/add_favorites/6549" target='_blank'>收藏</a>
+                                            </div>
+                                            <div class="abstract_body">
+                                                <p><b>摘要:</b>随着深度学习技术的成熟, 智能语音识别软件获得了广泛的应用, 存在于智能软件内部的各种深度神经网络发挥了关键性的作用. 然而, 最近的研究表明: 含有微小扰动的对抗样本会对深度神经网络的安全性和鲁棒性构成极大威胁. 研究人员通常将生成的对抗样本作为测试用例输入到智能语音识别软件中, 观察对抗样本是否会让软件产生错误判断, 从而采取防御方法来提高智能软件安全性和鲁棒性. 在对抗样本的生成中, 黑盒智能语音软件在生活中较为常见, 具有实际的研究价值, 而现有的生成方法却存在一定的局限性. 为此, 针对黑盒智能语音软件, 提出了一种基于萤火虫算法和梯度评估方法的目标对抗样本生成方法, 即萤火虫-梯度对抗样本生成方法. 针对设定的目标文本, 在原始的音频样本中不断加入干扰, 根据当前对抗样本的文本内容与目标文本之间的编辑距离, 选择使用萤火虫算法或梯度评估方法来优化对抗样本, 最终生成目标对抗样本. 为了验证方法的效果, 在常用的语音识别软件上, 使用公共语音数据集、谷歌命令数据集和LibriSpeech数据集这3种不同类型的语音数据集进行了实验评估, 并寻找志愿者进行对抗样本的质量评估. 实验表明, 提出的方法能有效提高目标对抗样本生成的成功率, 例如针对DeepSpeech语音识别软件, 在公共语音数据集上生成对抗样本的成功率相比对比方法提升了13%.</p>
+                                            </div>
+                                        </div>
+                                    </li>    
+                                    <li class="article_line">
+                                        <input class="article_issue_fl" name='FileNO' id='FileNO6550' value='6550' type='checkbox'>
+                                        <div class="article_des article_issue_fl">
+                                            <div class="article_title">
+					     <a href='jos/article/abstract/6550?st=article_issue' target='_blank'>基于软件度量的Solidity智能合约缺陷预测方法</a>
+					    </div>
+                                            <p class="article_author">
+							<span><a href='http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=杨慧文，崔展齐，陈翔，贾明华，郑丽伟，刘建宾' target='_blank'>杨慧文，崔展齐，陈翔，贾明华，郑丽伟，刘建宾</a></span>
+					    </p>
+                                            <p class="article_position">2022, 33(5):1587-1611. 
+						<span>DOI: <a href='http://dx.doi.org/10.13328/j.cnki.jos.006550' target='_blank' >10.13328/j.cnki.jos.006550</a></span>
+					    </p>
+                                            <div class="article_toolbar">
+                                                <a class="btn_abstract" href='jos/article/abstract/6550?st=article_issue' target='_blank'>摘要 (<span id='ClickNum6550'>1603</span>)</a>
+						<a class="btn_html" href='jos/article/html/6550?st=article_issue' target='_blank'>HTML (<span id='HtmlClickNum6550'>1944</span>)</a>
+                                                <a class="btn_pdf" href='jos/article/pdf/6550?st=article_issue' target='_blank'>PDF 10.59 M (<span id='PDFClickNum6550'>3359</span>)</a>
+						<a class="btn_appraise" href='jos/article/abstract/6550?st=article_issue' target='_blank'>评论 (<span id='AppraiseNum6550'>0</span>)</a>
+                                                <a class="btn_collection" href="jos/article/add_favorites/6550" target='_blank'>收藏</a>
+                                            </div>
+                                            <div class="abstract_body">
+                                                <p><b>摘要:</b>随着区块链技术的兴起, 智能合约安全问题被越来越多的研究者和企业重视, 目前已有一些针对智能合约缺陷检测技术的研究. 软件缺陷预测技术是软件缺陷检测技术的有效补充, 能够优化测试资源分配, 提高软件测试效率. 然而, 目前还没有针对智能合约的软件缺陷预测研究. 针对这一问题, 提出了面向Solidity智能合约的缺陷预测方法. 首先, 设计了一组针对Solidity智能合约特有的变量、函数、结构和Solidity语言特性的度量元集(smart contract-Solidity, SC-Sol度量元集), 并将其与重点考虑面向对象特征的度量元集(code complexity and features of object-oriented program, COOP度量元集)组合为COOP-SC-Sol度量元集. 然后, 从Solidity智能合约代码中提取相关度量元信息, 并结合缺陷检测结果, 构建Solidity智能合约缺陷数据集. 在此基础上, 应用了7种回归模型和6种分类模型进行Solidity智能合约的缺陷预测, 以验证不同度量元集和不同模型在缺陷数量和倾向性预测上的性能差异. 实验结果表明, 相对于COOP度量元集, COOP-SC-Sol能够让缺陷预测模型的<i>F</i>1-<i>score</i>指标提升8%. 此外, 进一步研究了智能合约缺陷预测中的类不平衡问题, 实验结果表明, 通过采样技术对数据集进行预处理能够提升缺陷预测模型的性能, 其中随机欠采样技术能够使模型的<i>F</i>1-<i>score</i>指标提升9%. 在特定缺陷倾向性预测问题上, 模型的预测性能受到数据集类不平衡的影响, 在缺陷模块百分比大于10%的数据集中能取得较好的预测性能.</p>
+                                            </div>
+                                        </div>
+                                    </li>    
+						<li><h5><span>&gt</span>综述文章</h5></li>
+                                    <li class="article_line">
+                                        <input class="article_issue_fl" name='FileNO' id='FileNO6551' value='6551' type='checkbox'>
+                                        <div class="article_des article_issue_fl">
+                                            <div class="article_title">
+					     <a href='jos/article/abstract/6551?st=article_issue' target='_blank'>基于GUI事件的安卓应用录制重放关键技术综述</a>
+					    </div>
+                                            <p class="article_author">
+							<span><a href='http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=李聪，蒋炎岩，许畅' target='_blank'>李聪，蒋炎岩，许畅</a></span>
+					    </p>
+                                            <p class="article_position">2022, 33(5):1612-1634. 
+						<span>DOI: <a href='http://dx.doi.org/10.13328/j.cnki.jos.006551' target='_blank' >10.13328/j.cnki.jos.006551</a></span>
+					    </p>
+                                            <div class="article_toolbar">
+                                                <a class="btn_abstract" href='jos/article/abstract/6551?st=article_issue' target='_blank'>摘要 (<span id='ClickNum6551'>1397</span>)</a>
+						<a class="btn_html" href='jos/article/html/6551?st=article_issue' target='_blank'>HTML (<span id='HtmlClickNum6551'>2509</span>)</a>
+                                                <a class="btn_pdf" href='jos/article/pdf/6551?st=article_issue' target='_blank'>PDF 7.02 M (<span id='PDFClickNum6551'>3012</span>)</a>
+						<a class="btn_appraise" href='jos/article/abstract/6551?st=article_issue' target='_blank'>评论 (<span id='AppraiseNum6551'>0</span>)</a>
+                                                <a class="btn_collection" href="jos/article/add_favorites/6551" target='_blank'>收藏</a>
+                                            </div>
+                                            <div class="abstract_body">
+                                                <p><b>摘要:</b>基于GUI事件的安卓应用录制重放技术致力于以自动化的方式捕捉和回放人类和移动应用的交互轨迹, 达到降低测试成本、提高测试用例复用率的目的. 录制重放技术面临的挑战来源于应用、版本和设备3个维度. 试图从人类录制重放的角度, 将录制重放建模为一个搜索问题, 并提出模拟人类录制重放行为的通用框架. 框架包含3部分: 组件表示与录制技术、事件等价策略和局部搜索策略. 通过对已有技术进行总结和分析, 以全新的视角更好地认识了已有工作的优势和不足, 并提出未来可行的研究方向.</p>
+                                            </div>
+                                        </div>
+                                    </li>    
+						<li><h5><span>&gt</span>专刊文章</h5></li>
+                                    <li class="article_line">
+                                        <input class="article_issue_fl" name='FileNO' id='FileNO6553' value='6553' type='checkbox'>
+                                        <div class="article_des article_issue_fl">
+                                            <div class="article_title">
+					     <a href='jos/article/abstract/6553?st=article_issue' target='_blank'>一种结合显式特征和隐式特征的开发者混合推荐算法</a>
+					    </div>
+                                            <p class="article_author">
+							<span><a href='http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=于旭，何亚东，杜军威，王昭哲，江峰，巩敦卫' target='_blank'>于旭，何亚东，杜军威，王昭哲，江峰，巩敦卫</a></span>
+					    </p>
+                                            <p class="article_position">2022, 33(5):1635-1651. 
+						<span>DOI: <a href='http://dx.doi.org/10.13328/j.cnki.jos.006553' target='_blank' >10.13328/j.cnki.jos.006553</a></span>
+					    </p>
+                                            <div class="article_toolbar">
+                                                <a class="btn_abstract" href='jos/article/abstract/6553?st=article_issue' target='_blank'>摘要 (<span id='ClickNum6553'>1350</span>)</a>
+						<a class="btn_html" href='jos/article/html/6553?st=article_issue' target='_blank'>HTML (<span id='HtmlClickNum6553'>1582</span>)</a>
+                                                <a class="btn_pdf" href='jos/article/pdf/6553?st=article_issue' target='_blank'>PDF 9.81 M (<span id='PDFClickNum6553'>2894</span>)</a>
+						<a class="btn_appraise" href='jos/article/abstract/6553?st=article_issue' target='_blank'>评论 (<span id='AppraiseNum6553'>0</span>)</a>
+                                                <a class="btn_collection" href="jos/article/add_favorites/6553" target='_blank'>收藏</a>
+                                            </div>
+                                            <div class="abstract_body">
+                                                <p><b>摘要:</b>现有开发者推荐算法通过对任务和开发者的显式信息进行挖掘, 抽取任务和开发者的显式特征, 完成针对任务的开发者推荐. 然而, 由于显式信息中的描述信息是主观的, 往往是不精确的, 现有基于显式特征的开发者推荐算法性能不够理想. 众包软件开发平台除包含大量不精确的描述信息外, 还包含客观的、较准确的“任务—开发者”成绩信息, 可以有效地推断任务和开发者的隐式特征. 考虑到隐式特征作为显式特征的补充, 将有效缓解描述信息不精确的难题, 提出一种结合显式特征和隐式特征的开发者混合推荐算法. 首先, 利用任务和开发者的平台可见信息充分提取显式特征, 提出面向显式特征的因子分解机(FM)推荐模型建模任务、开发者显式特征和相应评分的映射关系. 然后, 利用“任务—开发者”成绩矩阵提取隐式特征, 提出面向隐式特征的矩阵分解(MF)推荐模型. 最后, 融合面向显式特征的FM推荐模型和面向隐式特征的MF推荐模型, 提出多层感知器融合算法. 进一步, 针对冷启动问题, 首先, 基于历史数据, 构建多层感知器模型建模显式特征到隐式特征的映射关系. 然后, 针对冷启动任务或冷启动开发者, 通过任务或开发者的显式特征求解相应的隐式特征. 最后, 基于已训练好的多层感知器融合算法预测评分. 在Topcoder软件众包平台的仿真实验表明本文算法相对于对比算法在4种不同测试指标上具有明显的优势.</p>
+                                            </div>
+                                        </div>
+                                    </li>    
+                                    <li class="article_line">
+                                        <input class="article_issue_fl" name='FileNO' id='FileNO6554' value='6554' type='checkbox'>
+                                        <div class="article_des article_issue_fl">
+                                            <div class="article_title">
+					     <a href='jos/article/abstract/6554?st=article_issue' target='_blank'>一个机载软件需求形式化建模与分析实例研究</a>
+					    </div>
+                                            <p class="article_author">
+							<span><a href='http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=胡军，吕佳润，王立松，康介祥，王辉，高忠杰' target='_blank'>胡军，吕佳润，王立松，康介祥，王辉，高忠杰</a></span>
+					    </p>
+                                            <p class="article_position">2022, 33(5):1652-1673. 
+						<span>DOI: <a href='http://dx.doi.org/10.13328/j.cnki.jos.006554' target='_blank' >10.13328/j.cnki.jos.006554</a></span>
+					    </p>
+                                            <div class="article_toolbar">
+                                                <a class="btn_abstract" href='jos/article/abstract/6554?st=article_issue' target='_blank'>摘要 (<span id='ClickNum6554'>935</span>)</a>
+						<a class="btn_html" href='jos/article/html/6554?st=article_issue' target='_blank'>HTML (<span id='HtmlClickNum6554'>1595</span>)</a>
+                                                <a class="btn_pdf" href='jos/article/pdf/6554?st=article_issue' target='_blank'>PDF 10.86 M (<span id='PDFClickNum6554'>3123</span>)</a>
+						<a class="btn_appraise" href='jos/article/abstract/6554?st=article_issue' target='_blank'>评论 (<span id='AppraiseNum6554'>0</span>)</a>
+                                                <a class="btn_collection" href="jos/article/add_favorites/6554" target='_blank'>收藏</a>
+                                            </div>
+                                            <div class="abstract_body">
+                                                <p><b>摘要:</b>现代民机机载软件系统的功能与复杂度在快速增长的同时还必须满足更严格的安全标准, 使得在机载软件需求层级必须进行诸如一致性、完整性等分析与验证成为重要的挑战. 工作基于一个自主设计实现的面向机载软件自然语言需求形式化建模与分析工具平台(ART)展开对座舱显控软件子系统(EICAS)需求的建模与分析, 包括: ART工具平台所采用的变量关系(VRM)理论模型、平台架构和平台工具链, 基于多范式的需求一致性、完整性形式化分析方法, EICAS系统的条目化初始自然语言需求的形式化建模和需求模型的自动化分析过程, 如: 需求条目的预处理、规范化处理、需求模型自动生成以及多范式分析等; 给出了工程需求实例研究的经验总结和思考.</p>
+                                            </div>
+                                        </div>
+                                    </li>    
+                                    <li class="article_line">
+                                        <input class="article_issue_fl" name='FileNO' id='FileNO6555' value='6555' type='checkbox'>
+                                        <div class="article_des article_issue_fl">
+                                            <div class="article_title">
+					     <a href='jos/article/abstract/6555?st=article_issue' target='_blank'>面向类集成测试序列生成的强化学习研究</a>
+					    </div>
+                                            <p class="article_author">
+							<span><a href='http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=丁艳茹，张艳梅，姜淑娟，袁冠，王荣存，钱俊彦' target='_blank'>丁艳茹，张艳梅，姜淑娟，袁冠，王荣存，钱俊彦</a></span>
+					    </p>
+                                            <p class="article_position">2022, 33(5):1674-1698. 
+						<span>DOI: <a href='http://dx.doi.org/10.13328/j.cnki.jos.006555' target='_blank' >10.13328/j.cnki.jos.006555</a></span>
+					    </p>
+                                            <div class="article_toolbar">
+                                                <a class="btn_abstract" href='jos/article/abstract/6555?st=article_issue' target='_blank'>摘要 (<span id='ClickNum6555'>1163</span>)</a>
+						<a class="btn_html" href='jos/article/html/6555?st=article_issue' target='_blank'>HTML (<span id='HtmlClickNum6555'>1761</span>)</a>
+                                                <a class="btn_pdf" href='jos/article/pdf/6555?st=article_issue' target='_blank'>PDF 9.80 M (<span id='PDFClickNum6555'>2447</span>)</a>
+						<a class="btn_appraise" href='jos/article/abstract/6555?st=article_issue' target='_blank'>评论 (<span id='AppraiseNum6555'>0</span>)</a>
+                                                <a class="btn_collection" href="jos/article/add_favorites/6555" target='_blank'>收藏</a>
+                                            </div>
+                                            <div class="abstract_body">
+                                                <p><b>摘要:</b>集成测试是软件测试过程中不可缺少的步骤, 针对在集成测试中如何对系统中的类合理排序的问题, 国内外研究者提出了多种生成类集成测试序列的方法, 然而他们大多没有将测试桩复杂度作为评估测试代价的指标. 针对该问题, 提出面向类集成测试序列生成的强化学习研究方法, 以总体测试桩复杂度为评价测试代价的指标, 生成测试代价尽可能低的类集成测试序列. 首先, 定义强化学习任务, 根据任务设定算法的追求目标; 其次, 进行程序的静态分析, 根据分析得到的结果计算测试桩复杂度; 然后, 将测试桩复杂度的计算融入奖励函数的设计中, 为选择下一步动作提供信息和依据; 最后, 通过奖励函数反馈值函数, 通过值函数的设定保证累计奖励最大化. 当智能体完成规定训练次数, 系统会选择获得最大累计奖励值的类集成测试序列进行输出, 即为我们追求的测试代价尽可能低的结果. 实验结果表明, 与现有方法相比, 在以总体测试桩复杂度为评价指标时, 提出的方法结果更优.</p>
+                                            </div>
+                                        </div>
+                                    </li>    
+                                    <li class="article_line">
+                                        <input class="article_issue_fl" name='FileNO' id='FileNO6556' value='6556' type='checkbox'>
+                                        <div class="article_des article_issue_fl">
+                                            <div class="article_title">
+					     <a href='jos/article/abstract/6556?st=article_issue' target='_blank'>软件问答社区的问题删除预测方法</a>
+					    </div>
+                                            <p class="article_author">
+							<span><a href='http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=蒋竞，苗萌，赵丽娴，张莉' target='_blank'>蒋竞，苗萌，赵丽娴，张莉</a></span>
+					    </p>
+                                            <p class="article_position">2022, 33(5):1699-1710. 
+						<span>DOI: <a href='http://dx.doi.org/10.13328/j.cnki.jos.006556' target='_blank' >10.13328/j.cnki.jos.006556</a></span>
+					    </p>
+                                            <div class="article_toolbar">
+                                                <a class="btn_abstract" href='jos/article/abstract/6556?st=article_issue' target='_blank'>摘要 (<span id='ClickNum6556'>881</span>)</a>
+						<a class="btn_html" href='jos/article/html/6556?st=article_issue' target='_blank'>HTML (<span id='HtmlClickNum6556'>1414</span>)</a>
+                                                <a class="btn_pdf" href='jos/article/pdf/6556?st=article_issue' target='_blank'>PDF 5.48 M (<span id='PDFClickNum6556'>2244</span>)</a>
+						<a class="btn_appraise" href='jos/article/abstract/6556?st=article_issue' target='_blank'>评论 (<span id='AppraiseNum6556'>0</span>)</a>
+                                                <a class="btn_collection" href="jos/article/add_favorites/6556" target='_blank'>收藏</a>
+                                            </div>
+                                            <div class="abstract_body">
+                                                <p><b>摘要:</b>Stack Overflow是最受欢迎的软件问答社区之一, 用户可以在该网站发布问题并得到其他用户的回答. 为了保证问题质量, 网站需要尽快发现并删除低质量或者不符合社区主题的问题. 当前, Stack Overflow主要采用人工检查的方式发现需要被删除的问题. 然而这种方式往往不能保证问题被及时发现、删除, 而且加重了社区管理员的负担. 为了快速发现需要删除的问题, 提出了自动化预测问题删除的方法MulPredictor. 该方法提取问题的语义内容特征、语义统计特征和元特征, 使用随机森林分类器计算问题会被删除的概率. 实验结果表明: 与现有方法DelPredictor和NLPPredictor相比, MulPredictor的准确率在平衡测试集上分别提升了16.34%和12.78%, 在随机测试集上分别提升了12.38%和14.14%. 此外, 分析了影响问题删除的重要特征, 发现代码段、问题的标题和正文第1段的特征对问题删除有重要的影响.</p>
+                                            </div>
+                                        </div>
+                                    </li>    
+                                    <li class="article_line">
+                                        <input class="article_issue_fl" name='FileNO' id='FileNO6557' value='6557' type='checkbox'>
+                                        <div class="article_des article_issue_fl">
+                                            <div class="article_title">
+					     <a href='jos/article/abstract/6557?st=article_issue' target='_blank'>基于场景模型的DDS架构一体化舰船任务系统测试</a>
+					    </div>
+                                            <p class="article_author">
+							<span><a href='http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=钱巨，王寅，程浩，韦正现' target='_blank'>钱巨，王寅，程浩，韦正现</a></span>
+					    </p>
+                                            <p class="article_position">2022, 33(5):1711-1735. 
+						<span>DOI: <a href='http://dx.doi.org/10.13328/j.cnki.jos.006557' target='_blank' >10.13328/j.cnki.jos.006557</a></span>
+					    </p>
+                                            <div class="article_toolbar">
+                                                <a class="btn_abstract" href='jos/article/abstract/6557?st=article_issue' target='_blank'>摘要 (<span id='ClickNum6557'>781</span>)</a>
+						<a class="btn_html" href='jos/article/html/6557?st=article_issue' target='_blank'>HTML (<span id='HtmlClickNum6557'>1389</span>)</a>
+                                                <a class="btn_pdf" href='jos/article/pdf/6557?st=article_issue' target='_blank'>PDF 7.06 M (<span id='PDFClickNum6557'>2325</span>)</a>
+						<a class="btn_appraise" href='jos/article/abstract/6557?st=article_issue' target='_blank'>评论 (<span id='AppraiseNum6557'>0</span>)</a>
+                                                <a class="btn_collection" href="jos/article/add_favorites/6557" target='_blank'>收藏</a>
+                                            </div>
+                                            <div class="abstract_body">
+                                                <p><b>摘要:</b>以数据分发服务(data-distribution service, DDS)为基础架构的新型一体化舰船任务系统在研发模式、结构和应用方面具有特殊特点, 使得其测试相当具有挑战. 基于模型的测试(model-based testing, MBT)是工业系统测试的一种有效方法. 然而, 对于类舰船任务系统, 由于其自身的高度复杂性和协同开发方式, 传统需要建立完整模型以表达系统内部行为的MBT技术极难应用. 为此, 提出了一种基于场景模型的类舰船任务系统MBT方法. 方法从外部角度构建模型来表达DDS架构系统中的交互场景. 模型使用扩展正则表达式来建模交互序列, 使用基本数据元素限制、约束公式和计算函数来建模交互数据, 能够在保留抽象性的同时便捷并相对完整地表达交互过程. 基于场景模型, 进一步提出算法生成直接可执行的测试用例. 在某真实舰船任务系统上的实验表明, 方法能够测试从一族舰船任务系统历史失效中总结出的21种常见风险场景, 对类舰船任务系统的DDS架构工业系统测试具有潜在应用价值.</p>
+                                            </div>
+                                        </div>
+                                    </li>    
+                                    <li class="article_line">
+                                        <input class="article_issue_fl" name='FileNO' id='FileNO6559' value='6559' type='checkbox'>
+                                        <div class="article_des article_issue_fl">
+                                            <div class="article_title">
+					     <a href='jos/article/abstract/6559?st=article_issue' target='_blank'>基于对象类型的API补全方法</a>
+					    </div>
+                                            <p class="article_author">
+							<span><a href='http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=唐泽，李传艺，葛季栋，骆斌' target='_blank'>唐泽，李传艺，葛季栋，骆斌</a></span>
+					    </p>
+                                            <p class="article_position">2022, 33(5):1736-1757. 
+						<span>DOI: <a href='http://dx.doi.org/10.13328/j.cnki.jos.006559' target='_blank' >10.13328/j.cnki.jos.006559</a></span>
+					    </p>
+                                            <div class="article_toolbar">
+                                                <a class="btn_abstract" href='jos/article/abstract/6559?st=article_issue' target='_blank'>摘要 (<span id='ClickNum6559'>1019</span>)</a>
+						<a class="btn_html" href='jos/article/html/6559?st=article_issue' target='_blank'>HTML (<span id='HtmlClickNum6559'>1580</span>)</a>
+                                                <a class="btn_pdf" href='jos/article/pdf/6559?st=article_issue' target='_blank'>PDF 8.03 M (<span id='PDFClickNum6559'>2253</span>)</a>
+						<a class="btn_appraise" href='jos/article/abstract/6559?st=article_issue' target='_blank'>评论 (<span id='AppraiseNum6559'>0</span>)</a>
+                                                <a class="btn_collection" href="jos/article/add_favorites/6559" target='_blank'>收藏</a>
+                                            </div>
+                                            <div class="abstract_body">
+                                                <p><b>摘要:</b>近年来, 随着软件技术在各行各业、不同领域的应用不断扩展与深入, 同时伴随着软件架构、服务计算等技术的不断发展, 软件行业涌现出了功能丰富且规模庞大的第三方API或库, 软件开发者在实现软件功能的时候也越来越依赖这些API. 但学习这些API的使用是非常困难且耗时的, 主要有两方面的原因: 1)相关文档的缺失和错误; 2)相关API用法的示例代码较少. 因此, 研究自动的API补全方法以帮助开发人员在开发过程中正确且快速的使用API, 具有很大的应用价值. 然而, 现有API自动补全方案多数将待补全代码段看作纯文本, 忽略了API所属对象类型对预测API的影响. 为此, 探究了对象类型对补全API的作用, 并且在对象状态图的启发下, 设计了一种使用API所属对象的类型作为特征的补全方法. 具体而言, 首先从API调用序列中先抽取同一对象类型的子序列, 利用深度学习模型编码出每个对象的状态, 再利用对象状态生成整个方法块的状态表示进行补全. 为了验证提出的补全方法, 在6个流行Java项目上进行了验证. 实验结果证明, 提出的考虑对象类型的API补全方法在预测准确率上明显高于基线模型.</p>
+                                            </div>
+                                        </div>
+                                    </li>    
+                                    <li class="article_line">
+                                        <input class="article_issue_fl" name='FileNO' id='FileNO6560' value='6560' type='checkbox'>
+                                        <div class="article_des article_issue_fl">
+                                            <div class="article_title">
+					     <a href='jos/article/abstract/6560?st=article_issue' target='_blank'>预训练增强的代码克隆检测技术</a>
+					    </div>
+                                            <p class="article_author">
+							<span><a href='http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=冷林珊，刘爽，田承霖，窦淑洁，王赞，张梅山' target='_blank'>冷林珊，刘爽，田承霖，窦淑洁，王赞，张梅山</a></span>
+					    </p>
+                                            <p class="article_position">2022, 33(5):1758-1773. 
+						<span>DOI: <a href='http://dx.doi.org/10.13328/j.cnki.jos.006560' target='_blank' >10.13328/j.cnki.jos.006560</a></span>
+					    </p>
+                                            <div class="article_toolbar">
+                                                <a class="btn_abstract" href='jos/article/abstract/6560?st=article_issue' target='_blank'>摘要 (<span id='ClickNum6560'>1225</span>)</a>
+						<a class="btn_html" href='jos/article/html/6560?st=article_issue' target='_blank'>HTML (<span id='HtmlClickNum6560'>1658</span>)</a>
+                                                <a class="btn_pdf" href='jos/article/pdf/6560?st=article_issue' target='_blank'>PDF 8.20 M (<span id='PDFClickNum6560'>2672</span>)</a>
+						<a class="btn_appraise" href='jos/article/abstract/6560?st=article_issue' target='_blank'>评论 (<span id='AppraiseNum6560'>0</span>)</a>
+                                                <a class="btn_collection" href="jos/article/add_favorites/6560" target='_blank'>收藏</a>
+                                            </div>
+                                            <div class="abstract_body">
+                                                <p><b>摘要:</b>代码克隆检测是软件工程领域的一项重要任务, 对于语义相似但语法差距较大的四型代码克隆的检测尤为困难. 基于深度学习的方法在四型代码克隆的检测上已经取得了较好的效果, 但是使用人工标注的代码克隆对进行监督学习的成本较高. 提出了两种简单有效的预训练策略来增强基于深度学习的代码克隆检测模型的代码表示, 以减少监督学习模型中对大规模训练数据集的需求. 首先, 使用ngram子词丰富对词嵌入模型进行预训练, 以增强克隆检测模型对词表之外的词的表示. 同时, 采用函数名预测作为辅助任务对克隆检测模型参数进行预训练. 通过这两个预训练策略, 可以得到一个有更准确的代码表示能力的模型, 模型被用来作为克隆检测中的代码表示模型并在克隆检测任务上进行有监督训练. 在标准数据集BigCloneBench (BCB)和OJClone上进行实验. 结果表明采用两种预训练增强的模型仅仅使用极少量的训练样例(BCB上100个克隆对和100个非克隆对, OJClone上200个克隆对和200个非克隆对)就能达到现有方法使用超过6百万个训练样例得到的结果.</p>
+                                            </div>
+                                        </div>
+                                    </li>    
+                                    <li class="article_line">
+                                        <input class="article_issue_fl" name='FileNO' id='FileNO6561' value='6561' type='checkbox'>
+                                        <div class="article_des article_issue_fl">
+                                            <div class="article_title">
+					     <a href='jos/article/abstract/6561?st=article_issue' target='_blank'>基于并行搜索优化的指控系统自适应决策方法</a>
+					    </div>
+                                            <p class="article_author">
+							<span><a href='http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=王璐，霍其恩，李青山，王展，姜宇轩' target='_blank'>王璐，霍其恩，李青山，王展，姜宇轩</a></span>
+					    </p>
+                                            <p class="article_position">2022, 33(5):1774-1799. 
+						<span>DOI: <a href='http://dx.doi.org/10.13328/j.cnki.jos.006561' target='_blank' >10.13328/j.cnki.jos.006561</a></span>
+					    </p>
+                                            <div class="article_toolbar">
+                                                <a class="btn_abstract" href='jos/article/abstract/6561?st=article_issue' target='_blank'>摘要 (<span id='ClickNum6561'>1042</span>)</a>
+						<a class="btn_html" href='jos/article/html/6561?st=article_issue' target='_blank'>HTML (<span id='HtmlClickNum6561'>1647</span>)</a>
+                                                <a class="btn_pdf" href='jos/article/pdf/6561?st=article_issue' target='_blank'>PDF 8.21 M (<span id='PDFClickNum6561'>2233</span>)</a>
+						<a class="btn_appraise" href='jos/article/abstract/6561?st=article_issue' target='_blank'>评论 (<span id='AppraiseNum6561'>0</span>)</a>
+                                                <a class="btn_collection" href="jos/article/add_favorites/6561" target='_blank'>收藏</a>
+                                            </div>
+                                            <div class="abstract_body">
+                                                <p><b>摘要:</b>指挥控制信息系统(指控系统)运行在动态变化的复杂环境中且任务需求时刻变更, 亟需一种自适应决策方法以动态产生调整系统的最优策略, 从而适应环境或任务变化, 确保系统长期稳定运行. 随着指控系统自身及其运行环境的持续复杂化, 自适应决策方法需具备应对多个非预期变化的在线权衡决策能力, 以避免造成冲突的调整后果或无法及时响应未知情况. 然而, 当前指控系统多采用基于先验知识、应对单一变化的自适应决策方法, 尚无法完全满足该能力需求. 因此, 提出了一种基于并行搜索优化的指控系统自适应决策方法. 方法采用基于搜索的软件工程思想, 将自适应决策问题建模为搜索优化问题, 并采用遗传粒子群算法, 实现针对同时发生的多个变化进行在线权衡的目标. 并且, 为解决该方法在指控系统中实际应用时存在的搜索效率保障、策略择优选择问题, 分别采用并行遗传算法和后优化理论, 对决策方法实现了并行化并建立了策略多指标排序法, 以确保方法的实用性.</p>
+                                            </div>
+                                        </div>
+                                    </li>    
+						<li><h5><span>&gt</span>综述文章</h5></li>
+                                    <li class="article_line">
+                                        <input class="article_issue_fl" name='FileNO' id='FileNO6122' value='6122' type='checkbox'>
+                                        <div class="article_des article_issue_fl">
+                                            <div class="article_title">
+					     <a href='jos/article/abstract/6122?st=article_issue' target='_blank'>密度峰值聚类算法研究进展</a>
+					    </div>
+                                            <p class="article_author">
+							<span><a href='http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=徐晓，丁世飞，丁玲' target='_blank'>徐晓，丁世飞，丁玲</a></span>
+					    </p>
+                                            <p class="article_position">2022, 33(5):1800-1816. 
+						<span>DOI: <a href='http://dx.doi.org/10.13328/j.cnki.jos.006122' target='_blank' >10.13328/j.cnki.jos.006122</a></span>
+					    </p>
+                                            <div class="article_toolbar">
+                                                <a class="btn_abstract" href='jos/article/abstract/6122?st=article_issue' target='_blank'>摘要 (<span id='ClickNum6122'>3867</span>)</a>
+						<a class="btn_html" href='jos/article/html/6122?st=article_issue' target='_blank'>HTML (<span id='HtmlClickNum6122'>3496</span>)</a>
+                                                <a class="btn_pdf" href='jos/article/pdf/6122?st=article_issue' target='_blank'>PDF 6.23 M (<span id='PDFClickNum6122'>5107</span>)</a>
+						<a class="btn_appraise" href='jos/article/abstract/6122?st=article_issue' target='_blank'>评论 (<span id='AppraiseNum6122'>0</span>)</a>
+                                                <a class="btn_collection" href="jos/article/add_favorites/6122" target='_blank'>收藏</a>
+                                            </div>
+                                            <div class="abstract_body">
+                                                <p><b>摘要:</b>密度峰值聚类(density peaks clustering, DPC)算法是聚类分析中基于密度的一种新兴算法, 该算法考虑局部密度和相对距离绘制决策图, 快速识别簇中心, 完成聚类. DPC具有唯一的输入参数, 且无需先验知识, 也无需迭代. 自2014年提出以来, DPC引起了学者们的极大兴趣, 并得到了快速发展. 首先阐述DPC的基本理论, 并通过与经典聚类算法比较, 分析了DPC的特点; 其次, 分别从聚类精度和计算复杂度两个角度分析了DPC的弊端及其优化方法, 包括局部密度优化、分配策略优化、多密度峰优化以及计算复杂度优化, 并介绍了每个类别的主要代表算法; 最后介绍了DPC在不同领域中的相关应用研究. 对DPC的优缺点提供了全面的理论分析, 并对DPC的优化以及应用进行了全面阐述. 还试图找出进一步的挑战来促进DPC研究发展.</p>
+                                            </div>
+                                        </div>
+                                    </li>    
+                                    <li class="article_line">
+                                        <input class="article_issue_fl" name='FileNO' id='FileNO6208' value='6208' type='checkbox'>
+                                        <div class="article_des article_issue_fl">
+                                            <div class="article_title">
+					     <a href='jos/article/abstract/6208?st=article_issue' target='_blank'>基于局部梯度和二进制模式的时间序列分类算法</a>
+					    </div>
+                                            <p class="article_author">
+							<span><a href='http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=郝石磊，王志海，刘海洋' target='_blank'>郝石磊，王志海，刘海洋</a></span>
+					    </p>
+                                            <p class="article_position">2022, 33(5):1817-1832. 
+						<span>DOI: <a href='http://dx.doi.org/10.13328/j.cnki.jos.006208' target='_blank' >10.13328/j.cnki.jos.006208</a></span>
+					    </p>
+                                            <div class="article_toolbar">
+                                                <a class="btn_abstract" href='jos/article/abstract/6208?st=article_issue' target='_blank'>摘要 (<span id='ClickNum6208'>529</span>)</a>
+						<a class="btn_html" href='jos/article/html/6208?st=article_issue' target='_blank'>HTML (<span id='HtmlClickNum6208'>708</span>)</a>
+                                                <a class="btn_pdf" href='jos/article/pdf/6208?st=article_issue' target='_blank'>PDF 5.48 M (<span id='PDFClickNum6208'>1532</span>)</a>
+						<a class="btn_appraise" href='jos/article/abstract/6208?st=article_issue' target='_blank'>评论 (<span id='AppraiseNum6208'>0</span>)</a>
+                                                <a class="btn_collection" href="jos/article/add_favorites/6208" target='_blank'>收藏</a>
+                                            </div>
+                                            <div class="abstract_body">
+                                                <p><b>摘要:</b>时间序列分类问题是时间序列数据挖掘中的一项重要任务, 近些年受到了越来越广泛的关注. 该问题的一个重要组成部分就是时间序列间的相似性度量. 在众多相似性度量算法中, 动态时间规整是一种非常有效的算法, 目前已经被广泛应用到视频、音频、手写体识别以及生物信息处理等众多领域. 动态时间规整本质上是一种在边界及时间一致性约束下的点对点的匹配算法, 能够获得两条序列间的全局最优匹配. 但该算法存在一个明显的不足, 即不一定能实现序列间的局部合理匹配. 具体的讲, 就是具有完全不同局部结构信息的时间点有可能被动态时间规整算法错误匹配. 为了解决这个问题, 提出了一种改进的基于局部梯度和二进制模式的动态时间规整算法LGBDTW (local gradient and binary pattern based dynamic time warping), 通过考虑时间序列点的局部结构信息来强化传统动态时间规整算法. 所提算法虽然实质上是一种动态时间规整算法, 但它通过考虑序列点的局部梯度和二进制模式值来进行相似性加权度量, 有效避免了具有相异局部结构的点匹配. 为了进行全面比较, 将所提出的算法应用到了最近邻分类算法的相似性度量中, 并在多个UCR时间序列数据集上进行了测试. 实验结果表明, 所提出的方法能有效提高时间序列分类的准确率. 此外, 实例分析验证了所提出算法的可解释性.</p>
+                                            </div>
+                                        </div>
+                                    </li>    
+                                    <li class="article_line">
+                                        <input class="article_issue_fl" name='FileNO' id='FileNO6197' value='6197' type='checkbox'>
+                                        <div class="article_des article_issue_fl">
+                                            <div class="article_title">
+					     <a href='jos/article/abstract/6197?st=article_issue' target='_blank'>基于回调函数的控制流深度模糊模型</a>
+					    </div>
+                                            <p class="article_author">
+							<span><a href='http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=沙子涵，舒辉，武成岗，熊小兵，康绯' target='_blank'>沙子涵，舒辉，武成岗，熊小兵，康绯</a></span>
+					    </p>
+                                            <p class="article_position">2022, 33(5):1833-1848. 
+						<span>DOI: <a href='http://dx.doi.org/10.13328/j.cnki.jos.006197' target='_blank' >10.13328/j.cnki.jos.006197</a></span>
+					    </p>
+                                            <div class="article_toolbar">
+                                                <a class="btn_abstract" href='jos/article/abstract/6197?st=article_issue' target='_blank'>摘要 (<span id='ClickNum6197'>792</span>)</a>
+						<a class="btn_html" href='jos/article/html/6197?st=article_issue' target='_blank'>HTML (<span id='HtmlClickNum6197'>789</span>)</a>
+                                                <a class="btn_pdf" href='jos/article/pdf/6197?st=article_issue' target='_blank'>PDF 7.28 M (<span id='PDFClickNum6197'>1695</span>)</a>
+						<a class="btn_appraise" href='jos/article/abstract/6197?st=article_issue' target='_blank'>评论 (<span id='AppraiseNum6197'>0</span>)</a>
+                                                <a class="btn_collection" href="jos/article/add_favorites/6197" target='_blank'>收藏</a>
+                                            </div>
+                                            <div class="abstract_body">
+                                                <p><b>摘要:</b>控制流是程序过程的抽象表现, 对控制流进行混淆, 可有效提高代码抗逆向能力. 提出了控制流深度模糊思想:针对循环结构, 利用回调函数构造等价循环模型, 将过程内基本块跳转变更为过程间函数调用, 对抗逆向技术. 综合应用控制流分析和数据流依赖性分析, 建立了基于回调函数的控制流深度模糊模型, 并给出功能一致性证明. 为进一步增大混淆强度, 设计并实现了函数调用融合算法, 构造更为复杂的函数调用过程. 最后, 使用OpenSSL和SpecInt-2000标准测试套件作为测试集, 验证了模型的可行性和有效性.</p>
+                                            </div>
+                                        </div>
+                                    </li>    
+                                    <li class="article_line">
+                                        <input class="article_issue_fl" name='FileNO' id='FileNO6209' value='6209' type='checkbox'>
+                                        <div class="article_des article_issue_fl">
+                                            <div class="article_title">
+					     <a href='jos/article/abstract/6209?st=article_issue' target='_blank'>基于调用链控制流分析的大型微服务系统性能建模与异常定位</a>
+					    </div>
+                                            <p class="article_author">
+							<span><a href='http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=于庆洋，白晓颖，李明杰，李奇原，刘涛，刘泽胤，裴丹' target='_blank'>于庆洋，白晓颖，李明杰，李奇原，刘涛，刘泽胤，裴丹</a></span>
+					    </p>
+                                            <p class="article_position">2022, 33(5):1849-1864. 
+						<span>DOI: <a href='http://dx.doi.org/10.13328/j.cnki.jos.006209' target='_blank' >10.13328/j.cnki.jos.006209</a></span>
+					    </p>
+                                            <div class="article_toolbar">
+                                                <a class="btn_abstract" href='jos/article/abstract/6209?st=article_issue' target='_blank'>摘要 (<span id='ClickNum6209'>1242</span>)</a>
+						<a class="btn_html" href='jos/article/html/6209?st=article_issue' target='_blank'>HTML (<span id='HtmlClickNum6209'>982</span>)</a>
+                                                <a class="btn_pdf" href='jos/article/pdf/6209?st=article_issue' target='_blank'>PDF 8.90 M (<span id='PDFClickNum6209'>1974</span>)</a>
+						<a class="btn_appraise" href='jos/article/abstract/6209?st=article_issue' target='_blank'>评论 (<span id='AppraiseNum6209'>0</span>)</a>
+                                                <a class="btn_collection" href="jos/article/add_favorites/6209" target='_blank'>收藏</a>
+                                            </div>
+                                            <div class="abstract_body">
+                                                <p><b>摘要:</b>大型微服务系统中组件众多、依赖关系复杂, 由于故障传播的涟漪效应, 一个故障可能引起大规模服务异常, 快速识别异常并定位根因是服务质量保证的关键. 目前主要采用的调用链分析方法, 常常面临调用链结构复杂、实例数量庞大、存在大量小样本等问题, 因此提出基于调用链控制流分析, 将大量调用链结构聚合为少量方法调用模型; 并提出基于方法调用模型的执行时间分解模型及预测方法, 将实际值与预测值的相对误差超过设定阈值的待检测数据判定为异常. 采用百度凤巢广告业务系统某天超过17亿条调用链日志记录开展实验分析, 结果表明: 与数据驱动的调用序列分析方法相比, 提出的基于模型的方法可以大幅缩减调用链结构数量, 并有效分析和检测微服务性能异常及其根因.</p>
+                                            </div>
+                                        </div>
+                                    </li>    
+                                    <li class="article_line">
+                                        <input class="article_issue_fl" name='FileNO' id='FileNO6202' value='6202' type='checkbox'>
+                                        <div class="article_des article_issue_fl">
+                                            <div class="article_title">
+					     <a href='jos/article/abstract/6202?st=article_issue' target='_blank'>Grenander时间结构学习与推理优化下的行为识别</a>
+					    </div>
+                                            <p class="article_author">
+							<span><a href='http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=吴克伟，高涛，谢昭，郭文斌' target='_blank'>吴克伟，高涛，谢昭，郭文斌</a></span>
+					    </p>
+                                            <p class="article_position">2022, 33(5):1865-1879. 
+						<span>DOI: <a href='http://dx.doi.org/10.13328/j.cnki.jos.006202' target='_blank' >10.13328/j.cnki.jos.006202</a></span>
+					    </p>
+                                            <div class="article_toolbar">
+                                                <a class="btn_abstract" href='jos/article/abstract/6202?st=article_issue' target='_blank'>摘要 (<span id='ClickNum6202'>516</span>)</a>
+						<a class="btn_html" href='jos/article/html/6202?st=article_issue' target='_blank'>HTML (<span id='HtmlClickNum6202'>617</span>)</a>
+                                                <a class="btn_pdf" href='jos/article/pdf/6202?st=article_issue' target='_blank'>PDF 6.57 M (<span id='PDFClickNum6202'>1198</span>)</a>
+						<a class="btn_appraise" href='jos/article/abstract/6202?st=article_issue' target='_blank'>评论 (<span id='AppraiseNum6202'>0</span>)</a>
+                                                <a class="btn_collection" href="jos/article/add_favorites/6202" target='_blank'>收藏</a>
+                                            </div>
+                                            <div class="abstract_body">
+                                                <p><b>摘要:</b>针对现有基于视频整体时间结构建模的行为识别方法中, 存在的时间噪声信息和歧义信息干扰现象, 从而引起行为类别识别错误的问题, 提出一种新型的Grenander推理优化下时间图模型(temporal graph model with Grenander inference, TGM-GI). 首先, 构建3D CNN-LSTM模块, 其中3D CNN用于行为的动态特征提取, LSTM模块用于该特征的时间依赖关系优化. 其次, 在深度模块基础上, 利用Grenander理论构建了行为识别的时间图模型, 并设计了两个模块分别处理慢行为时间冗余和异常行为干扰问题, 实现了时间噪声抑制下的时间结构提议. 随后, 设计融合特征约束和语义约束的Grenander测度, 并提出一种时序增量形式的Viterbi算法, 修正了行为时间模式中的歧义信息. 最后, 采用基于动态时间规划的模式匹配方法, 完成了基于时间模式的行为识别任务. 在UCF101和Olympic Sports两个公认数据集上, 与现有多种基于深度学习的行为识别方法进行比较, 该方法获得了最好的行为识别正确率. 该方法优于基准的3D CNN-LSTM方法, 在UCF101数据集上识别精度提高6.41%, 在 Olympic Sports数据集上识别精度提高5.67%.</p>
+                                            </div>
+                                        </div>
+                                    </li>    
+                                    <li class="article_line">
+                                        <input class="article_issue_fl" name='FileNO' id='FileNO6320' value='6320' type='checkbox'>
+                                        <div class="article_des article_issue_fl">
+                                            <div class="article_title">
+					     <a href='jos/article/abstract/6320?st=article_issue' target='_blank'>基于双向注意力语境关联建模的论辩关系预测</a>
+					    </div>
+                                            <p class="article_author">
+							<span><a href='http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=单华玮，路冬媛' target='_blank'>单华玮，路冬媛</a></span>
+					    </p>
+                                            <p class="article_position">2022, 33(5):1880-1892. 
+						<span>DOI: <a href='http://dx.doi.org/10.13328/j.cnki.jos.006320' target='_blank' >10.13328/j.cnki.jos.006320</a></span>
+					    </p>
+                                            <div class="article_toolbar">
+                                                <a class="btn_abstract" href='jos/article/abstract/6320?st=article_issue' target='_blank'>摘要 (<span id='ClickNum6320'>932</span>)</a>
+						<a class="btn_html" href='jos/article/html/6320?st=article_issue' target='_blank'>HTML (<span id='HtmlClickNum6320'>689</span>)</a>
+                                                <a class="btn_pdf" href='jos/article/pdf/6320?st=article_issue' target='_blank'>PDF 3.98 M (<span id='PDFClickNum6320'>1990</span>)</a>
+						<a class="btn_appraise" href='jos/article/abstract/6320?st=article_issue' target='_blank'>评论 (<span id='AppraiseNum6320'>0</span>)</a>
+                                                <a class="btn_collection" href="jos/article/add_favorites/6320" target='_blank'>收藏</a>
+                                            </div>
+                                            <div class="abstract_body">
+                                                <p><b>摘要:</b>在线讨论是当下公众表达意见和交流互动的主要方式之一. 参与者不仅发布评论来表述自己的观点, 还会回复已有的表述进行应答, 支持或反驳他人的观点. 识别表述-应答交互文本的论辩关系可以建模公众对话结构, 挖掘群体意见, 进而为企业产品营销、政府舆情监测等提供辅助. 现有的工作大多通过神经网络对交互文本的条件语义信息或者整体语义信息进行建模, 而忽略了交互文本的语境关联信息. 为此, 提出了一种挖掘语境关联的双向注意力网络模型(CCRnet). 该模型使用BERT分别对表述和应答进行文本语义表示, 并通过双向注意力机制建模交互文本的语境关联表示. 在此基础上, 模型将语境关联表示和交互文本的语义表示进行融合, 建模全局关系特征, 继而输出预测标签. 在CreateDebate数据集上的实验结果表明, 与目前主流的方法相比, CCRnet模型的整体性能表现更优. 此外, 可视化相似度矩阵证实, 双向注意力机制能够有效捕捉交互文本之间的语境关联信息并进一步服务于论辩关系预测.</p>
+                                            </div>
+                                        </div>
+                                    </li>    
+                                    <li class="article_line">
+                                        <input class="article_issue_fl" name='FileNO' id='FileNO6195' value='6195' type='checkbox'>
+                                        <div class="article_des article_issue_fl">
+                                            <div class="article_title">
+					     <a href='jos/article/abstract/6195?st=article_issue' target='_blank'>深度学习在分组密码差分区分器上的研究应用</a>
+					    </div>
+                                            <p class="article_author">
+							<span><a href='http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=侯泽洲，陈少真，任炯炯' target='_blank'>侯泽洲，陈少真，任炯炯</a></span>
+					    </p>
+                                            <p class="article_position">2022, 33(5):1893-1906. 
+						<span>DOI: <a href='http://dx.doi.org/10.13328/j.cnki.jos.006195' target='_blank' >10.13328/j.cnki.jos.006195</a></span>
+					    </p>
+                                            <div class="article_toolbar">
+                                                <a class="btn_abstract" href='jos/article/abstract/6195?st=article_issue' target='_blank'>摘要 (<span id='ClickNum6195'>769</span>)</a>
+						<a class="btn_html" href='jos/article/html/6195?st=article_issue' target='_blank'>HTML (<span id='HtmlClickNum6195'>966</span>)</a>
+                                                <a class="btn_pdf" href='jos/article/pdf/6195?st=article_issue' target='_blank'>PDF 4.97 M (<span id='PDFClickNum6195'>1800</span>)</a>
+						<a class="btn_appraise" href='jos/article/abstract/6195?st=article_issue' target='_blank'>评论 (<span id='AppraiseNum6195'>0</span>)</a>
+                                                <a class="btn_collection" href="jos/article/add_favorites/6195" target='_blank'>收藏</a>
+                                            </div>
+                                            <div class="abstract_body">
+                                                <p><b>摘要:</b>差分分析在分组密码分析领域是一种重要的研究方法, 针对分组密码的差分分析的重点在于找到一个轮数或者概率更大的差分区分器. 首先描述了通过深度学习技术构造差分区分器时所需要的数据集的构造方法, 并且分别基于卷积神经网络(convolutional neural networks, CNN)和残差神经网络(residual neural network, ResNet)训练了两种轻量级分组密码算法SIMON32与SPECK32的差分区分器, 并对两种模型得到的差分区分器进行了比较, 发现综合考虑时间花销与精度的前提下, 在SIMON32的差分区分器构造上, ResNet训练得到的模型表现更好, 而CNN则在SPECK32的模型训练上表现的更好; 其次, 研究了网络模型中卷积运算个数对模型精度的影响, 发现在原有模型基础上增加CNN模型的卷积层数和ResNet模型的残差块数, 都会导致模型精度的下降. 最后, 给出在进行基于深度学习的差分区分器构造时的模型及参数选择建议, 即, 应该首要考虑低卷积层数的CNN模型和低残差块数的ResNet模型.</p>
+                                            </div>
+                                        </div>
+                                    </li>    
+                                    <li class="article_line">
+                                        <input class="article_issue_fl" name='FileNO' id='FileNO6206' value='6206' type='checkbox'>
+                                        <div class="article_des article_issue_fl">
+                                            <div class="article_title">
+					     <a href='jos/article/abstract/6206?st=article_issue' target='_blank'>向量等分量数的保密计算及应用</a>
+					    </div>
+                                            <p class="article_author">
+							<span><a href='http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=窦家维，陈明艳，成雯' target='_blank'>窦家维，陈明艳，成雯</a></span>
+					    </p>
+                                            <p class="article_position">2022, 33(5):1907-1921. 
+						<span>DOI: <a href='http://dx.doi.org/10.13328/j.cnki.jos.006206' target='_blank' >10.13328/j.cnki.jos.006206</a></span>
+					    </p>
+                                            <div class="article_toolbar">
+                                                <a class="btn_abstract" href='jos/article/abstract/6206?st=article_issue' target='_blank'>摘要 (<span id='ClickNum6206'>453</span>)</a>
+						<a class="btn_html" href='jos/article/html/6206?st=article_issue' target='_blank'>HTML (<span id='HtmlClickNum6206'>642</span>)</a>
+                                                <a class="btn_pdf" href='jos/article/pdf/6206?st=article_issue' target='_blank'>PDF 5.13 M (<span id='PDFClickNum6206'>1461</span>)</a>
+						<a class="btn_appraise" href='jos/article/abstract/6206?st=article_issue' target='_blank'>评论 (<span id='AppraiseNum6206'>0</span>)</a>
+                                                <a class="btn_collection" href="jos/article/add_favorites/6206" target='_blank'>收藏</a>
+                                            </div>
+                                            <div class="abstract_body">
+                                                <p><b>摘要:</b>随着信息技术的快速发展, 在保护数据隐私的条件下进行多方合作计算变得越来越普及, 安全多方计算已经成为解决这类保密计算问题的核心技术. 向量的保密计算是安全多方计算的重要研究方向, 目前有很多研究成果, 包括保密计算向量的点积, 保密的向量求和等. 但关于保密计算向量等分量数的研究成果还很少, 且主要研究向量分量在有全集限制下的两方保密计算问题. 主要研究多方参与者隐私向量的等分量数以及相关阈值的安全计算问题. 首先针对向量设计了分量-矩阵编码方法, 结合ElGamal门限加密系统, 构造了多方向量等分量数保密计算协议. 进一步以向量等分量数保密计算协议为基础, 研究设计了多方向量等分量数阈值问题保密计算协议. 所有向量分量没有全集的限制. 应用模拟范例方法对文中所有协议的安全性进行了严格证明. 效率分析和实验验证表明设计的协议是简单高效的. 最后, 将所设计的协议应用于解决一些实际安全计算问题.</p>
+                                            </div>
+                                        </div>
+                                    </li>    
+                                    <li class="article_line">
+                                        <input class="article_issue_fl" name='FileNO' id='FileNO6196' value='6196' type='checkbox'>
+                                        <div class="article_des article_issue_fl">
+                                            <div class="article_title">
+					     <a href='jos/article/abstract/6196?st=article_issue' target='_blank'>概率分布双向稀疏化下单一Tsallis熵阈值选取方法</a>
+					    </div>
+                                            <p class="article_author">
+							<span><a href='http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=邹耀斌，张进玉，臧兆祥，夏平，王俊英，龚国强，孙水发' target='_blank'>邹耀斌，张进玉，臧兆祥，夏平，王俊英，龚国强，孙水发</a></span>
+					    </p>
+                                            <p class="article_position">2022, 33(5):1922-1946. 
+						<span>DOI: <a href='http://dx.doi.org/10.13328/j.cnki.jos.006196' target='_blank' >10.13328/j.cnki.jos.006196</a></span>
+					    </p>
+                                            <div class="article_toolbar">
+                                                <a class="btn_abstract" href='jos/article/abstract/6196?st=article_issue' target='_blank'>摘要 (<span id='ClickNum6196'>834</span>)</a>
+						<a class="btn_html" href='jos/article/html/6196?st=article_issue' target='_blank'>HTML (<span id='HtmlClickNum6196'>873</span>)</a>
+                                                <a class="btn_pdf" href='jos/article/pdf/6196?st=article_issue' target='_blank'>PDF 12.16 M (<span id='PDFClickNum6196'>1749</span>)</a>
+						<a class="btn_appraise" href='jos/article/abstract/6196?st=article_issue' target='_blank'>评论 (<span id='AppraiseNum6196'>0</span>)</a>
+                                                <a class="btn_collection" href="jos/article/add_favorites/6196" target='_blank'>收藏</a>
+                                            </div>
+                                            <div class="abstract_body">
+                                                <p><b>摘要:</b>现有基于熵最大准则选取阈值的方法涉及两个或两个以上的随机变量, 都忽视了一个约束条件而影响到它们的分割精度和适用范围: 参与随机系统整体熵计算的各随机变量应当相互独立. 提出了一种概率分布双向稀疏化下的单一Tsallis熵最大化导向的自动阈值选取方法, 可以自然规避多个随机变量需要相互独立的约束条件. 在多尺度卷积乘变换所得两幅图像上, 该方法先构建了一个具有双向稀疏概率分布特征的二维随机变量, 然后在该二维随机变量基础上定义了一个二维Tsallis熵. 在将二维Tsallis熵的计算简化到只涉及二维随机变量的边缘概率分布后, 选取单一Tsallis熵取最大值时对应的阈值作为最终分割阈值. 提出的方法和1个交互式阈值方法、4个自动阈值方法以及1个自动聚类分割方法进行了比较. 所用测试图像集由44幅合成图像和44幅真实世界图像组成, 这些测试图像具有单峰、双峰、多峰或无峰灰度直方图模式. 结果表明: 提出方法的计算效率虽然不优于5个自动分割方法, 但是它的分割适应性和分割精度有显著提高.</p>
+                                            </div>
+                                        </div>
+                                    </li>    
+                                    <li class="article_line">
+                                        <input class="article_issue_fl" name='FileNO' id='FileNO6198' value='6198' type='checkbox'>
+                                        <div class="article_des article_issue_fl">
+                                            <div class="article_title">
+					     <a href='jos/article/abstract/6198?st=article_issue' target='_blank'>基于双解码U型卷积神经网络的胰腺分割</a>
+					    </div>
+                                            <p class="article_author">
+							<span><a href='http://it.alljournals.cn/search.aspx?subject=industry_technology&major=zdhjsjsjjs&orderby=referenced&field=author_name&encoding=utf8&q=毕秀丽，陆猛，肖斌，李伟生' target='_blank'>毕秀丽，陆猛，肖斌，李伟生</a></span>
+					    </p>
+                                            <p class="article_position">2022, 33(5):1947-1958. 
+						<span>DOI: <a href='http://dx.doi.org/10.13328/j.cnki.jos.006198' target='_blank' >10.13328/j.cnki.jos.006198</a></span>
+					    </p>
+                                            <div class="article_toolbar">
+                                                <a class="btn_abstract" href='jos/article/abstract/6198?st=article_issue' target='_blank'>摘要 (<span id='ClickNum6198'>741</span>)</a>
+						<a class="btn_html" href='jos/article/html/6198?st=article_issue' target='_blank'>HTML (<span id='HtmlClickNum6198'>1389</span>)</a>
+                                                <a class="btn_pdf" href='jos/article/pdf/6198?st=article_issue' target='_blank'>PDF 6.65 M (<span id='PDFClickNum6198'>1975</span>)</a>
+						<a class="btn_appraise" href='jos/article/abstract/6198?st=article_issue' target='_blank'>评论 (<span id='AppraiseNum6198'>0</span>)</a>
+                                                <a class="btn_collection" href="jos/article/add_favorites/6198" target='_blank'>收藏</a>
+                                            </div>
+                                            <div class="abstract_body">
+                                                <p><b>摘要:</b>计算机断层成像(computed tomography, CT)中, 胰腺分割作为医学图像分析中最具挑战的任务之一, 由于其体积小、形状多变的特点, 导致传统的自动分割方法无法达到理想的分割精度. 利用高级语义特征指导低级特征的思想, 提出一种基于双解码U型卷积神经网络的单阶段胰腺分割模型. 模型由一个编码器和两个解码器构成, 两个解码器利用不同编码深度的特征将低级空间信息与高级语义信息有效结合, 加强分割网络对特征信息的高效利用, 能够对未裁剪、未降低分辨率的CT切片实现高精确度的分割. 实验结果表明, 方法能够在全尺寸的输入下实现较好的分割性能, 在公开胰腺数据集上的分割效果优于现有单阶段胰腺分割方法.</p>
+                                            </div>
+                                        </div>
+                                    </li>    
+				 </ul>
+                            </div>
+                        </ul>
+                        <script type="text/javascript">
+                            jQuery(".slideBox-list").slide({mainCell:".article_issue_bd ul",prevCell:".btn_prev_images",nextCell:".btn_next_images",autoPlay:true,trigger:"click"});
+                            jQuery(".slideTxtBox").slide({trigger:"click"});
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+        //获取选择的文章编号
+	function GetSelectAllFileNO(){
+		var strFileNOList="";
+		$("input:checkbox").each(function(){
+			var strID=$(this).prop("id");
+			var strFileNO=$(this).prop("value");
+			if($(this).prop("checked")){
+				if(strID!=null && strID.indexOf("FileNO")==0){
+					if(strFileNOList!=""){
+						strFileNOList=strFileNOList+",";
+					}
+					strFileNOList=strFileNOList+strFileNO;
+				}
+			}
+			
+		});
+		return strFileNOList;
+	}
+
+	//导出文章
+	function ExportArticle(){
+		var strFileNOList=GetSelectAllFileNO();
+		if(strFileNOList==""){
+			alert("请选择文章！");
+			return;
+		}
+		window.location.href="jos/article/export?article_list="+strFileNOList;    
+	}
+
+    $(function () {
+        $(".btnSelectAll").click(function () {
+            if($(".btnSelectAll").is(":checked")){
+                $(this).parents(".choose_article_toolbar").siblings(".article_list").find("input[type='checkbox']").prop("checked", true);
+            }else{
+                $(this).parents(".choose_article_toolbar").siblings(".article_list").find("input[type='checkbox']").prop("checked", false);
+            }
+
+        });
+
+        $("#pic_and_abstract_mode").click(function () {
+            $(this).parent().find('a').removeClass('on');
+            $(this).addClass('on');
+            $(this).parents('.choose_article_toolbar').siblings('.article_list').find('li .article_images_list').fadeIn();
+            $(this).parents('.choose_article_toolbar').siblings('.article_list').find('li .abstract_body').fadeOut();
+        })
+        $("#text_mode").click(function () {
+            $(this).parent().find('a').removeClass('on');
+            $(this).addClass('on');
+            $(this).parents('.choose_article_toolbar').siblings('.article_list').find('li .article_images_list').fadeOut();
+            $(this).parents('.choose_article_toolbar').siblings('.article_list').find('li .abstract_body').fadeOut();
+        })
+        $("#text_and_abstract_mode").click(function () {
+            $(this).parent().find('a').removeClass('on');
+            $(this).addClass('on');
+            $(this).parents('.choose_article_toolbar').siblings('.article_list').find('li .article_images_list').fadeOut();
+            $(this).parents('.choose_article_toolbar').siblings('.article_list').find('li .abstract_body').fadeIn();
+        })
+	
+	 $("#btn_data_export").click(function () {
+             ExportArticle();
+        });
+	//刷新最新一期访问数据
+	 var strURL="jos/ajax/get_issue_article_view_count?year_id=2022&issue=5";
+	 $.get(strURL,function(strScript){			 
+		eval(strScript);
+	});
+    })
+</script>
+			</div>
+	  </div>
+</div>
+<div class="index_info_right">
+ <div class="index_info_r1">
+			<div class="index_right_pic">
+			<span id='current_small_cover_id'></span></div>
+			<div class="index_book_info">
+				<h2 id='current_issue_label'>当期目录</h2>
+				<input type="hidden" id="current_year_key" name="current_year_key">
+				<input type="hidden" id="current_issue_key" name="current_issue_key">
+				<p><span id="current_publish_date_id"></span><br/>
+				   
+				   <span id='current_year_id'></span>年<span id='current_volume_id'></span>第<span id='current_issue_id'></span>期
+				  	
+				  </p>
+				<p><a href="jos/issue/current" id="current_issue_url">文章目录</a></p>
+				<p><a href="jos/issue/browser">过刊浏览</a> </p>
+			</div>
+			<i><img src="template/011_csa/images/yy1.png" width="390" height="16"></i> 
+		</div>
+<div class="index_info_r2">
+                
+    <div class="index_info_list">
+					<form id="SearchIssueForm" name="SearchIssueForm" onsubmit="return ProcessSearchIssue();">
+					<div class="index_select">
+					  <h2>年份</h2>
+					  <select class="select_s" name="year_id" id='year_id' onchange="onChangeYear(this.value)">
+					  </select>
+					</div>
+					<div class="index_select">
+					  <h2>刊期</h2>
+					  <select class="select_s" name="quarter_id" id="quarter_id">
+					  </select>
+					</div>
+					<input type="image" class="inselectinput_image" src="template/011_csa/images/neiye5_07.jpg" width="260" href="38"/>
+					</form>
+			  </div>
+               <div class="zi-LxWm" style="border-bottom:2px solid #610B0B;padding-bottom:12px;margin:10px 0px 15px"><b>联系方式</b></div>
+               <div> <a href="mailto:JAP@buaa.edu.cn"><img src="template/011_csa/images/E-mail.gif" style="margin-bottom:15px;"></a></div>
+                <ul class="myUstyle">
+                       <li ><b>《软件学报 》</b></li>
+                       <li></li>
+                       <li>主办单位：中国科学院软件研究所 <br >                 中国计算机学会</li>
+                       <li>邮编：100190</li>
+                       <li>电话：010-62562563</li>
+                       <li>电子邮箱：<a href="mailto:JAP@buaa.edu.cn">jos@iscas.ac.cn</a></li>
+                     <li style=" line-height:14px; ">网址：<a href="https://www.jos.org.cn">https://www.jos.org.cn</a></li>  
+                       <li>刊号：ISSN&nbsp;1000-9825</li>
+                       <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CN&nbsp;11-2560/TP</li>
+                       <li>国内定价：70元<br></li>
+                   
+                   </ul>
+</div>
+
+<!--主体内容--> 
+<script language="javascript">
+	var strAllIssueInfo="";
+	var strLanguage="cn";
+   //获取当期或当前查询一期的刊期信息
+   function GetCurrentIssueInfo(){
+		 var strUrl="/jos/issue/get_current_issue_info";
+		 var strCurrentUrl=document.location.href;
+		 var strCurrentIssueKey="";
+		 if(strCurrentUrl.indexOf("/article/issue/")>0){
+			strCurrentIssueKey=strCurrentUrl.substring(strCurrentUrl.indexOf("/article/issue/")+15);
+		 }
+		 if(strCurrentIssueKey.indexOf("?")>0){
+			strCurrentIssueKey=strCurrentIssueKey.substring(0,strCurrentIssueKey.indexOf("?"));
+		 }
+		 if(strCurrentIssueKey.indexOf("#")>0){
+			strCurrentIssueKey=strCurrentIssueKey.substring(0,strCurrentIssueKey.indexOf("#"));
+		 }
+		 if(strCurrentIssueKey!=""){
+			strUrl="/jos/issue/get_other_issue_info/"+strCurrentIssueKey;
+			$("#current_issue_label").hide();
+		 }else{
+			$("#current_issue_label").show();
+		 }	
+		 $.ajax({
+                type: "get",
+                url: strUrl,
+                async: false,
+                cache: false,
+                success: function (strIssueXml) {
+                       var strYearID=GetXmlValue(strIssueXml,"year_id");
+						var strIssueID=GetXmlValue(strIssueXml,"quarter_id");
+						var strVolume=GetXmlValue(strIssueXml,"book_no");
+						var strYearKey=strYearID;
+						if(strVolume!="" && strVolume!="0"){
+                            strYearKey = strYearKey + "_" + strVolume;
+                            strVolume = "第" + strVolume + "卷";
+                        }
+                        
+						var strIssueEnName=GetXmlValue(strIssueXml,"quarter_en_name");
+                        var strEnPublishDate = GetXmlValue(strIssueXml, "en_publish_date");
+                        $("#current_year_id").html(strYearID);
+						var strIssueSmallCoverURL=GetXmlValue(strIssueXml,"image_url");
+						strIssueSmallCoverURL=strIssueSmallCoverURL.replace("/uploadfile","uploadfile");
+						$("#current_small_cover_id").html("<a href='jos/article/issue/"+strYearKey+"_"+strIssueID+"'><img src='"+strIssueSmallCoverURL+"' width='100%'></a>");
+						$("#current_publish_date_id").html(strEnPublishDate);
+						$("#current_volume_id").html(strVolume);
+						$("#current_issue_id").html(strIssueID);
+						$("#current_year_key").attr("value",strYearKey);
+						$("#current_issue_key").attr("value",strIssueID);
+
+						
+						
+                }
+         });
+   }
+
+   function GetYearInfo(){
+		var strUrl="/jos/issue/get_year_info";		
+		$.ajax({
+                type: "get",
+                url: strUrl,
+                async: false,
+                cache: false,
+                success: function (strYearInfo) {
+                          $("#year_id").empty();
+						  var YearArray = strYearInfo.split('#');
+						  var strYearOptions="";
+						  for(var i=0;i<YearArray.length;i++){
+								var strOneYearInfo=YearArray[i];
+								var OneYearArray = strOneYearInfo.split(',');
+								var strYear = OneYearArray[0];
+								var strVolume = OneYearArray[1];
+								var strYearKey=strYear;
+								if(strVolume!="" && strVolume!="0"){
+									strYearKey=strYearKey+"_"+strVolume;
+								}
+
+								var strYearName=strYear+"年";
+								if(strVolume!="" && strVolume!="0"){
+									strYearName=strYearName+"第"+strVolume+"卷";
+								}
+								if(strLanguage=="en"){						
+									if(strVolume!=null && strVolume!="0"){
+										strYearName="Vol. "+strVolume+"";
+									}
+									if(strYearName!=""){
+										strYearName=strYearName+", ";
+									}
+									strYearName=strYearName+strYear;
+								}
+								strYearOptions=strYearOptions+"<option value='"+strYearKey+"'>"+strYearName+"</option>";
+						  }
+						  $("#year_id").append(strYearOptions);	
+                }
+         });
+   }
+   function onChangeYear(strYearKey){
+		  var strYearID=strYearKey;
+		  if(strYearID.indexOf("_")>0){
+			 strYearID=strYearID.substring(0,strYearID.indexOf("_"));
+		  }
+		  $("#quarter_id").empty();
+		  var strCurrentYearIssueInfo=strAllIssueInfo;
+		  if(strCurrentYearIssueInfo.indexOf("<"+strYearID+">")>=0){
+				strCurrentYearIssueInfo=strCurrentYearIssueInfo.substring(strCurrentYearIssueInfo.indexOf("<"+strYearID+">")+6);
+				if(strCurrentYearIssueInfo.indexOf("</"+strYearID+">")>0){
+					strCurrentYearIssueInfo=strCurrentYearIssueInfo.substring(0,strCurrentYearIssueInfo.indexOf("</"+strYearID+">"));
+				}else{
+					strCurrentYearIssueInfo="";
+				}
+		   }else{
+				strCurrentYearIssueInfo="";
+		   }
+		   var IssueArray = strCurrentYearIssueInfo.split(':');
+		  
+		   var strPleaseSelect="请选择...";
+		   if(strLanguage=="en"){	
+			   strPleaseSelect="Please select ...";
+		   }
+		    var strIssueOptions="<option value=''>"+strPleaseSelect+"</option>";
+		   for(i=0;i<IssueArray.length;i++){
+			  var strOneIssueInfo=IssueArray[i];
+			  var OneIssueArray = strOneIssueInfo.split(',');
+			  var strIssueID = OneIssueArray[0];
+			  var strIssueName = OneIssueArray[1];
+			  if(strLanguage=="en"){						
+					strIssueName="NO. "+strIssueID;
+			  }
+			  strIssueOptions=strIssueOptions+"<option value='"+strIssueID+"'>"+strIssueName+"</option>";
+		   }
+		   $("#quarter_id").append(strIssueOptions);
+	}
+	function ProcessSearchIssue(){
+		var strYearID=$("#year_id").val();
+		var strIssueID=$("#quarter_id").val();
+		var strKeyID=strYearID+"_"+strIssueID;
+		window.location.href="jos/article/issue/"+strKeyID;
+		return false;
+	}
+    function GetAllIssueInfo(){
+		var strUrl="jos/issue/get_all_issue_info";
+		 $.ajax({
+                type: "get",
+                url: strUrl,
+                async: false,
+                cache: false,
+                success: function (strIssueInfo) {
+                      strAllIssueInfo=strIssueInfo;
+					  onChangeYear($("#year_id").val());
+                }
+         });
+   }
+  $().ready(function() {
+	GetYearInfo();
+	GetCurrentIssueInfo();	
+	GetAllIssueInfo();
+	
+	var strCurrentYearKey=$("#current_year_key").val();
+	var strCurrentIssueKey=$("#current_issue_key").val();
+	if(strCurrentYearKey!=""){
+		onChangeYear(strCurrentYearKey);
+	}else{
+		onChangeYear($("#year_id").val());
+	}	
+	$("#year_id option[value='"+strCurrentYearKey+"']").attr("selected", true);  
+	$("#quarter_id option[value='"+strCurrentIssueKey+"']").attr("selected", true);  
+
+  });
+</script>
+
+
+<style>
+  .issue_browser_wrap .issue_browser ul li.on{
+  background: #610B0B;
+  }
+</style>									
+</div>
+    
+<!--body end-->		
+                
+
+			</div>
+		<div class="clear"></div>
+  </div>
+
+  <!--底部开始-->
+  <div class="footer">
+      <span>友情链接:</span><span><a href='http://www.iscas.ac.cn/' target='_blak'>中国科学院软件研究所</a></span><span><a href='https://www.ccf.org.cn/' target='_blak'>中国计算机学会</a></span><span><a href='http://www.cas.cn/' target='_blak'>中国科学院</a></span><span><a href='http://www.nsfc.gov.cn/' target='_blak'>国家自然科学基金委员会</a></span><span><a href='https://dl.ccf.org.cn/index.html?_ack=1' target='_blak'>CCF数字图书馆</a></span><span><a href='http://www.ijsi.org' target='_blak'>Int'l J of Softw Info</a></span><span><a href='http://www.c-s-a.org.cn' target='_blak'>计算机系统应用</a></span>    
+       <div class="clear"></div>
+  </div>
+  <div class="foot">
+    您是第<b><span id="WebSiteTotalCount"></span></b>位访问者<br>
+		版权所有：中国科学院软件研究所    <a href="https://beian.miit.gov.cn/">京ICP备05046678号-3</a><br /> 
+地址：北京市海淀区中关村南四街4号,邮政编码：100190<br />
+电话：010-62562563 传真：010-62562533  Email：jos@iscas.ac.cn<br />
+技术支持：<a href="http://www.e-tiller.com" target="_blank">北京勤云科技发展有限公司</a><br />
+<div style="width:406px;margin:0 auto; padding:10px 0;">
+         <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11040202500063" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="/jos/ch/ext_images/batb.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11040202500063号</p></a>
+       </div>
+   
+       <div class="clear"></div>
+  </div>
+  
+  <!--底部结束-->
+  <link rel="stylesheet" type="text/css" href="template/011_2/css/1000and1200.css">
+<!--  悬浮广告左边-->
+<!--1-->
+
+<!--  悬浮广告右边-->
+
+<!--弹出窗口-->
+
+<style>
+
+    .slideTxtBox_list_zy bb_1 {
+        display:block;
+    }
+    .slideTxtBox_list_shuffling bb_2 {
+        display:block;
+    }
+	#Content a{
+	
+	text-decoration: underline;
+	color: blue;
+	}
+	.search_ext_list_body .search_ext_list_body_container .search_ext_keyword_result .search_ext_article_list li{
+	
+	clear: both;
+	}
+
+
+</style>
+</body>
+</html>
+<script language="javascript">
+$().ready(function() {
+	//不管页面上有没有统计数字，都要加这个语句，用来刷新访问统计
+	 var strURL="jos/site/get_access_and_today_count";
+	 $.get(strURL,function(strScript){			 
+		eval(strScript);
+	});
+    });
+   
+   
+   
+
+    setTimeout(() => {
+        //alert($(".YYSS").length);
+        //alert($(".slideTxtBox_list_zy bb_1").length);
+        // $(".slideTxtBox_list_shuffling bb_2").css("display", "block");
+    },5000)
+</script>

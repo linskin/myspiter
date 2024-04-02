@@ -1,0 +1,72 @@
+[
+    {
+        "title": "基于TEE和SE的移动平台双离线匿名支付方案",
+        "authors": [
+            "杨波，冯伟，秦宇，张彦超，佟冬"
+        ],
+        "html_url": "jos/article/html/7115?st=article_issue"
+    },
+    {
+        "title": "UEFI固件的启发式逆向分析与模糊测试方法",
+        "authors": [
+            "林欣康，顾匡愚，赵磊"
+        ],
+        "html_url": "jos/article/html/7116?st=article_issue"
+    },
+    {
+        "title": "一种利用动态分析的嵌入式应用托管方案",
+        "authors": [
+            "吴华茂，姜木慧，周亚金，李金库"
+        ],
+        "html_url": "jos/article/html/7117?st=article_issue"
+    },
+    {
+        "title": "基于多元数据融合的网络侧告警排序方法",
+        "authors": [
+            "王维靖，陈俊洁，杨林，侯德俊，王星凯，吴复迪，张润滋，王赞"
+        ],
+        "html_url": "jos/article/html/7118?st=article_issue"
+    },
+    {
+        "title": "基于双分支特征提取和自适应胶囊网络的DGA域名检测方法",
+        "authors": [
+            "杨宏宇，章涛，张良，成翔，胡泽"
+        ],
+        "html_url": "jos/article/html/7119?st=article_issue"
+    },
+    {
+        "title": "面向漏洞检测模型的强化学习式对抗攻击方法",
+        "authors": [
+            "陈思然，吴敬征，凌祥，罗天悦，刘镓煜，武延军"
+        ],
+        "html_url": "jos/article/html/7120?st=article_issue"
+    },
+    {
+        "title": "移动应用隐私权声明内容合规性检验方法",
+        "authors": [
+            "王寅，范铭，陶俊杰，雷靖薏，晋武侠，韩德强，刘烃"
+        ],
+        "html_url": "jos/article/html/7121?st=article_issue"
+    },
+    {
+        "title": "一种基于突变流量的在野黑产应用采集方法",
+        "authors": [
+            "陈沛，洪赓，邬梦莹，陈晋松，段海新，杨珉"
+        ],
+        "html_url": "jos/article/html/7122?st=article_issue"
+    },
+    {
+        "title": "一种面向图神经网络安卓恶意代码检测的通用解释定位方法",
+        "authors": [
+            "郭燕慧，王东，王晓煊，王柳，徐国胜"
+        ],
+        "html_url": "jos/article/html/7123?st=article_issue"
+    },
+    {
+        "title": "基于负数据库的隐私保护图神经网络推荐系统",
+        "authors": [
+            "赵冬冬，徐虎，彭思芸，周俊伟"
+        ],
+        "html_url": "jos/article/html/7124?st=article_issue"
+    }
+]

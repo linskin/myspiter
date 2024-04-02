@@ -1,0 +1,51 @@
+[
+    {
+        "title": "DBI-Go: 动态插桩定位 Go 二进制的非法内存引用",
+        "authors": [
+            "陈金宝，张昱，李清伟，丁伯尧"
+        ],
+        "html_url": "jos/article/html/7096?st=article_issue"
+    },
+    {
+        "title": "位宽感知的寄存器绑定算法",
+        "authors": [
+            "高猛，赵家程，崔慧敏，冯晓兵"
+        ],
+        "html_url": "jos/article/html/7097?st=article_issue"
+    },
+    {
+        "title": "申威众核处理器访存与通信融合编译优化",
+        "authors": [
+            "方燕飞，李雁冰，董恩铭，王云飞，刘齐"
+        ],
+        "html_url": "jos/article/html/7098?st=article_issue"
+    },
+    {
+        "title": "二进制翻译技术综述",
+        "authors": [
+            "谢汶兵，田雪，漆锋滨，武成岗，王俊，罗巧玲"
+        ],
+        "html_url": "jos/article/html/7099?st=article_issue"
+    },
+    {
+        "title": "DDoop: 基于差分式Datalog求解的增量指针分析框架",
+        "authors": [
+            "沈天琪，王熙灶，宾向荣，卜磊"
+        ],
+        "html_url": "jos/article/html/7100?st=article_issue"
+    },
+    {
+        "title": "面向全分布式智能建筑系统应用程序的并行化编译方法",
+        "authors": [
+            "陈文杰，杨启亮，姜子炎，邢建春，周启臻，邹荣伟，冯博伟"
+        ],
+        "html_url": "jos/article/html/7101?st=article_issue"
+    },
+    {
+        "title": "AutoConfig: 面向深度学习编译优化的自动配置机制",
+        "authors": [
+            "张洪滨，周旭林，邢明杰，武延军，赵琛"
+        ],
+        "html_url": "jos/article/html/7102?st=article_issue"
+    }
+]
