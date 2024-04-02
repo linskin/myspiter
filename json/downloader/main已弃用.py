@@ -25,12 +25,12 @@ for filename in os.listdir(input_folder):
                 # 读取所有html网址
                 html_url = "https://jos.org.cn/" + item['html_url']
                 html_urls.append(html_url)
-                # html_urls += f"PDF URL: {item['pdf_url']}\n\n"
+                # pdf_urls += f"PDF URL: {item['pdf_url']}\n\n"
 
         # 遍历网址列表，下载对应pdf
 print(html_urls)
 # # 打开输出文件，如果不存在，则会创建该文件
 # with open(output_file_path, 'w', encoding='utf-8') as output_file:
 #     # 将file_content内容写入输出文件
-#     output_file.write(html_urls)
+#     output_file.write(pdf_urls)
 # print(f"File '{filename}' copied to '{output_folder}'.")
