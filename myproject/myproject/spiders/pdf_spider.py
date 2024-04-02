@@ -8,7 +8,6 @@ from selenium.webdriver.support import expected_conditions as EC
 project_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))  # 获取上上级目录
 down_load_dir = os.path.join(project_dir, 'output', 'pdf_output')  # 下载目录设为目标目录
 
-
 options = webdriver.ChromeOptions()
 options.add_experimental_option("excludeSwitches", ['enable-automation'])
 prefs = {
