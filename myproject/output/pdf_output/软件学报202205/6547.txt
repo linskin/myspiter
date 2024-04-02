@@ -1,0 +1,1888 @@
+软件学报 ISSN 1000-9825, CODEN RUXUEW
+Journal of Software,2022,33(5):1529−1550 [doi: 10.13328/j.cnki.jos.006547]
+©中国科学院软件研究所版权所有.
+
+面向航空航天领域的工业 CFD 软件研发设计
+
+E-mail: jos@iscas.ac.cn
+http://www.jos.org.cn
+Tel: +86-10-62562563
+
+*
+
+张 健 1,2, 周乃春 2, 李 明 2, 刘 杰 1, 陈江涛 2, 向 栋 2, 金 韬 2
+1
+
+(国防科技大学 计算机学院, 湖南 长沙 410073)
+
+2
+
+(中国空气动力研究与发展中心 计算空气动力研究所, 四川 绵阳 621000)
+
+通信作者: 李明, E-mail: liming@cardc.cn
+
+摘
+
+要: 工业 CFD (computational fluid dynamics) 软件属于计算机辅助工程 (computer-aided engineering, CAE) 软
+
+件的一种, 在航空航天等领域有着广泛的应用. 其开发过程强烈依赖于流体力学、数学、计算机以及其他领域学
+科知识模型, 涉及大量理论推导、模型构建、算法优化、验证与确认等专业性、基础性科学研究, 导致软件系统
+构成复杂, 研发难度巨大. 通过引入软件工程的方法和实践, 能够对软件开发进行更有效的组织与管理, 达到缩短
+开发周期、提升软件质量的目的. 分析了工业 CFD 软件的特点和发展趋势, 提出了适合于工业 CFD 软件的增量
+与迭代结合的开发模型. 自主研发了面向 CFD 仿真软件的自动化持续集成平台. 从软件交互、封装与效率、功能
+扩展性及高性能集群环境部署等方面给出了工业 CFD 软件的设计建议. 针对性建立了适用于科学计算软件的验
+证与确认方法. 最后给出了一款国产自主 CFD 软件示范性案例, 以期为相关研究者和实践者提供参考.
+关键词: 航空航天; 软件工程; 工业软件; CFD; 验证与确认
+中图法分类号: TP311
+中文引用格式: 张健, 周乃春, 李明, 刘杰, 陈江涛, 向栋, 金韬. 面向航空航天领域的工业CFD软件研发设计. 软件学报,
+2022, 33(5): 1529–1550. http://www.jos.org.cn/1000-9825/6547.htm
+英文引用格式: Zhang J, Zhou NC, Li M, Liu J, Chen JT, Xiang D, Jin T. R & D and Design of Industrial CFD Software for
+Aeronautics and Astronautics. Ruan Jian Xue Bao/Journal of Software, 2022, 33(5): 1529–1550 (in Chinese). http://www.jos.org.cn/
+1000-9825/6547.htm
+
+R & D and Design of Industrial CFD Software for Aeronautics and Astronautics
+ZHANG Jian1,2, ZHOU Nai-Chun2, LI Ming2, LIU Jie1, CHEN Jiang-Tao2, XIANG Dong2, JIN Tao2
+1
+
+(College of Computer Science and Technology, National University of Defense Technology, Changsha 410073, China)
+
+2
+
+(Computational Aerodynamics Institute, China Aerodynamics Research and Develop Center, Mianyang 621000, China)
+
+Abstract: Industrial computational fluid dynamics (CFD) software is a kind of computer-aided engineering (CAE) software, which has a
+wide range of applications in aeronautics and astronautics and other fields. Its development process strongly relies on fluid mechanics,
+mathematics, computers, and other disciplines knowledge models, involving a large number of professional and fundamental scientific
+researches, such as theoretical derivations, physical model establishment, algorithm optimization, verification and validation, leading to a
+very complex composition of the software system and huge research and development difficulty. By introducing software engineering
+methods and practices, software development can be effectively organized and managed to shorten development and to improve the quality
+of the software. This study briefly analyzes the characteristics and new trends of industrial CFD software. Base on this, a combination of
+incremental and iterative developing model suitable for industrial CFD software is proposed. An automated continuous integration platform
+for CFD simulation software is developed. Suggestions for industrial CFD software design are given from the aspects of software
+interaction, encapsulation and efficiency, functional scalability, and high-performance cluster environment deployment. Targeted verification
+and validation methods suitable for scientific computing software are established. Finally, a demonstration case of domestic independent
+
+*
+
+基金项目: 国家数值风洞工程
+本文由“领域软件工程”专题特约编辑汤恩义副教授、江贺教授、陈俊洁副教授、李必信教授以及唐滨副教授推荐.
+收稿时间: 2021-07-22; 修改时间: 2021-10-09; 采用时间: 2022-01-10; jos 在线出版时间: 2022-01-28
+
+软件学报 2022 年第 33 卷第 5 期
+
+1530
+
+CFD software is illustrated, with a view to providing references for related researchers and practitioners.
+Key words: Aeronautics and Astronautics; software engineering; industrial software; computational fluid dynamics (CFD); verification and
+validation
+
+基于计算流体力学 (computational fluid dynamics, CFD) 的数值仿真软件是计算机辅助工程 (computer aided
+engineering, CAE) 的重要组成部分, 其原理是通过计算机数值求解流动控制方程, 从而对流动现象进行分析和预
+测, 进而用于指导工业设计. 工业 CFD 软件是针对于工业应用的一类 CFD 软件, 有别于基础理论研究的 CFD 软
+件, 其特点是采用更多成熟的技术方案、拥有稳定的架构体系和软件生态、适用于更宽广的应用范围和更自由的
+对象, 在武器装备、航空航天、交通运输等产业和领域发展中起到重要支撑作用, 是提高国家核心竞争力的重要
+手段 [1] . 在航空航天领域, 基于 CFD 的数值模拟软件一直是飞行器设计中空气动力性能评估的核心软件, 但当前
+国内 CFD 软件的研发仍然属于短板, 众多型号设计的气动评估还是主要依赖进口商业软件, 亟需自主化 CFD 软
+件开发.
+经过多年的技术积累和市场培育, 美欧已经诞生了诸如 ANSYS Fluent/CFX、Star-CCM+、CFD++、Numeca
+等成熟商业软件, 牢牢占据国内市场. 近年来, 随着我国对工业软件发展的高度重视, 国产自主工业 CFD 软件的研
+发也逐渐兴起. 例如, 航空工业气动院研发的航空数值计算平台 UNSMB, 可以高效和精确地进行跨音速、超音速
+复杂模型的气动力计算 [2] ; 西北工业大学研制的 HUNS3D 软件, 是一套面向航空航天工程领域气动力/热分析、
+流固耦合、飞行仿真等相关问题的数值模拟平台 [3] , 此外还有北京航空航天大学开发的战术导弹 CFD 系统平
+台 [4] , 以及中国空气动力研究与发展中心推出的开源 CFD 软件平台 PHengLEI[5] 等. 上述大多数 CFD 软件以研究
+所、高校自研自用软件为主要特征, 但也有一些优秀的通用 CFD 软件渐露头角, 逐渐朝着商业化路线迈进: 例如,
+中国空气动力研究与发展中心的 NNW-FlowStar 软件 (以下简称 FlowStar 软件), 在国家数值风洞 (NNW) 工程资
+助下, 集成了常规气动力预测、喷流干扰评估、进排气影响模拟、多体分离轨迹计算等航空航天领域主要气动仿
+真功能, 目前已面向全国发布, 可免费使用 [6] ; 深圳清沣溪科技有限公司开发的 QFLUX 软件, 具备完善的图形化
+界面、流场可视化及数据后处理功能, 可广泛应用于精细模拟各类复杂的可压缩或不可压缩湍流分离流、多相流、
+颗粒流、气动声学/水动声学等问题 [7] . 整体而言, 相比成熟商业软件, 国产 CFD 软件才刚刚起步, 在很多方面还
+有很大差距, 这些差距主要集中在功能的丰富性、系统的鲁棒性和用户的体验性等方面. 我国 CFD 科研领域在计
+算方法上基本能够跻身世界前列, 但上述先进的技术在迈向成熟软件产品的转换上还存在较多问题, 其中很大一
+部分原因就是在开发实践中缺乏对软件工程的重视. 大型工业 CFD 软件开发不可避免面临软件开发的普遍问题:
+一方面软件系统的规模和复杂性越来越高, 开发过程面临较大的不确定性, 另一方面作坊式的软件开发方式在开
+发效率和质量保障等方面越来越难以满足需要. 因此, 在当前国防军工和国民经济发展对工业 CFD 软件有迫切需
+求的背景下, 探寻适合大型工业 CFD 软件的软件工程方法, 实现国产自主工业软件的创新超越具有十分重要的现
+实意义.
+面向航空航天领域的工业 CFD 软件虽然具备鲜明的行业特色, 但其本质依然是软件. 截至目前, 讨论 CFD 软
+件的文献大多侧重于 CFD 理论方法研究, 缺乏工程化软件开发的研究. 由于软件开发的复杂性和不可见性, 使得
+描述软件开发过程的软件开发与组织方法也天然带着一定的抽象性. 由此带来了很多概念上的误导和实践中的争
+论 [8] . 所以在指导实际特定领域软件开发时需要相应的进行适应性组合和裁剪. 本文将结合笔者所在团队在
+FlowStar 软件中的开发实践经验, 以“解剖麻雀”的方式, 从多个维度科学剖析工业 CFD 软件开发全生命周期的各
+个阶段的一些特殊问题, 最终用于促进 CFD 软件开发者之间进行交流, 共同提升国产自主工业 CFD 软件的开发
+水平.
+本文第 1 节分析了工业 CFD 软件的特点及发展趋势, 并进一步分析了影响 CFD 软件开发难易度的因素. 第
+2 节结合工业 CFD 软件特点提出了一种增量式迭代开发过程. 第 3 节讨论了工业 CFD 软件设计时在效率和可扩
+展性之间的权衡. 第 4 节重点介绍了科学计算软件特点下的 CFD 软件验证与确认. 第 5 节给出了多样化环境下
+的 CFD 软件部署解决方案. 第 6 节展示了结合软件工程方法实践研发出的一款自主工业 CFD 软件示范性案例.
+
+张健 等: 面向航空航天领域的工业 CFD 软件研发设计
+
+1531
+
+第 7 节对研究进行了讨论和总结.
+
+1 工业 CFD 软件特点及发展趋势
+工业 CFD 软件属于科学计算类软件以及计算机辅助工程 (CAE) 软件, 是架构在数学、力学、计算机和航空
+航天、武器装备工程经验之上的复杂系统, 研发难度巨大. 组成工业 CFD 软件的核心要素是数学物理模型. 除此
+之外, 工业 CFD 软件还融合了 CAE 业务逻辑, 领域知识经验以及人机交互界面. 充分了解 CFD 软件的行业特点
+和发展趋势, 有助于设计灵活的软件开发策略, 定制针对性的软件开发过程.
+1.1 特
+
+点
+
+不同于普通的桌面应用软件或移动互联网应用, 工业 CFD 软件具备如下 3 个重要特点.
+(1) 开发过程的高度不确定性
+实际 CFD 工程问题的本质是求解特定初边值条件下描述流动物理特征方程的数学问题, 因此面对一个特定
+CFD 应用需求, 首先要完成严格的数学理论公式推导后才能进行程序编码. 目前在实际工程应用和科学研究领域,
+广泛使用的 CFD 流动特征数学描述是基于物理模型的雷诺平均 N-S 方程 (Reynolds averaged Navier-Stokes
+equation, RANS 方程). 尽管基于上述数学方程描述架构的 CFD 技术在应用上已开展了诸多实践, 解决了很多工程
+设计问题需求, 但在计算方法和物理模型等核心理论上仍存在诸多瓶颈 [9] . 例如, 从数学方程本身来看, 对湍流问
+题认知的局限导致了方程中引入的湍流模型本身存在建模误差, 对计算精度存在较大影响; 同时从数学方程的计
+算机模拟求解过程来看, 针对不同的物理问题特征发展了多种通量计算方法 (通量差分分裂格式、矢通量分裂格
+式等), 上述格式的使用范围有限, 因此在计算流动分离、激波/边界层干扰这类多维复杂流动时, 不同的离散格式
+及迭代步长组合会存在计算稳定性下降问题. 此外, 对流动控制方程进行离散得到大型稀疏线性代数方程组, 需要
+高效并行求解. 故而 CFD 自身的数学问题属性导致了其软件开发中更需要进行精细地设计, 才能兼顾解决精度、
+效率和鲁棒性等问题, 因此, 工业 CFD 软件的研发过程具有一定的科学探索特点, 其开发过程充满不确定性.
+(2) 软件使用的高度专业性
+工业 CFD 软件最难的是如何将工程技术知识经验融入软件. 事实上, 早期的 CFD 技术由于其艰深的理论背
+景和流体力学问题的复杂性阻碍了它向工业界推广. 直到通用 CFD 软件的出现, 由于具备方便的前置处理, 友好
+的用户界面, 成熟的算法集成以及丰富的数据处理等优点, 使许多不擅长 CFD 理论的其他专业人员也能够轻松地
+进行流动数值计算, 而不用去理解计算模拟背后艰深的理论算法, 从而投入更多的精力专注于所计算的物理问题
+本身, 为解决实际工程问题开辟了道路. 但是, 实际应用面临的流动物理问题变幻莫测, 软件很难固化出流程标准
+或参数统一的解决方案. 这对软件使用者的专业性提出很高要求, 用户需要结合实际应用场景, 进行合理的建模与
+分析, 才能利用软件生产出合理的数据用于指导设计. 对于软件设计来说, 要做到软件更加通用易用, 需要尽量降
+低对用户的专业性依赖. 因此要进行良好的知识经验封装, 包括严密的逻辑设计统筹、经验性参数的总结、操作
+流程的简化、数据生产的定制化及可信度归纳等. 例如不同熵修正系数对飞行器摩阻预测的影响较大, 通过大量
+的工程计算和经验总结, 建立与网格尺度、流场特征关联的熵修正自适应调节策略, 可以提升软件对阻力的预测
+精度 [10] .
+(3) HPC 平台的高度依赖性
+高性能计算机的快速发展, 使得 CFD 具备了解决复杂外形工程问题的能力. 大规模 CFD 并行计算已成为飞
+行器气动性能计算的常规手段 [11] . CFD 软件属于计算密集型软件, 基本上采用有限体积方法求解控制方程, 计算
+时涉及到大量时间步迭代及并行交界区域处理, 尤其是采用隐式迭代方法, 对内存带宽和并行通信要求较高, 需要
+开发者对硬件架构也要有较深理解. 另一方面, 工业 CFD 软件更多运行在集群或工作站上, 涉及到系统的内核版
+本、调度系统等环境适配等等. 因此, CFD 应用软件需要与高性能计算机 (HPC) 协调发展, 及时适应 HPC 硬件架
+构演变的趋势, 这些都对软件的框架设计和软件的部署提出了很高要求.
+基于上述特点, 对于大型 CFD 软件项目的开发, 一般不可能定义一套精确的需求并制定详细的软件和工作计
+
+软件学报 2022 年第 33 卷第 5 期
+
+1532
+
+划. 计算科学家和工程师面临的挑战是经常需要快速应对开发新的算法或应用新的工具的变化需求, 并去解决新
+的物理问题. 例如在开发过程中可能会出现一些候选算法不够准确、稳定或高效的问题, 需要识别、实施和测试
+新的候选算法等. 相应地, 也需要经常与试验数据验证比较来评估模型参数是否能够模拟目标现象, 通常这一系列
+的步骤会被重复多次. 这些特点决定了一个典型的科学计算类软件开发和生成工作流程具有高度迭代、探索性和
+不确定性. 软件开发的每个阶段都涉及到许多紧密相连的步骤. 如果当前步骤可以成功完成, 则继续进行下一步.
+对于大多数实际情况, 每个步骤都会出现多个问题, 问题的解决通常需要与先前的步骤进行迭代, 如图 1 所
+示 [12] .
+Detailed
+goals
+
+Customer
+input
+
+Test
+component
+
+Set global
+requirements
+
+Identify
+algorithms
+
+Debug
+component
+
+Define
+goals
+
+Select
+programming
+model
+
+Write
+component
+
+Formulate
+questions
+
+Develop
+approach
+
+Identify
+customers
+
+Detailed
+design
+
+Define general
+approach
+
+Recruit
+team
+
+Identify
+models
+
+Computing
+environment
+
+Initial
+analysis
+
+Optimize
+component
+
+Store
+results
+Execute
+runs
+Schedule
+runs
+Setup
+problems
+
+Develop
+code
+
+V&V
+
+Analyze
+results
+
+Production
+runs
+
+Define
+tests
+
+Complete
+run
+Verification
+tests
+
+Analyze
+run
+
+Regression
+tests
+
+Identify
+next run
+
+Validation
+expts
+Validation
+tests
+
+图1
+1.2 趋
+
+Optimize
+runs
+
+Identify
+next step
+
+Formulate
+questions
+
+Decide
+hypothesize
+
+Make
+decisions
+Document
+decisions
+Identify
+uncertainties
+
+Develop
+approach
+
+科学计算软件开发的详细过程
+
+势
+
+工业 CFD 软件经历了早期的缓慢发展, 随着计算机及网络通信技术的发展进入了快速迭代阶段. 我国现阶段
+的工业 CFD 软件受到前期“拿来主义”影响, 存在经验积累不足、产品单一、能力偏弱等特点, 要在国外逐渐加紧
+的封锁之下破解“卡脖子”的难题, 需要抓紧工业 CFD 软件的发展趋势, 从以下几个方面入手争取实现弯道超车.
+(1) CAD/CAE 流程集成
+随着技术发展成熟度的增加和用户需求的改变, 工业软件, 特别是工业 CFD 软件, 逐渐由单一工具向融合化
+平台化方向转变, 这些转变带来了各大工业软件厂商逐渐从提供单一软件向提供“一条龙”工业软件服务发展, 如
+ANSYS、达索系统、西门子等, 针对工业用户需求, 整合从概念设计/详细设计 (CAD) 到数值仿真 (CAE) 的所有
+相关软件, 打通各单独软件之间的壁垒, 实现采用一套软件完成所有任务的能力. 推动信息孤岛向信息大陆转变,
+是当前和未来一段时间用户需求以及工业软件发展的主流方向.
+
+张健 等: 面向航空航天领域的工业 CFD 软件研发设计
+
+1533
+
+(2) 多学科耦合
+随着计算机技术能力水平的不断发展, 工业设计逐渐向着更加精细化的方向发展, 设计外形越来越复杂, 追求
+的目标越来越多, 目标之间的矛盾也越来越突出. 工业设计这种全局性、非线性、多极值等特点, 需要在实际设计
+过程中综合考虑多学科、多目标耦合影响. 不同学科之间的协同仿真和优化技术作为重要角色已经登上了装备研
+发的历史舞台. 国内外著名研发机构如美国国家航空航天局 (NASA)、德国宇航局 (DLR) 等均在多学科协同数值
+优化、仿真分析方面投入了大量的人力物力, 并在应用方面进行了大量尝试与验证 [13] . 在此趋势下, 工业 CFD 软
+件必须拓展领域, 与其他相关学科如结构力学、飞行控制、飞行力学、声学、光学、电磁学等计算科学分支融
+合, 从而实现多学科耦合模拟及综合优化设计. 这就需要采用先进的软件工程方法构建灵活、弹性的软件框架, 建
+立高效的耦合计算策略, 实现多学科耦合仿真工作流.
+(3) 云端化和工业 APP
+随着信息化技术特别是网络技术的发展, 传统的工业正在经历由工厂办公向云端生产方向发展, 工业 CFD 软
+件也需要迎合工业用户的发展需求, 在兼顾传统工业领域的同时, 向云端化和工业 APP 方面拓展. 工业 APP 是工
+业软件发展的一种新形态. 以 CFD 软件为代表的传统工业软件是紧耦合单体式架构, 承载的是工业通用知识, 多
+以成套的方式出售. 在面对门类众多的工业细分领域时传统工业软件需要依赖工程师的技术经验或者通过二次开
+发的方式来提供合适的服务. 工业 APP 则具有耦合度低、轻代码化和灵活等特点, 它以特定知识为导向, 将高度
+分工的专业知识和经验封装到可复用组件中, 进行组合、复用和传播, 并能够独立完整地表达一个或多个特定功
+能、解决特定问题, 更加便捷和易用 [14] .
+
+2 针对 CFD 软件特点的持续集成开发实践
+选择和定义合适的工业 CFD 软件开发过程, 对软件开发进行有效组织与管理十分重要. 以 CFD 为代表的高
+性能科学计算软件开发是一个复杂的过程, 它与企业级软件开发面临许多相同的挑战. 同时又因为其兼顾科学研
+究和工业应用属性, 导致在软件开发过程的各个阶段有许多特殊困难.
+(1) 开发周期长. 企业级软件开发需要按照时间表进行可靠的更新和验证, 而大型 CFD 软件项目的生命周期
+可以达到 30–40 年甚至更长, 远远长于大多数信息技术 (IT) 项目. 工业 CFD 软件的发展总是迭代式发展的, 例如
+著名的 Ansys Fluent 的研发超过了 40 年, 每一年都固定推出若干版本.
+(2) 需求定义困难. 一般软件项目计划通常从一组详细的需求规范开始. 相比之下, 对于大型 CFD 项目来说,
+一般不可能定义一套精确的需求并制定详细的软件设计和工作计划. 并不是因为 CFD 项目没有需求, 它的需求通
+常是很明确的, 即模拟某种自然流动现象规律, 而挑战在于如何完整、无二义性的定义相关的实现.
+(3) 开发过程的不确定性. 一方面, CFD 应用程序通常用来解决未知的流动现象, 所以经常表现出新的和意想不
+到的行为; 另一方面, 计算机硬件更新换代十分频繁, 通常不超过 2–4 年, CFD 软件还需及时适应硬件体系结构变化.
+基于 CFD 软件的开发过程“非线性”特点突出, 各个阶段的划分不完全固定并且相互影响, 直接采用传统的瀑
+布模型并不适合. 同时, CFD 软件服务于传统的工业部门, 用户的需求相对确定, 轻量敏捷模型也不完全适合. 可
+以采取一种平衡策略, 先做总体的需求分析和设计, 合理的分解任务逐个增量开发, 同时在增量过程中对已有功能
+不断迭代优化改进, 通过组合裁剪发挥不同软件过程各自的优势 [15] 以达到充分利用资源, 降低项目风险的目的.
+增量集成的方式较为适合工业 CFD 软件研发, 即软件被作为一系列增量构件来设计、实现、集成和测试, 每一个
+构件是由多种相互作用的模块所形成的提供特定功能的代码片段构成. 增量集成的极致是持续集成 [16] , 这样做的
+好处是软件开发可以较好地适应变化, 客户可以不断地看到所开发的软件, 从而降低开发风险. 在建立自主 CFD
+软件应用生态过程中, 快速集成和快速部署是 CFD 软件推广应用的重要推力. 目前国内从事数值模拟软件研发的
+团队逐渐意识到持续集成和持续部署的重要性, 并开始搭建适合持续集成平台 [17,18] .
+图 2 是作者团队为研发 FlowStar 软件所设计的持续集成和部署流程, 提供了一套全自主的针对工业 CFD 软
+件开发过程的迭代开发解决方案. 团队大致以季度为单位设定一轮迭代周期, 通过收集新功能需求和前期版本的
+使用反馈, 制定下一周期的开发计划. 基于持续集成技术, 结合 CFD 软件开发特点实现了多人协同开发平台和全
+
+软件学报 2022 年第 33 卷第 5 期
+
+1534
+
+工具链的自动化编译构建和测试平台, 解决了自动化程度低、测试环节分离、测试数据分散、难以快速应对软件
+变更等技术难题. 协同开发平台主要负责软件工程管理, 包括需求管理、任务管理、缺陷管理、配置管理等. 新代
+码变更后自动触发既定的自动化测试流程, 经过静态缺陷扫描、单元测试、自动化编译、算例集成测试等环节形
+成测试报告, 发现测试问题并记录至缺陷管理. 源代码关键分支的更迭一般是经过功能分支验证后的代码合并, 输
+出较为稳定的受控版本进入生产环境, 经过更全面的人工验证、可信度评价和第三方测试后, 达到预期即可纳入
+配置管理并发布产品.
+协同开发平台
+
+任务分解
+
+需求管理
+
+Task 1
+
+创建分支
+GitLab: feature/task-1
+
+需求迭代列表
+任务管理
+
+Task 2
+
+需求
+
+配置管理
+PUSH
+文档管理
+源代码管理
+
+持续集成与自动化测试
+
+Task 1:feature/task-1
+
+缺陷记录
+
+及时修复
+代码缺陷 commit 1: false
+commit 2: pass
+
+持续迭代
+
+里程碑管理
+
+反馈
+
+拉取代码
+
+问题跟踪
+
+代码扫描
+
+单元测试
+
+构建编译
+
+算例测试
+
+工作日志
+受控版本
+缺陷管理
+制品版本
+
+确认与评价
+
+...
+
+产品版本
+
+交付物入库
+
+feature/task 1: commit 3
+版本可交付物
+
+图2
+
+Beta
+用户
+
+第三方
+测试
+
+可信度
+评价
+
+feature/task 3: commit 2
+
+CFD 软件的持续集成流程设计
+
+下面, 就其中的几个关键技术点作进一步介绍.
+● 需求分析及任务分解
+全面、准确地认识所面临的问题是软件成功开发的前提, 做好工业 CFD 软件的需求分析不仅能够有效指导
+设计方案, 更能帮助软件找准定位从而更好地适应市场. 然而 CFD 软件的需求分析并不容易, 一是功能性需求不
+易描述, 数学理论公式和计算机程序之间的联系不太容易通过功能建模、数据流图或行为建模等方式文档化; 同
+时非功能性需求不好量化, 比如数值算法的“稳定性”、模型的“分辨率”等指标. 事实上, 只要提出合理而自然的方
+法, 解决如何获取和表达对问题的描述并根据问题描述归约出对软件的描述, 需求分析的目的就达到了 [19] .
+本文基于问题框架方法, 设计出一种非常简易的适合 CFD 软件开发的基于目标的需求分析方法, 通过“场景
+(需求)—理论 (上下文)—程序 (解决方案)”逐级分解, 最终规约出软件开发描述. 上述过程并不容易, 而且不同的功
+能需求之间可能还有很多技术上的交叉重叠. 为了完成从用户需求 (提出问题) 到产品需求 (解决问题) 的过渡, 通
+常需要以下几个步骤.
+(1) 收集初始需求, 确定宏观目标. 需求的来源包括对用户的调研、对竞品的分析等. 特别在竞品分析方面, 流
+体仿真领域的几大进口商业软件产品例如 ANSYS Fluent、CFD++等产品经历了多年的打磨, 存留功能往往是经
+过时间考验的, 这对于刚刚起步的自主 CFD 软件研发非常有帮助.
+(2) 确定可交付成果. 评估现有代码能够提供的计算能力以及它将解决的问题.
+(3) 确定满足要求的通用、科学的计算方法和数学模型, 包括主要技术挑战. 如图 3 示例, 根据气流通过阻尼
+网、织物等阻挡区域模拟场景需求, 制定多孔介质、多孔跳跃等理论模型.
+(4) 分析软件架构, 对不同功能需求进行统筹和规约, 在此基础上进行程序设计. 在上例中需要对软件的空间
+离散、几何拓扑、边界条件等模块进行代码重构.
+
+张健 等: 面向航空航天领域的工业 CFD 软件研发设计
+
+1535
+
+(5) 最后, 为各个代码模块之间以及模块与主代码之间的接口制定详细的定义. 通过理论方案调研后形成技术
+方案并制定测试计划, 最终分解形成任务列表纳入到持续集成平台进而指导开发. 为提高效率, 可以不采用严格的
+形式化语言进行描述. 在程序描述时, 可以选择使用可视化建模语言 (比如 UML) 作为辅助使得业务流程更加
+清晰.
+用户故事: 模拟气流通过阻尼网、
+织物等对流动有阻挡作用的区域发
+生压力骤降.
+
+场景分析
+
+理论建模
+多孔介质模型
+
+多孔跳跃模型
+
+程序设计
+空间网格的
+区域标记
+
+被标记单元动量方程空
+间离散添加动量源项
+
+图3
+
+识别区域
+连接面
+
+速度/压降特征
+参数输入
+
+实例化多孔跳跃
+边界条件
+
+CFD 软件需求分析流程示例
+
+● 协同开发管理
+大型工业 CFD 软件开发任务通常需要并行开发以缩短项目周期. 为了让团队更高效运转, 必须有统一规范的
+工作流程 (Workflow). 本文的协同开发平台采用 Git 进行代码版本控制, 使用 GitLab 进行代码托管, 并采用构建
+在 Git 之上的组织开发模型 GitFlow 进行各个分支工作流的维护、合并、发布和修复等管理. 前文提到 CFD 软件
+的不同开发任务之间彼此可能强烈重叠, 开发团队之间可能相互影响, 并行开发也增加了相对风险. 为了应对这些
+风险, 在 GitFlow 基础上结合 CFD 软件特点进一步制定了相应规范 (图 4).
+
+Bug/abc
+
+Dev/1.0.0
+
+1.0.1
+
+Tag=Release 1.1.0
+
+1.0.2
+
+1.0.3
+
+1.0.4
+
+1
+2
+feature 1
+
+1 1. Pull latest updates
+2. Run test cases
+2 Merge request:
+1. All test cases pass
+2. Master’s code review
+
+feature 2
+
+图4
+
+利用 GitFlow 工作流管理 CFD 软件协同开发过程
+
+(1) 开发角色权限划分. 主开发分支 (Dev) 由团队里经验丰富且对软件整体架构熟悉的人员 (Master 角色) 维
+护, 一般开发者 (Developer 角色) 无权限修改.
+(2) 开发与测试深度绑定. 开发流水线和测试流水线 (下文将详细介绍) 实时关联, 每一次的代码变更都可以选
+择触发自动测试, 获取测试报告.
+(3) 规范代码合并. 功能分支开发完毕, 强制要求该功能分支先拉取合并主分支的最新更新, 通过全部测试后
+方可提交合并请求, Master 进行代码审查并合并.
+(4) 构建日志的管理. 功能分支合并后自动更新主分支版本号标签, 同时将自动构建生成的可执行程序纳入数
+据库管理, 方便问题回溯.
+● 自动化测试验证
+
+软件学报 2022 年第 33 卷第 5 期
+
+1536
+
+软件开发过程中, 代码编写所占的时间比例只占总开发时间的很少一部分, 更多的时间往往花在构建 (build)
+和测试 (test) 上. 为了提高软件开发的效率, 可以借助自动化构建和测试工具, 例如 Travis CI, Jenkins 等商业或开
+源持续集成工具. 这些工具具备丰富的插件、功能强大、通用性强, 但需要通过复杂的脚本化流程适配才能够满
+足 CFD 研发的需求. 陈树生等人设计的 CFD 软件自动化验证确认云平台 [20] 和何磊等人设计的大型 CFD 软件自
+动化测试平台 [21] 针对 CFD 软件开发特点进行了自动化测试过程的流程定制, 但主要只针对解算器的算例回归测
+试验证, 流程相对固化, 缺少源代码级的测试环节.
+本文设计和实现了一种面向 CFD 仿真软件的高可扩展自动化构建与测试平台, 帮助 FlowStar 软件研发团队
+进行快速迭代和代码验证. 当本地完成开发提交代码至源代码控制系统时, 自动触发软件构建与测试流程, 包括源
+代码缺陷检测、单元测试覆盖率检查、源代码编译、自动部署、验证与确认测试等, 最终生成一份详尽的测试报
+告. 软件研发团队可依据测试报告, 分析源代码缺陷检测结果和算例验收结果, 尽早发现代码中存在的潜在风险、
+集成错误等问题. 平台建设思路是在通用灵活的顶层框架下与多个测试场景插件相结合, 可以自由扩展添加独立
+的测试工具、集成新的标模算例, 软件开发者可以根据需求, 直接在网页上用拖拽、连接、填写运行参数等方式
+组合多个测试环节, 自定义有序执行的测试流水线, 如图 5 所示.
+源代码检测
+
+推送代码
+源代码更新
+
+代码风格检查
+
+静态缺陷检查
+
+单元测试
+
+验证与确认
+
+测试算例验收
+
+自动部署
+
+自动编译
+
+查看报告
+
+图5
+
+CFD 软件自动化构建与测试流程
+
+CFD 属于典型的科学计算, 软件模块间具备“强耦合”关系的特点, 并且涉及大量的逻辑判断和浮点运算. 因此
+开发过程中, 求解器代码的任何小变动都可能引起“蝴蝶效应”, 哪怕是微小的数值误差很可能导致最后的结果不
+正确甚至计算“崩溃”. 这就需要在持续集成过程中严格进行回归测试, 即在软件修改后对程序进行测试, 以确保系
+统的已有功能不被破坏. 根据不同的目标, 回归测试分两个层级.
+(1) 功能分支代码验证测试. 功能分支代码进行局部修改并提交后触发多状态的基本算例测试, 一旦遇到算例
+的计算结果不一致, 必须确认是新代码引起的 bug 还是真正因修改 CFD 算法导致的结果变化, 经过核定后的功能
+分支才能合并到主分支. 考虑到持续集成的频繁性以及硬件资源的有限性, 通过组合设计测试算例, 保证通过有限
+的算例能够覆盖测试所有的功能模块, 并且单个测试算例的耗时应该控制在数分钟以内, 以快速给出评价结果.
+(2) 每日回归系统测试 (nightly regression test). 功能分支的代码验证测试仅仅能保证代码实现的正确性, 并不
+能系统确认和评估 CFD 算法的改动对实际工程问题适应能力以及程序变动对运行效率的影响. 主分支每日回归
+测试, 是利用资源空闲时间段 (例如每日夜间或周末), 完整运行典型的实际工程外形算例, 通过前后结果对比, 分
+析出主分支代码变动对 CFD 计算残差收敛情况和气动性能参数结果的影响.
+关于 CFD 计算仿真结果可信度的验证与确认, 将在第 4 节进一步详细介绍.
+
+3 兼顾效率与扩展性的软件设计
+Brooks 在他的“没有银弹”的经典演讲 [22] 中指出: 所有软件创作都包括了本质性工作 (essential task) 和附属性
+工作 (accidental task), 前者是去创造出一种由抽象的软件实体所组成的复杂概念结构, 后者则是用编程语言来表
+现这些抽象的实体, 并在某些空间和速度的限制之下, 将程序对应至机器语言. 软件开发方法旨在消除附属性困
+难, 并帮助开发者理解和驾驭问题本身的实质性困难 [23] . 就 CFD 软件而言, 其核心是 CFD 理论, 包括物理模型和
+数值算法, 外在表现形式是带有 GUI 界面的计算机软件. 找到合适的模型和算法去离散求解描述物理现象的偏微
+分方程属于本质性工作, 其困难来源于所要解决问题本身所固有的复杂性和多变性. 而利用丰富的技术手段 (如结
+
+张健 等: 面向航空航天领域的工业 CFD 软件研发设计
+
+1537
+
+构化和模块化设计、面向对象、软件复用与构件化方法等) 将这些数学算法和工程经验进行高效组织串联, 是提
+升自主工业 CFD 软件成熟度的关键. 本节将重点探讨 CFD 理论之外的软件设计与构造技术, 探讨软件设计时如
+何在计算效率和功能扩展之间进行有效兼顾.
+3.1 强科学计算属性下的软件框架设计
+进行科学计算软件开发的主要问题是如何应用程序框架高效、合理、安全地操作计算程序内核, 使之能正常
+工作并能返回正确的运行结果 [24] . 工业 CFD 软件相比自研自用的 CFD 研究代码而言, 不仅仅是一个“公式翻译
+器”, 需要考虑的因素更多.
+(1) 通用性. 面对 CFD 软件发展演化中不断出现的新需求, 设计统一的工作流范式对需求进行抽象合并, 提供
+普适、便捷的实现.
+(2) 易用性. 软件的操作简化、逻辑合理、文档完整.
+(3) 鲁棒性. 适当的异常管理机制能够监测异常, 处理异常并提供日志, 尤其是能够处理因网格、算法以及流
+动本身的复杂度引起的收敛稳定性问题.
+(4) 扩展性. 兼容多语言的二次开发接口, 当出现新的算法参数和数据流组合时, 能够快速进行功能集成.
+(5) 可移植性. 兼容 Windows、Linux 等多种操作系统, 提供图形交互 (GUI)、文本交互 (TUI) 等多种交互方式.
+(6) 可视化. 需要对网格、流场和计算收敛历程进行展示. 但考虑到硬件资源配置, 需要在操作流畅性和数据
+完整性之间进行折衷.
+上述要求都对软件设计者提出了很高的要求. 唐滨等人研发了一套 CAE 仿真软件研发支撑平台——
+FastCAE, 提供软件界面与通用功能模块快速研发集成服务, 从而将自主研发的求解程序快速产品化 [25] . 其提出的
+适用于数值模拟仿真软件的“公用模块”+“适配接口”的开放式平台采用的是一种分层架构设计思想, 可以有效区
+分科学计算内核和其他管理功能任务. 考虑到与 CAD 产品的集成, 对于 CAE 软件来说, 分层软件设计还有一个优
+势是提供统一的接口, 隐藏现有 CAD 产品的差异, 将与几何相关的公共服务封装到中间件 [26] . 笔者团队在设计
+FlowStar 软件时借鉴了这种思想, 图 6 是 FlowStar 软件的整体框架层次结构. 可以看到在数据层将 CFD 前处理、
+解算和分析功能尽可能地从具体问题中抽象出来, 使得算法工程师专注于算法设计. 业务层平台通过内部结构函
+数对用户提供的网格和参数进行处理, 以内存或文件的方式转换成求解程序所需要的数据, 通过配置协议申请计
+算资源, 并且负责驱动计算求解程序, 实时监控并展示 CFD 计算过程和结果. 表现层专注于人机交互, 并且采用经
+典的 MVC (model-view-controller) 思想进一步对 UI 层进行分化, 通过控制器 (controller) 处理用户交互的逻辑, 并
+与业务逻辑层进行对话, 而 View 层可以是图形界面也可以是脚本命令行, 以满足不同的使用场景.
+3.2 面向对象设计与面向数据设计
+软件工程中“高内聚低耦合”的概念, 是判断软件设计好坏的标准. 由于众多物理模型、解决方案策略和求解
+器设置之间的相互作用, 仿真软件往往非常复杂. 这导致开发瓶颈和测试验证困难. 单体功能软件 (monolithic
+functional software) 的复杂性源于其数据组织模型: 全局可访问的数据由一组功能操作以实现目标, 如果每个添加
+的功能都与代码的所有其他部分交互, 可能会引入新的缺陷 (错误)——随着规模的增长, 数据管理和代码验证问
+题必然会失控. 面向对象尝试通过“分而治之”的方法解决复杂性, 使程序模块的可重用性、移植性大大增强. 例如
+著名的开源软件 OpenFoam 采用数据封装 (data encapsulation)、运算符重载 (operator overloading)、泛型编程
+(generic programming) 等“面向对象”策略对程序进行分级组织, 并利用对象族 (object families) 和运行时选择 (runtime selection) 等手段进行模块化设计以及通用功能抽象 [27] , 如表 1 所示, 相似的概念也可以在另一个著名开源软
+件 SU2 上找到 [28] .
+但是, 工业 CFD 软件属于典型的高性能应用软件, 因此工业 CFD 软件的设计和开源软件的侧重点不同, 在一
+定程度下可能要牺牲封装性, 追求高效率. 最典型的例子就是变量数据结构的存储布局, 一种选择是追求封装性,
+采用结构体的数组形式 (array of struct, AoS), 即求解器与特定网格单元关联的所有数据封装在一起, 这种封装的
+好处是扩展性强, 尤其是涉及到多物理场功能扩展时非常方便, 而且代码的可维护性强. 但是随着代码的增长, 这
+
+软件学报 2022 年第 33 卷第 5 期
+
+1538
+
+种架构将造成性能瓶颈. 一方面, 由于虚拟函数被添加到基类以允许访问新物理问题的特定变量, 空间局部性因为
+连续网格单元变量之间的内存距离增加而恶化; 另一方面, 同一个变量由于封装从而只能跨步访存, 使得向量化优
+化更加困难, 从而无法通过 SIMD (single instruction multiple data) 最大限度利用向量处理器的性能 [29] . 因此数组的
+结构体 (struct of array, SoA) 可能是更好的选择, 相同内存操作引用的同字段元素在存储时是彼此相邻的. 这种设
+计模式是数据驱动模式, 让数据控制许多程序的行为, 以便更高效处理大的连续内存操作.
+用户图形界面
+(GUI)
+
+Qt
+
+脚本交互
+命令行
+
+Python
+
+Bat
+
+Shell
+
+资源管理
+
+计算调度
+
+数据管理
+
+计算资源申请
+
+内存管理
+
+批量作业管理
+
+任务管理
+
+求解器运行
+状态管理
+
+进程监控
+
+异常处理
+
+作业状态监控
+
+网格文件
+参数文件
+结果文件
+
+工作流集成
+
+前处理模块
+前处理
+网格格式
+转换
+
+后处理分析
+
+求解器
+网格质量
+检查
+
+物理模型
+流场云图
+
+性能曲线
+
+实时轨迹
+动画
+
+监测数据
+提取
+
+数值算法
+
+边界条件拾取定义
+
+线性系统求解
+并行计算分区
+
+自定义功能接口
+
+核心 CFD 模块
+
+CGNS
+
+MPI
+
+HDF 5
+
+FFTW
+
+Metis
+
+QWT
+
+VTK
+
+底层库
+
+图6
+
+NNW-FlowStar 软件的分层架构设计
+表1
+
+CFD 开源软件里的对象族
+
+描述
+
+OpenFoam
+
+SU2
+
+空间 (网格)和时间 (推进)
+
+Space and Time
+
+CGeometry and CIntergration
+
+场变量
+线性系统求解
+数值方法
+物理模型 (方程)
+
+Field Variable
+Matrix and Linear System
+Discretisation Method
+
+CVariable
+CSysMatrix and CSysVector
+CNumerics
+
+Physical Model
+
+CSolver
+
+张健 等: 面向航空航天领域的工业 CFD 软件研发设计
+
+1539
+
+工业 CFD 软件的设计需要在封装和效率之间进行权衡, 上层的业务逻辑层包含较多的功能集成业务, 因而可
+能更多的采用面向对象设计; 而 CFD 求解器的设计更靠近下层的数据访问层, 更加追求硬件性能, 从而更趋向于
+面向数据设计. 至于如何识别上层业务逻辑和下层数据访问, 很难有明确的界限划分. 莫则尧等在关于数值模拟领
+域并行编程模型的要素研究 [30] 中指出, CFD 领域专家可以根据硬件体系结构的多层嵌套特征, 从并行编程模型入
+手 (图 7), 定义上层业务逻辑和下层数据访问的界面划分. 具体就 CFD 模拟而言, 通过给定计算区域将其剖分成子
+区域, 在每个子区域由网格离散并定义物理量, 从而开展独立的数值计算. 因此, 基于构件模型 (比如子区域数据结
+构) 封装的数值计算程序表示了领域相关的上层业务逻辑, 可以采用面向对象设计, 这部分程序通常由领域专家编
+写, 更加注重可扩展性. 而构成相关构件模型的基础数据结构 (比如存储网格及流场变量的数组结构) 涉及到内核
+计算, 应该采用面向数据思想设计, 这部分内容一般变动不大, 可以充分匹配高性能计算特征进行优化, 保证高
+效率.
+上层业务逻辑
+跨节点
+
+MPI
+
+数值计算算法
+模板
+
+节点内
+
+OpenMP
+
+并行子区域抽
+象数据结构
+
+CPU 内
+
+SIMD and
+Vectorization
+
+网格及物理场
+数据结构
+下层数据访问
+
+图7
+
+面向数值模拟的通用分层并行计算模型
+
+3.3 二次开发功能
+CFD 软件用户因行业背景不同, 对软件功能的需求也千差万别. CFD 软件要想更加通用, 应该具备良好的二
+次开发机制以满足用户特殊功能的定制需求. 比如 Fluent 软件支持使用 C 语言编写用户自定义函数 (user defined
+function, UDF) 进行功能扩展, 支持采用 Scheme 语言进行界面扩展, 支持使用 TUI 脚本命令进行计算流程扩展等
+等, 从而实现软件自身未能提供的功能, 以满足用户的“非标准”特殊需求. 比如特殊的初边值条件、自定义源项、
+部件运动控制、现有物理模型的扩展等等.
+为了满足上述定制需求, 软件必须将其架构开放到一定程度 [27] , 这也符合软件设计的“开闭原则”, 即“用抽象
+构建框架, 用实现扩展细节”. 图 8 给出了 FlowStar 软件的用户自定义函数功能设计, 软件提供功能模块接口, 用户
+根据接口规则自定义扩展实现. 根据功能复杂程度, 可以选择灵活处理: 一种方法是直接提供规则性的文本参数或
+脚本, 内部解释器解释执行. 另一种是提供功能源码, 编译成动态库后供主程序调用运行. 图 9 是软件目前实现的
+一个简单的自定义部件气动力监控界面功能, 用户可以自由定制需要监控的部件组合参数, 内部解释器解析后调
+用相应积分程序进行计算.
+
+4 工业 CFD 软件的验证与确认
+目前国产 CFD 软件在体系化、工程化及大规模推广应用等方面还与国外存在较大差距, 对自研软件的可信
+度普遍没有明确、客观的认识和评价是重要的原因之一. 系统、科学、严格的验证与确认 (V&V) 是 CFD 软件可
+信度评价和质量保证的必经途径 [31] , 其活动贯穿整个软件全生命周期, 包括开发、测试、应用和更新. 邓小刚院
+士在关于 CFD 的验证与确认的研究 [32] 中曾建议: “CFD 软件作为应用软件的一类, 在研发过程中必须遵循软件工
+
+软件学报 2022 年第 33 卷第 5 期
+
+1540
+
+程的一些基本原则. 国内 CFD 软件正处在系统化、商业化的转型阶段, 如果能利用软件质量工程化方法进行全程
+控制, 那么就可以将代码中的编程错误降至最低”. 航空航天领域的工业 CFD 软件是科学计算类软件, 除了应遵循
+基本的软件工程思想保证软件质量之外, 还应该从科学计算角度出发对软件进行严格的验证与确认, 确保软件计
+算结果满足工业应用的精准度要求. 在科学计算领域, 验证与确认的概念更多的是强调数学 (物理) 模型、计算模
+型和真实物理现象三者之间的关系. 具体来说, 验证是确定计算模型精确实现数学模型的过程, 确认是确定模型在
+预期用途内表征真实流体系统或过程准确程度的过程. 简单地说, 验证是“确定是否正确地求解了方程”, 本质上是
+一个数学问题. 确认是“确定是否求解了正确的方程”[33] , 强调和物理真实情况的比较. 在复杂流动的 CFD 模拟过
+程中, 存在偶然和认知混合不确定性及模型形式的非数值不确定变量, 还包括计算网格、离散方法、边界条件等
+多种误差和不确定性来源, 分析与辨识不确定性的来源, 因此通过验证回答 CFD 的数值结果在多大程度上是可靠
+的, 具有十分重要的意义.
+= 抽象语法树
+
+语法分析
+词法分析
+
+x
+
+sin
+*
+
+用户输入
+‘x=sin(y*z)’
+
+y
+
+z
+
+函数/语句
+求值
+变量表
+
+变量 x
+
+变量 y
+
+图8
+
+变量 z 返回结果
+
+用户自定义功能设计思路
+
+点1
+
+机头
+机翼
+
+点2
+
+机身
+
+起落架舱 不同部件自由组合
+
+垂直尾翼
+
+水平尾翼
+
+图9
+
+NNW-FlowStar 软件的自定义部件气动力监控功能
+
+下文将分别从基本过程、数据库建设、可信度评价 3 个方面展开讨论, 详细给出 CFD 软件的验证与确认解
+决方案.
+4.1 基本过程
+在验证与确认过程中, 遵循先验证后确认的原则. 首先通过验证确保软件代码没有会显著影响模拟结果的缺
+陷或错误, 离散方法 (包括离散格式和计算域离散) 恰当, 数值求解过程可靠, 数值解能合理表征模型开发者的意
+图. 再实施确认, 定量评价软件中的模型与真实现象的吻合程度.
+(1) 在验证层面: 首先根据软件包含的数学模型和计算模型的性质, 采用对称性测试、守恒性测试、伽利略不
+变性测试、离散误差评估、收敛测试和精度阶测试等手段, 将数值模拟结果与数值解已知行为或性质进行比较,
+对软件进行了科学计算层面上的代码验证, 确保程序化的数值算法执行正确且有预期的功能. 其中精度阶测试是
+
+张健 等: 面向航空航天领域的工业 CFD 软件研发设计
+
+1541
+
+最严格的验证方法, 主要是考察随着网格加密或时间步长减小, 数值离散误差是否以理论速率减小 [33] . 精度阶测
+试对于代码错误或者数值算法的缺陷非常敏感, 是最值得信赖的识别编程错误或数值算法缺陷的代码验证方法,
+能够有效识别影响数值解收敛精度的常见编程错误. 在代码验证的基础上, 进一步在复杂构型、方程精确解未知
+的情况下进行数值解验证. 数值解验证主要目的是确保数学模型的仿真在其预期用途内足够准确. 数值解验证主
+要分析数学模型离散和求解过程中产生的误差, 包括: ① 数值模拟输入过程中的错误或误差; ② 计算机求解计算
+模型过程中的数值误差, 包括: 舍入误差、统计抽样误差、迭代误差和离散误差; ③ 处理模拟输出数据过程产生
+的错误或误差.
+(2) 在确认层面: 航空航天领域面临复杂的外形和复杂的流动现象 (非线性、多尺度、多物理场耦合等), 因此
+为了全面评价软件在预期应用场景下和预期用途内的可信度, 避免片面的评价结论, 在确认时采用了层次分解的
+原则, 以降低真实复杂物理系统的复杂度. 实施过程中针对航空航天领域的特点, 建立了以工程需求、流动速域和
+流动形态为标签的系统、全面的多层确认活动, 具体包括完整系统、子系统、基准问题和单元问题 4 个层次. 从
+CFD 角度来说, 单元问题包括边界层、激波、漩涡等典型的单一流动问题; 基准问题通常包含 2–3 种单元流动问
+题的相互作用, 如激波边界层干扰, 激波旋涡相互作用等流动问题; 子系统层一般从工程问题出发, 在几何上为完
+整的标模部件, 在此层级考虑所关心的宏观特性, 如机翼的气动力、压力分布等; 而完整系统层则包含有多物理场
+的耦合现象, 如高超声速飞行器中的复杂气动力/热/结构耦合问题. 如图 10 所示, 以稳态流动问题为例, 回答了应
+从哪些方面对软件进行评价的问题. 进行软件可信度评价时, 按照从下而上依次评价的原则, 综合给出软件的整体
+可信度.
+低速: 1 附着、2 分离、3 自由剪切流
+基本流动特征
+
+亚跨: 1 附着、2 分离、3 自由剪切流、4 激波/边界层干扰
+超声速: 1 附着、2 分离、3 自由剪切流、4 激波、5 激波/边界层干扰、
+6 激波/激波干扰
+高超: 1 附着、2 分离、3 激波、4 激波/边界层干扰、5 激波/激波干扰、
+6 气动热、7 高温气体效应、8 稀薄气体效应
+
+定常气动力/热
+数值模拟软件
+可信度评价
+
+大展弦比飞机: 1巡航气动力特性、2 高升力气动力特性、3 进排气影响
+气动特性
+小展弦比飞机: 1 常规气动力特性、2 大迎角静稳定气动特性、3 进排气
+影响气动特性
+弹箭类飞行器: 1 常规气动力特性、2 喷流干扰气动特性、3 气动热特性
+
+工程问题
+
+升力主导高超飞行器: 1 常规气动力特性、2 气动热特性、3 高温气体
+效应、4 稀薄气体效应
+阻力主导高超飞行器: 1 常规气动力特性、2 气动热特性、3 高温气体
+效应、4 稀薄气体效应、5 喷流干扰特性
+
+图 10
+
+针对稳态模拟问题的可信度评价指标体系
+
+4.2 验证与确认数据库
+验证与确认过程需要高可信度的基准数据, 这些数据通常来自标准模型的风洞试验. 为了依据上述评价指标
+体系对软件进行可信度评价, 作者团队搜集整理了 70 余个国内外开展的高可信度基准试验数据, 如表 2 所示, 为
+客观、系统地评价软件可信度提供了基础.
+在软件测试过程中, 需要针对这些基准算例进行大量的计算. 每个基准算例都需要提供包括数模文件、网格
+文件、计算控制文件、边界条件、试验结果、其他软件计算结果、文献和报告等多种类型的数据. 为了有效管理
+数据, 专门开发了验证与确认数据库, 为软件自动化测试和可信度评价提供数据支持. 数据库的基本功能包括数据
+装入、管理、检索、显示、分析、统计等. 通过设计数据访问接口和自动化构建与测试平台集成起来, 共同提供
+验证与确认基准数据服务.
+
+软件学报 2022 年第 33 卷第 5 期
+
+1542
+
+4.3 CFD 软件的可信度评价
+为了提高软件可信度评价过程的自动化程度, 专门开发了可信度评价平台 (图 11), 可高度自动化地实现软件
+装载、作业调度、计算监控、结果分析、评测报告生成等评价分析活动. 平台采用 B/S 架构, 选用 SpringCloud 的
+企业级微服务框架, 通过内外部接口, 将验证与确认数据库、高性能计算集群、流场前/后处理工具等融合在一起.
+基于建立的验证与确认指标体系和开发的评价工具, 最终对自研软件在航空航天工程应用领域的预测能力进行评
+估. 评价结果以雷达图的形式展现, 从可信度评价结果中可以识别出自研软件擅长处理和有待提高的特定外形和
+流动, 既可以为软件开发者持续提升软件可信度提供努力方向, 也可为软件用户选择特定软件处理工程问题提供
+决策建议.
+表2
+算例名称
+
+已整理的基准试验数据示例
+
+算例类型
+验证
+
+算例流域
+
+确认
+
+亚
+
+跨
+
+超
+
+气动问题
+高超
+
+气动力
+
+算例来源
+
+气动热
+
+S809层流翼形
+
+●
+
+●
+
+●
+
+荷兰Delft大学低湍流风洞数据
+
+ONERA-A翼形
+
+●
+
+●
+
+●
+
+ONERA F1和F2风洞数据
+
+跨声速65度三角翼
+
+●
+
+●
+
+●
+
+AGARD算例库
+
+DLR-F6全机构型
+
+●
+
+●
+
+●
+
+AIAA阻力预测会议
+
+NLR7301两段翼
+
+●
+
+●
+
+超声速凹槽
+
+●
+
+DLR-GK01进气道
+
+●
+
+●
+
+钝双锥
+ARA-M100翼身组合
+
+●
+
+●
+
+●
+
+●
+
+●
+
+●
+
+AGARD 303报告
+
+●
+
+Settles试验报告(普林斯顿)
+
+●
+
+AIAA 2007-5423
+●
+
+●
+
+AIAA 2004-0529
+CFL3D 算例库
+
+可信度自动计算分析平台
+软件管理
+
+评价项管理
+
+可信度活动管理
+
+大展弦比飞机
+
+结果对比分析
+
+作业管理
+
+报告生成
+
+计算资源支撑
+可
+CFD 软件
+信
+度
+评 理论和
+……
+价 工具支
+功能模块 1
+功能模块 2
+功能模块 3
+理 撑
+论
+数据支撑
+方
+验证与确认数据库
+法
+
+返回舱
+
+高超飞行器
+
+……
+翼身组合体外形
+
+小展弦比飞机
+
+弹箭
+竞品软件
+
+自研软件
+
+可信度分析结果
+
+高速列车
+
+螺旋桨飞机
+
+图 11
+
+CFD 软件可信度评价平台设计
+
+5 多样化运行环境下的软件部署解决方案
+软件部署是一个复杂的过程, 包括软件打包、安装、配置、集成和更新等活动. 随着 CFD 软件复杂度的不断
+增长, 软件部署也面临着种种风险. 特别在航空航天领域, 用户单位的安全性要求较高, 造成了软件运行环境有很
+大不确定性. 由于飞行器设计过程中涉及到全包线范围内成千上万状态的数值模拟 (即“容量”模拟需求), 以及复
+杂流动问题的大规模并行模拟 (即“能力”模拟需求), 当前工业 CFD 软件的运行除了在普通的 PC 机上运行外, 更
+多是在高性能计算集群 (HPC cluters) 或 Linux 工作站上运行, 不同的 HPC 配置环境也对软件的部署增加了难度.
+表 3 给出了作者团队对目前国内主要 CFD 软件使用者的硬件配置情况调研统计, 可以看出不同用户的配置差异
+
+张健 等: 面向航空航天领域的工业 CFD 软件研发设计
+
+1543
+
+较大. CFD 软件的部署应该尽量减少对环境的依赖, 下面将结合作者团队的实践经验, 分别从二进制兼容性、命
+令行交互设计和调度系统适配性等方面给出解决方案.
+表3
+
+主要 CFD 软件用户的硬件配置环境调研情况
+
+关键配置类型
+
+选项
+
+操作系统
+平台架构
+C运行库
+
+Windows/Linux (Redhat/Ubuntu/Kylin)
+x86/ARM
+
+Linux图形接口服务
+
+glibc 1.7~2.2.5
+打开/关闭
+
+图形渲染
+
+集成显卡/独立显卡
+
+调度系统
+MPI环境
+平台开放性
+
+SGE/LSF/PBS/SLURM
+msMPI/MPICH/OpenMPI/IntelMPI
+ssh远程登陆/Web微服务
+
+造成 CFD 软件程序运行兼容性问题的原因主要由两个, 首先是不同内核的底层 C 运行库版本问题, 例如高版
+本 glibc 环境编译的执行程序无法在低版本环境执行; 其次是依赖库缺失或依赖服务未打开, 例如有些用户未打
+开 X Server 服务, 导致无法启动图形界面. 随着技术的发展, 工业 CFD 软件可以考虑容器技术 (例如 docker), 将运
+行程序及依赖环境虚拟化, 提供标准化的软件部署解决方案. 但目前用户对 docker 的支持还不够普遍, 因此只能
+采用较为传统的方法, 即尽量选择在较低版本的内核环境下进行编译, 并打包所需要的动态依赖库. 同时, 受益于
+软件的模块化设计, 对软件安装可以提供灵活的策略, 存在兼容性问题的构件可以选择不加载, 例如网格及流场显
+示模块, 从而最大限度保证核心功能的完整性. 结合自动化构建与测试平台, 搭建了与用户部署环境相同的生产环
+境, 软件上线前将代码自动分发到不同架构和配置的服务器进行构建和测试, 形成统一、标准的制品管理, 提高软
+件部署的成功率.
+一些 CFD 用户更倾向以命令行交互而不是图形界面的方式使用软件. 因此 FlowStar 软件的设计考虑了不同
+用户的需求, 设计了命令行脚本语言 (FowStar scripts language, FSL) 交互方式. 用户直接通过脚本进行参数设置、
+提交计算作业. 通过命令行交互不仅降低了软件部署难度, 也提升了软件使用灵活性, 用户可以通过自定义脚本进
+行自动化、批量化工程管理. 如图 12 所示, FSL 的参数输入语法规则按照树形结构进行组织, 与 GUI 设置面板一
+一映射, GUI 表现层和 FSL 共用相同的中间件, 包括参数对象解析、CFD 工作流控制等, 保证有无图形界面下运
+行逻辑的统一.
+不同 HPC 的调度系统不同, 当前主流的有 Slurm, LSF, PBS 等等. 不同调度系统提交任务和资源分配的方式
+差异较大. 针对不同类型作业调度难题, 可以将 CFD 执行程序和硬件资源之间的交互进行封装隔离. 图 13 是
+FlowStar 软件的计算作业管理系统设计, 定义了一套统一的资源申请、作业提交、状态查询、作业取消等业务逻
+辑, 并且在底层针对不同的调度系统进行自由适配.
+
+6 案例: NNW-FlowStar 软件
+FlowStar 软件受国家数值风洞工程资助, 是中国空气动力研究与发展中心自主开发的通用计算流体力学软
+件. 软件以工业应用需求为牵引, 面向航空航天领域复杂流动问题提供数值仿真解决方案. FlowStar 研发团队在国
+家数值风洞工程启动之初就已经意识到“工业 CFD 软件研发”实际上已经超出了“CFD 技术研究”本身, 涉及到数
+学、流体力学、计算机等多个学科交叉, 是一项庞大的系统工程. 因此坚持采用软件工程的思想去指导软件开发
+设计, 并以产品化的思维进行过程管理组织. 表 4 是对前文关于该软件开发过程和开发方法的技术的一些总结, 这
+些技术和手段还将在实践中不断改进和完善.
+FlowStar 软件在 2020 年 9 月面向全国发布, 具备针对飞机、直升机、导弹及其他飞行器的低、亚、跨、超
+声速流动模拟功能 (图 14). 软件以多体运动模拟为特色, 涵盖了网格处理、数值解算及工程化数据处理等典型
+
+软件学报 2022 年第 33 卷第 5 期
+
+1544
+
+CFD 流程, 凝聚了航空航天领域专业 CFD 工程师丰富的 CFD 工程应用经验, 在气动性能计算精度上与国际主流
+CFD 软件相当 [34] .
+GUI 参数设置面板
+
+命令行参数文本
+功能模块 1
+子功能 1
+子参数 2
+子参数 3
+具体参数设置
+功能模块 2
+功能模块 3
+
+参数解析器
+
+调用
+
+参数对象
+-参数名 (char *)
+-类型 (char *)
+-值 (char*)
+-子节点 (参数对象*）
+
+触发
+
+逻辑控制中枢
+CFD 求解器
+启动命令
+
+example:
+nnw-flowstar.sh -nogui -t=solver -s=slurm -N=10 -i=param.fsl
+[启动脚本] [gui 选项] [CFD 组件] [调度系统] [计算节点数] [参数文本]
+
+图 12
+
+FlowStar 命令行脚本交互设计
+
+资源管理中间件
+
+HPC 集群
+...
+Slurm PBS
+
+LSF
+云/Web
+
+计算资源申请 计算作业提交 计算作业查询 计算作业终止
+计算请求
+
+仿真
+
+仿真
+
+仿真
+
+仿真
+
+用户
+
+图 13
+
+NNW-FlowStar 的计算作业调度管理
+
+张健 等: 面向航空航天领域的工业 CFD 软件研发设计
+
+1545
+
+结合实际工程型号应用, 软件已在国内多家航空航天工程单位进行了部署安装, 取得了不错的工业软件研发
+创新性示范. 根据软件发布 1 年以来的统计, 已在航空、航天、兵器等超过 40 家工业部门和超过 10 家高校推广
+使用. 普通用户也可以通过门户网站 [35] 免费下载开展自己的 CFD 基础和应用研究. 范月华等人利用 FlowStar 软
+件开展了高马赫数层流摩阻数值计算精度研究 [36] , 张培红等人开展了栅格舵气动特性模拟研究 [37]. 同时, 软件不
+受硬件架构制约, 在国内广州、天津、成都等超级计算中心以工业 CFD 云平台的方式进行部署, 大大降低了
+CFD 软件的使用门槛, 并且更易于软件后期维护升级. 表 5 和图 15 展示了目前统计的用户使用该软件的典型应
+用场景情况.
+表4
+
+NNW-FlowStar 软件研发设计的一些技术要点
+
+开发体系
+
+开发方法
+
+开发技术点
+
+模型、工具或手段
+
+生命周期模型
+软件工程实践
+过程管理工具
+
+增量和迭代开发模型结合
+持续集成
+禅道
+
+编程语言
+
+C++、Python、Qt
+
+设计思想
+软件架构
+
+面向对象、面向数据
+分层架构、模块化设计
+UML、Doxygen
+
+设计与文档
+版本控制
+代码托管
+开发工具
+
+构建工具
+
+Git
+GitLab
+CMake、QMake
+
+持续集成
+
+Jenkins、自研工具
+
+代码检查
+
+CppCheck
+
+舵面性能分析
+
+座舱盖抛洒
+载荷插值
+
+网格测力
+动导数
+
+全机及部件气动力
+发动机进排气影响
+
+导弹尾喷流
+导弹侧向喷流
+
+武器分离安全性评估
+定常计算功能
+
+准定常计算功能
+
+常规气动特性数值模拟 (测力、测压)
+发动机进排气
+喷流干扰评估
+……
+
+图 14
+
+多套网格测力
+CTS 试验数值模拟
+……
+
+非定常计算功能
+URANS、DES...
+多体分离
+螺旋桨滑流
+……
+
+NNW-FlowStar 软件功能概览
+
+软件推广使用 1 年之内, 累计收到超过 500 条使用反馈和意见建议, 用于指导软件改进完善. 结合 GitFlow 工
+作流, 通过增量集成的模式, 以期建立“开发-应用-反馈-升级”的良性循环, 促进软件螺旋式改进提高. 软件后续成
+功迭代更新了 4 个版本 [35] , 增加或改进 60 余个功能点, 例如根据用户需求新增远场噪声分析功能、直升机动量
+源方法等模块, 根据用户建议改进自定义部件力积分、进气道流量监控等功能以更贴近工程习惯. 随着应用范围
+的不断扩大, 软件开发过程还将不断改进, 以期建立良性工业 CFD 软件研发应用生态, 突破技术壁垒, 提升产品核
+心竞争力.
+
+软件学报 2022 年第 33 卷第 5 期
+
+1546
+
+表5
+
+NNW-FlowStar 软件典型应用场景统计 (2020.09–2021.09)
+
+装备型号类型
+
+软件应用场景
+
+大型客机/军用运输机/轰 外形布局设计、机翼设计、翼尖小翼设计、翼身整流罩设计、传感器安装位置设计、发动机进排气
+影响、气动力/载荷计算
+炸机
+战斗机
+
+外形布局设计、飞行包线气动力数据、武器投放安全性评估、座舱盖分离、大S弯/DSI进气道设计
+
+空天飞机
+
+外形布局设计、传感器校核、喷流干扰评估、气动力/载荷分析
+
+旋翼机
+导弹/火箭
+
+外形布局设计、进气道设计、喷流干扰、栅格舵设计、级间分离、头罩抛洒
+
+制导兵器
+
+气动特性评估、子母弹抛洒、卷弧翼设计、发射过程模拟、弹托分离安全性评估
+
+螺旋桨滑流影响、旋翼洗流干扰
+
+Time=0.037 s
+
+Cp
+−0.05 0.01 0.08 0.14
+
+(a) 运输机标模 (CHN-T1)
+
+(b) 火箭栅格翼展开
+
+(c) 航天飞机标模 (OV102)
+
+(d) 十字翼导弹标模
+
+图 15
+
+7 总
+
+NNW-FlowStar 应用实例
+
+结
+
+伴随着工业转型升级, 数字化设计是未来发展的新趋势, 以 CFD 软件为代表的工业软件在我国市场上的需求
+将更加旺盛. 在政策和需求的推动下, 开发自主工业 CFD 软件十分紧迫. 相比成熟商业软件, 自主工业 CFD 软件
+开发必须找准突破口实现追差赶超, 而突破的核心之一就是用软件工程的思维优化开发模式. 实践出真知, 工业
+CFD 软件的开发是一个长期的过程, 需要不断摸索、不断改进. 本文从航空航天领域的 CFD 应用特点出发, 从“道、
+术、器”多个维度 (即开发模型、开发方法、开发工具等方面) 去探寻适合工业 CFD 软件发展的思路, 形成的主要
+贡献如下:
+(1) 工业 CFD 软件属于典型的科学计算类软件, 其开发过程是一个复杂且高度迭代的过程, 也表现出很多现
+代软件工程工作流的一些共同特性. 通过组合和裁剪不同生命周期模型和过程实践 (例如增量式或迭代式开发模
+型), 从而发挥不同软件过程的优势, 达到规范开发行为, 改善开发效率的目的.
+(2) 持续集成部署 (CI/CD) 这种软件工程实践非常适合工业 CFD 软件开发, 在生命周期内引入代码托管、检
+查、构建、测试等自动化工具, 可以大大降低科学计算软件开发过程中的不确定性, 缩短开发周期, 提高软件质
+量, 完成快速交付.
+
+张健 等: 面向航空航天领域的工业 CFD 软件研发设计
+
+1547
+
+(3) 工业 CFD 软件设计要紧密结合用户需求, 除了核心求解器要做到精确、鲁棒、高效外, 还要兼顾考虑用
+户的交互体验、软件的可扩展性和可移植性. 因此需要层次化架构设计, 对模块进行合理拆解, 不同的架构层次选
+取不同的设计策略. 对于底层数值计算模块, 需要对硬件友好, 可以以面向数据程序为主, 对于上层业务流程模块,
+需要对用户友好, 可以更多的采用面向对象设计.
+(4) 除遵循传统软件工程指导工业 CFD 软件的测试与验证外, 还应从科学计算角度对软件进行系统的验证与
+确认. 从理论出发, 对流动现象进行层次划分, 建立不同应用阶段、涵盖基本流动特征和典型工程应用的基准数据
+体系, 在代码验证、解验证、不确定度量化等不同层次进行验证与确认, 最后对软件给出科学的可信度评价.
+(5) 最后, 展示了一个软件工程化思想指导航空航天应用领域 CFD 软件开发的案例, 以期为相关研究者和实
+践者提供参考.
+References:
+[1]
+
+Zhou Z, Huang JT, Huang Y, Liu G, Chen ZB, Wang YT, Jiang X. CFD technology in aeronautic engineering field: Applications,
+challenges and development. Acta Aeronautica et Astronautica Sinica, 2017, 38(3): 020891 (in Chinese with English abstract). [doi: 10.
+7527/S1000-6893.2016.0311]
+
+[2]
+
+Zhang JW, Qi SN, Guo CP, Dong J. Computed verification of drag prediction for DLR-F6 wing body on unstructured grids flow solver.
+Aeronautical Computing Technique, 2015, 45(2): 84–87, 95 (in Chinese with English abstract). [doi: 10.3969/j.issn.1671-654X.2015.
+02.021]
+
+[3]
+
+Liu Y, Wang G, Ye ZY. Numerical investigation of aerodynamic and aero-thermal effects for hypersonic vehicles. Journal of
+Northwestern Polytechnical University, 2014, 32(2): 169–175 (in Chinese with English abstract). [doi: 10.3969/j.issn.1000-2758.2014.
+02.002]
+
+[4]
+
+Yan C, Zhang LX, Li TH, Long YS. Graphic and automatic tactical missile CFD systemic platform. Journal of Beijing University of
+Aeronautics and Astronautics, 2003, 29(5): 424–427 (in Chinese with English abstract). [doi: 10.3969/j.issn.1001-5965.2003.05.012]
+
+[5]
+
+Zhao Z, Zhang LP, He L, He XY, Guo YH, Xu QX. PHengLEI: A large scale parallel CFD framework for arbitrary grids. Chinese
+Journal of Computers, 2019, 42(11): 2368–2383 (in Chinese with English abstract). [doi: 10.11897/SP.J.1016.2019.02368]
+
+[6]
+
+Chen JQ, Wu XJ, Zhang J, Li B, Jia HY, Zhou NC. FlowStar: General unstructured-grid CFD software for National Numerical
+Windtunnel (NNW) project. Acta Aeronautica et Astronautica Sinica, 2021, 42(9): 625739 (in Chinese with English abstract). [doi: 10.
+7527/S1000-6893.2021.25739]
+
+[7]
+
+QFLUX website. https://www.tenfong.cn/
+
+[8]
+
+Rong GP, Zhang H, Shao D, Wang Q. Survey of process and management approaches for software development. Ruan Jian Xue
+Bao/Journal of Software, 2019, 30(1): 62 –79 (in Chinese with English abstract). http://www.jos.org.cn/1000-9825/5645.htm [doi: 10.
+13328/j.cnki.jos.005645]
+
+[9]
+
+Yan C, Qu F, Zhao YT, Yu J, Wu CH, Zhang SH. Review of development and challenges for physical modeling and numerical scheme of
+CFD in aeronautics and astronautics. Acta Aerodynamica Sinica, 2020, 38(5): 829–857 (in Chinese with English abstract). [doi: 10.
+7638/kqdlxxb-2020.0072]
+
+[10]
+
+Zhang PH, Zhang YB, Zhou GY, Chen JT, Deng YQ. Entropy correction method for high accuracy drag prediction with mixed grids.
+Acta Aeronautica et Astronautica Sinica, 2018, 39(9): 122019 (in Chinese with English abstract). [doi: 10.7527/S1000-6893.2018.
+22019]
+
+[11]
+
+Tang J, Li B, Zhou NC, Zheng M. Large scale parallel computing for fluid dynamics on unstructured grid. Acta Aerodynamica Sinica,
+2019, 37(1): 61–67 (in Chinese with English abstract). [doi: 10.7638/kqdlxxb-2016.0088]
+
+[12]
+
+Post DE, Kendali RP. Large-scale Computational Scientific and Engineering Code Development and Production Workflows. In:
+Mozdzynski G, ed. Use of High Performance Computing in Meteorology. Hackensack: World Scientific, 2007. 84–110. [doi: 10.1142/
+9789812775894_0007]
+
+[13]
+
+Huang JT, Liu G, Gao ZH, Zhou Z, Chen ZB, Jiang X. Current situation and development trend of multidisciplinary coupled adjoint
+system for aircraft. Acta Aeronautica et Astronautica Sinica, 2020, 41(5): 623404 (in Chinese with English abstract). [doi: 10.7527/
+S1000-6893.2019.23404]
+
+[14]
+
+Zhang YY, Liu ZZ, Liu XJ, Li WP. Suggestions on promoting the development of Chinese industrial APP with standards. Standard
+Science, 2020, (9): 49–52 (in Chinese with English abstract). [doi: 10.3969/j.issn.1674-5698.2020.09.009]
+
+[15]
+
+Boehm B, Turner R. Balancing agility and discipline: Evaluating and integrating agile and plan-driven methods. In: Proc. of the 26th Int’1
+
+1548
+
+软件学报 2022 年第 33 卷第 5 期
+
+Conf. on Software Engineering. Edinburgh: IEEE, 2004. 718–719. [doi: 10.1109/ICSE.2004.1317503]
+
+[16]
+
+Sampedro Z, Holt A, Hauser T. Continuous integration and delivery for HPC: Using singularity and jenkins. In: Proc. of the Practice and
+Experience on Advanced Research Computing. Pittsburgh: ACM, 2018. 6. [doi: 10.1145/3219104.3219147]
+
+[17]
+
+Shan YH, Liu QK, Yang Z, Tian HY, Zou YG. A continuous integration platform for numerical simulation software. Computer Aided
+Engineering, 2020, 29(3): 7–13 (in Chinese with English abstract). [doi: 10.13340/j.cae.2020.03.002]
+
+[18]
+
+He L, Guo YY, Zeng ZC, Lai XC, Zhao Z. Design and development of software automated continuous integration and testing platform
+for National Numerical Windtunnel project. Acta Aerodynamica Sinica, 2020, 38(6): 1158–1164 (in Chinese with English abstract).
+[doi: 10.7638/kqdlxxb-2020.0126]
+
+[19]
+
+Li Z, Jin Z. From user requirements to software specifications: An approach based on problem transformation. Ruan Jian Xue Bao/Journal
+of Software, 2013, 24(5): 961 –976 (in Chinese with English abstract). http://www.jos.org.cn/1000-9825/4398.htm [doi: 10.3724/SP.J.
+1001.2013.04398]
+
+[20]
+
+Chen SS, Liu LY, Yan C, Lin BX. Design and realization of automated testing cloud platform for CFD verification and validation. Acta
+Aeronautica et Astronautica Sinica, 2017, 38(3): 120209 (in Chinese with English abstract). [doi: 10.7527/S1000-6893.2016.0173]
+
+[21]
+
+He L, He X, Ma R, Zhang YR, Zhang LP. Preliminary design and application of CFD software automatic testing platform. Acta
+Aerodynamica Sinica, 2016, 34(4): 418–425 [doi: 10.7638/kqdlxxb-2014.0102]
+
+[22]
+
+Brooks FP Jr. No silver bullet—Essence and accidents of software engineering. Computer, 1987, 20(4): 10–19. [doi: 10.1109/MC.1987.
+1663532]
+
+[23]
+
+Ma XX, Liu XZ, Xie B, Pu P, Zhang T, Bu L, Li XD. Software development methods: Review and outlook. Ruan Jian Xue Bao/Journal
+of Software, 2019, 30(1): 3–21 (in Chinese with English Abstract). http://www.jos.org.cn/1000-9825/5650.htm [doi: 10.13328/j.cnki.jos.
+005650]
+
+[24]
+
+Qin MY. Design and realization of software programming framework for scientific computation. Journal of Beijing Electronic Science
+and Technology Institute, 2014, 12(4): 69–74 (in Chinese with English abstract). [doi: 10.3969/j.issn.1672-464X.2004.04.017]
+
+[25]
+
+Tang B, Li BJ. FastCAE-domestic CAE simulation software R&D support platform. In: Proc. of the 14th China CAE Annual Conf.
+Yinchuan: Industry University Research Working Committee of Chinese Society of Mechanics, 2018. 170–172 (in Chinese with English
+abstract)
+
+[26]
+
+Cao BW, Chen JJ, Huang ZG, Zheng Y. CAD/CAE integration framework with layered software architecture. In: Proc. of the 11th IEEE
+Int’l Conf. on Computer-aided Design and Computer Graphics. Huangshan: IEEE, 2009. 410–415. [doi: 10.1109/CADCG.2009.52468
+66]
+
+[27]
+
+Hrvoje J, Aleksandar J, Zeljko T. OpenFOAM: A C++ library for complex physics simulations. In: Proc. of the Int ’l Workshop on
+Coupled Methods in Numerical Dynamics. Dubrovnik: IUC, 2007.
+
+[28]
+
+Economon TD, Palacios F, Copeland SR, Lukaczyk TW, Alonso JJ. SU2: An open-source suite for multiphysics simulation and design.
+AIAA Journal, 2016, 54(3): 828–846. [doi: 10.2514/1.J053813]
+
+[29]
+
+Hadade I, Wang F, Carnevale M, di Mare L. Some useful optimisations for unstructured computational fluid dynamics codes on multicore
+and manycore architectures. Computer Physics Communications, 2019, 235: 305–323. [doi: 10.1016/j.cpc.2018.07.001]
+
+[30]
+
+Mo ZY, Zhang AQ, Liu QK, Cao XL. Research on the components and practices for domain-specific parallel programming models for
+numerical simulation. SCIENTIA SINICA Informationis, 2015, 45(3): 385 –397 (in Chinese with English abstract). [doi: 10.1360/
+N112013-00197]
+
+[31]
+
+Zhao W, Chen JT, Xiao W, Yang FJ, Wu XJ, Chen JQ. Advances in the key technologies of verification and validation system of
+National Numerical Windtunnel project. Acta Aerodynamica Sinica, 2020, 38(6): 1165–1172 (in Chinese with English abstract). [doi:
+10.7638/kqdlxxb-2020.0138]
+
+[32]
+
+Deng XG, Zong WG, Zhang LP, Gao SC, Li C. Verification and validation in computational fluid dynamics. Advances in Mechanics,
+2007, 37(2): 279–288 (in Chinese with English abstract). [doi: 10.3321/j.issn:1000-0992.2007.02.011]
+
+[33]
+
+Knupp P, Salari K. Verification of Computer Codes in Computational Science and Engineering. In: Rosen KH, ed. CRC Press Series on
+Discrete Mathematics and its Applications. Boca Raton: Chapman & Hall/CRC, 2003. 144.
+
+[34]
+
+Chen JT, Zhang J, Tang J, Zhang YB. Numerical investigations of the jaxa high-lift configuration standard model with MFlow solver. In:
+Mejia ODL, Gomez JSE, eds. Numerical Simulation of the Aerodynamics of High-lift Configurations. Cham: Springer, 2018. 45 –65.
+[doi: 10.1007/978-3-319-62136-4_4]
+
+[35]
+
+NNW-FlowStar website. 2021. http://www.cardc.cn/nnw/software/flowstar
+
+[36]
+
+Fan YH, Duan Y, Zhou NZ, Yang P. Friction numerical calculation precision in high Mach number laminar flow. Acta Aeronautica et
+Astronautica Sinica, 2021, 42(9): 625737 (in Chinese with English abstract). [doi: 10.7527/S1000-6893.2021.25737]
+
+张健 等: 面向航空航天领域的工业 CFD 软件研发设计
+
+[37]
+
+1549
+
+Zhang PH, Jia HY, Guo YY, Zhou GY, Wu XJ, Zhao W. Aerodynamic characteristics simulation of grid rudder using FlowStar software.
+Chinese Journal of Computational Mechanics, 2021. https://kns.cnki.net/kcms/detail/21.1373.o3.20210701.1627.014.html
+
+附中文参考文献:
+[1]
+
+周铸, 黄江涛, 黄勇, 刘刚, 陈作斌, 王运涛, 江雄. CFD技术在航空工程领域的应用、挑战与发展. 航空学报, 2017, 38(3): 020891.
+[doi: 10.7527/S1000-6893.2016.0311]
+
+[2]
+
+章锦威, 戚姝妮, 郭承鹏, 董军. 基于非结构平台的DLR-F6标模阻力预测. 航空计算技术, 2015, 45(2): 84–87, 95. [doi: 10.3969/j.issn.
+1671-654X.2015.02.021]
+
+[3]
+
+刘毅, 王刚, 叶正寅. 典型外形高超声速气动力/热数值计算研究. 西北工业大学学报, 2014, 32(2): 169–175. [doi: 10.3969/j.issn.10002758.2014.02.002]
+
+[4]
+
+阎超, 张立新, 李亭鹤, 龙尧松. 界面化、自动化的战术导弹CFD系统平台. 北京航空航天大学学报, 2003, 29(5): 424–427. [doi: 10.
+3969/j.issn.1001-5965.2003.05.012]
+
+[5]
+
+赵钟, 张来平, 何磊, 何先耀, 郭永恒, 徐庆新. 适用于任意网格的大规模并行CFD计算框架PHengLEI. 计算机学报, 2019, 42(11):
+2368–2383. [doi: 10.11897/SP.J.1016.2019.02368]
+
+[6]
+
+陈坚强, 吴晓军, 张健, 李彬, 贾洪印, 周乃春. FlowStar: 国家数值风洞(NNW)工程非结构通用CFD软件. 航空学报, 2021, 42(9):
+625739. [doi: 10.7527/S1000-6893.2021.25739]
+
+[8]
+
+荣国平, 张贺, 邵栋, 王青. 软件过程与管理方法综述. 软件学报, 2019, 30(1): 62–79. http://www.jos.org.cn/1000-9825/5645.htm [doi:
+10.13328/j.cnki.jos.005645]
+
+[9]
+
+阎超, 屈峰, 赵雅甜, 于剑, 武从海, 张树海. 航空航天CFD物理模型和计算方法的述评与挑战. 空气动力学学报, 2020, 38(5):
+829–857. [doi: 10.7638/kqdlxxb-2020.0072]
+
+[10]
+
+张培红, 张耀冰, 周桂宇, 陈江涛, 邓有奇. 面向混合网格高精度阻力预测的熵修正方法. 航空学报, 2018, 39(9): 122019. [doi: 10.
+7527/S1000-6893.2018.22019]
+
+[11]
+
+唐静, 李彬, 周乃春, 郑鸣. 基于非结构网格流场超大规模并行计算. 空气动力学学报, 2019, 37(1): 61–67. [doi: 10.7638/kqdlxxb2016.0088]
+
+[13]
+
+黄江涛, 刘刚, 高正红, 周铸, 陈作斌, 江雄. 飞行器多学科耦合伴随体系的现状与发展趋势. 航空学报, 2020, 41(5): 623404. [doi: 10.
+7527/S1000-6893.2019.23404]
+
+[14]
+
+张旸旸, 刘增志, 刘潇健, 李文鹏. 以标准促进我国工业APP发展的几点建议. 标准科学, 2020, (9): 49–52. [doi: 10.3969/j.issn.16745698.2020.09.009]
+
+[17]
+
+单雅辉, 刘青凯, 杨章, 田鸿运, 邹勇刚. 一种面向数值模拟软件的持续集成平台. 计算机辅助工程, 2020, 29(3): 7–13. [doi: 10.13340/
+j.cae.2020.03.002]
+
+[18]
+
+何磊, 郭勇颜, 曾志春, 赖相成, 赵钟. 国家数值风洞(NNW)软件自动化集成与测试平台设计与研发. 空气动力学学报, 2020, 38(6):
+1158–1164. [doi: 10.7638/kqdlxxb-2020.0126]
+
+[19]
+
+李智, 金芝. 从用户需求到软件规约: 一种问题变换的方法. 软件学报, 2013, 24(5): 961–976. http://www.jos.org.cn/1000-9825/4398.
+htm [doi: 10.3724/SP.J.1001.2013.04398]
+
+[20]
+
+陈树生, 刘丽媛, 阎超, 林博希. CFD软件自动化验证确认云平台设计与实现. 航空学报, 2017, 38(3): 120209. [doi: 10.7527/S10006893.2016.0173]
+
+[21]
+
+何磊, 赫新, 马戎, 张益荣, 张来平. 大型CFD软件自动化测试平台的初步设计与实现. 空气动力学学报, 2016, 34(4): 418–425. [doi:
+10.7638/kqdlxxb-2014.0102]
+
+[23]
+
+马晓星, 刘譞哲, 谢冰, 余萍, 张天, 卜磊, 李宣东. 软件开发方法发展回顾与展望. 软件学报, 2019, 30(1): 3–21. http://www.jos.org.cn/
+1000-9825/5650.htm [doi: 10.13328/j.cnki.jos.005650]
+
+[24]
+
+秦明钰. 科学计算软件开发框架的设计与实现. 北京电子科技学院学报, 2014, 12(4): 69–74. [doi: 10.3969/j.issn.1672-464X.2004.04.
+017]
+
+[25]
+
+唐滨, 李宝君. FastCAE-国产CAE仿真软件研发支撑平台. 见: 第十四届中国CAE工程分析技术年会论文集. 银川: 中国力学学会产
+学研工作委员会, 2018. 170–172.
+
+[30]
+
+莫则尧, 张爱清, 刘青凯, 曹小林. 数值模拟领域并行编程模型的要素与实例研究. 中国科学: 信息科学, 2015, 45(3): 385–397. [doi:
+10.1360/N112013-00197]
+
+[31]
+
+赵炜, 陈江涛, 肖维, 杨福军, 吴晓军, 陈坚强. 国家数值风洞(NNW)验证与确认系统关键技术研究进展. 空气动力学学报, 2020,
+38(6): 1165–1172. [doi: 10.7638/kqdlxxb-2020.0138]
+
+[32]
+
+邓小刚, 宗文刚, 张来平, 高树椿, 李超. 计算流体力学中的验证与确认. 力学进展, 2007, 37(2): 279–288. [doi: 10.3321/j.issn:1000-
+
+软件学报 2022 年第 33 卷第 5 期
+
+1550
+
+0992.2007.02.011]
+
+[36]
+
+范月华, 段毅, 周乃桢, 杨攀. 高马赫数层流摩阻数值计算精度. 航空学报, 2021, 42(9): 625737. [doi: 10.7527/S1000-6893.2021.
+25737]
+
+[37]
+
+张培红, 贾洪印, 郭勇颜, 周桂宇, 吴晓军, 赵炜. 基于FlowStar软件的栅格舵气动特性模拟. 计算力学学报, 2021. https://kns.cnki.net/
+kcms/detail/21.1373.o3.20210701.1627.014.html
+
+张健(1989－), 男, 博士生, 助理研究员, 主要研
+
+陈江涛(1983－), 男, 副研究员, 主要研究领域为
+
+究领域为计算流体力学应用与软件开发, 高性能
+
+科学计算验证与确认, 不确定度量化.
+
+计算, 软件工程.
+
+周乃春(1973－), 男, 博士, 研究员, 国家数值风
+
+向栋(1989－), 男, 工程师, 主要研究领域为软件
+
+洞工程副总设计师, 主要研究领域为计算流体力
+
+工程, 计算流体力学软件前端开发.
+
+学方法研究, 软件开发.
+
+李明(1981－), 男, 博士, 副研究员, 主要研究领
+
+金韬(1995－), 男, 工程师, 主要研究领域为
+
+域为计算流体力学非结构网格高阶数值方法, 软
+
+DevOps, B/S 软件架构设计.
+
+件开发.
+
+刘杰(1969－), 男, 博士, 研究员, 博士生导师,
+CCF 专业会员, 主要研究领域为并行算法, 高性
+能计算应用.
+
+
