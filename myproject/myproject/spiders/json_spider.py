@@ -1,5 +1,4 @@
 import json
-
 import scrapy
 import os
 
@@ -16,23 +15,11 @@ class JsonSpider(scrapy.Spider):
         for url in self.start_urls:
             yield scrapy.Request(url, callback=self.parse)
 
-    # start_urls = [
-    #     'https://www.jos.org.cn/jos/article/issue/2024_35_9',
-    #     'https://www.jos.org.cn/jos/article/issue/2024_35_8',
-    #     'https://www.jos.org.cn/jos/article/issue/2024_35_7',
-    #     'https://www.jos.org.cn/jos/article/issue/2024_35_6',
-    #     'https://www.jos.org.cn/jos/article/issue/2024_35_5',
-    #     'https://www.jos.org.cn/jos/article/issue/2024_35_4',
-    #     'https://www.jos.org.cn/jos/article/issue/2024_35_3',
-    #     'https://www.jos.org.cn/jos/article/issue/2024_35_2',
-    #     'https://www.jos.org.cn/jos/article/issue/2024_35_1',
-    # ]
-
     def parse(self, response):
         url_parts = response.url.split('/')
         # 获取项目根目录路径
         project_dir = os.path.abspath(os.path.dirname(__file__))
-        filename = f"{project_dir}/../../json_output/{url_parts[-3]}_{url_parts[-2]}_{url_parts[-1]}.json"
+        filename = f"{project_dir}/../../output/json_output/{url_parts[-3]}_{url_parts[-2]}_{url_parts[-1]}.json"
         os.makedirs(os.path.dirname(filename), exist_ok=True)
         articles_data = []
         for article in response.xpath("//li[@class='article_line']"):

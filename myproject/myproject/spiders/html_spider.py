@@ -18,7 +18,7 @@ class HtmlSpider(scrapy.Spider):
         url_parts = response.url.split('/')
         # 获取项目根目录路径
         project_dir = os.path.abspath(os.path.dirname(__file__))
-        filename = f"{project_dir}/../../html_output/{url_parts[-3]}_{url_parts[-2]}_{url_parts[-1]}.json"
+        filename = f"{project_dir}/../../output/html_output/{url_parts[-3]}_{url_parts[-2]}_{url_parts[-1]}.json"
         os.makedirs(os.path.dirname(filename), exist_ok=True)
         articles_data = []
         for article in response.xpath("//div[@class='article']"):

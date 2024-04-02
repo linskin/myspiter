@@ -1,158 +1,61 @@
-# import scrapy
-#
-#
-# class PdfSpider(scrapy.Spider):
-#     name = 'pdf_spider'
-#
-#     def __init__(self, urls=None, *args, **kwargs):
-#         super(PdfSpider, self).__init__(*args, **kwargs)
-#         self.start_urls = urls.split(',') if urls else []
-#
-#     def start_requests(self):
-#         for url in self.start_urls:
-#             yield scrapy.Request(url, callback=self.parse)
-#
-#     def parse(self, response):
-#         # 获取PDF文件的URL
-#         pdf_url = response.url
-#
-#         # 提取PDF文件名
-#         pdf_name = pdf_url.split('/')[-1]
-#
-#         # 下载PDF文件
-#         yield {
-#             'file_urls': [pdf_url],
-#             'file_name': pdf_name
-#         }
-
-
-# import scrapy
-# from scrapy.crawler import CrawlerProcess
-# from scrapy.pipelines.files import FilesPipeline
-# from scrapy.utils.project import get_project_settings
-#
-#
-# class PdfSpider(scrapy.Spider):
-#     name = 'pdf_spider'
-#     start_urls = [
-#             'https://www.jos.org.cn//jos/article/pdf/6908?st=article_issue',
-#             'https://www.jos.org.cn//jos/article/pdf/6935?st=article_issue',
-#             'https://www.jos.org.cn//jos/article/pdf/6810?st=article_issue',
-#             'https://www.jos.org.cn//jos/article/pdf/6835?st=article_issue',
-#             'https://www.jos.org.cn//jos/article/pdf/6902?st=article_issue'
-#         ]
-#     # def __init__(self, urls=None, *args, **kwargs):
-#     #     super(PdfSpider, self).__init__(*args, **kwargs)
-#     #     self.start_urls = urls if urls else []
-#     #
-#     # def start_requests(self):
-#     #     for url in self.start_urls:
-#     #         yield scrapy.Request(url, callback=self.parse)
-#
-#     def parse(self, response):
-#         # 提取PDF文件的URL
-#         pdf_url = response.url
-#
-#         # 提取PDF文件名
-#         pdf_name = pdf_url.split('/')[-1]
-#
-#         # 返回包含文件URL和文件名的字典
-#         yield {
-#             'file_urls': [pdf_url],
-#             'pdf_name': pdf_name
-#         }
-
-
-# class CustomFilesPipeline(FilesPipeline):
-#     def file_path(self, request, response=None, info=None, *, item=None):
-#         return item['pdf_name']
-#
-# import scrapy
-#
-# class PdfSpider(scrapy.Spider):
-#     name = 'pdf_spider'
-#     start_urls = ['https://jos.org.cn/jos/home?id=20210909102755001&name=%E4%B8%BB%E9%A1%B5']  # 替换为你要爬取的网页
-#
-#     def parse(self, response):
-#         # 提取所有的<a>标签
-#         for link in response.css('a'):
-#             # 获取链接的href属性
-#             href = link.attrib['href']
-#             # 检查链接是否以'.pdf'结尾
-#             if href.endswith('.pdf'):
-#                 # 构造PDF文件的绝对链接
-#                 pdf_url = response.urljoin(href)
-#                 # 下载PDF文件
-#                 yield scrapy.Request(pdf_url, callback=self.save_pdf)
-#
-#     def save_pdf(self, response):
-#         # 获取PDF文件名
-#         filename = response.url.split('/')[-1]
-#         # 保存PDF文件
-#         with open(filename, 'wb') as f:
-#             print("save to %s" % filename)
-#             f.write(response.body)
-#         self.log('Saved file %s' % filename)
-#
-
-# def run_spider(urls):
-#     process = CrawlerProcess(get_project_settings())
-#     process.crawl(PdfSpider, urls=urls)
-#     process.start()
-#
-#
-# if __name__ == "__main__":
-#     urls = [
-#         'https://www.jos.org.cn//jos/article/pdf/6908?st=article_issue',
-#         'https://www.jos.org.cn//jos/article/pdf/6935?st=article_issue',
-#         'https://www.jos.org.cn//jos/article/pdf/6810?st=article_issue',
-#         'https://www.jos.org.cn//jos/article/pdf/6835?st=article_issue',
-#         'https://www.jos.org.cn//jos/article/pdf/6902?st=article_issue'
-#     ]
-#     run_spider(urls)
+import os
 import scrapy
-from scrapy.http import Request
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+project_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))  # 获取上上级目录
+down_load_dir = os.path.join(project_dir, 'output', 'pdf_output')  # 下载目录设为目标目录
 
 
-# def save_pdf(response):
-#     # 提取PDF文件名
-#     file_name = response.url.split('/')[-1]
-#     # 保存PDF文件到本地
-#     with open(file_name, 'wb') as f:
-#         f.write(response.body)
-#
-#
-# class PDFSpider(scrapy.Spider):
-#     name = 'pdf_spider'
-#     start_urls = ['https://www.jos.org.cn//jos/article/pdf/6908?st=article_issue']  # 替换为你要爬取的网页URL
-#     custom_settings = {
-#         'ROBOTSTXT_OBEY': False
-#     }
-#     def parse(self, response):
-#         # 在这里编写代码来提取PDF链接
-#         pdf_links = response.css('a[href$=".pdf"]::attr(href)').extract()
-#
-#         for pdf_link in pdf_links:
-#             # 构造一个Request对象，指定下载PDF文件的回调函数
-#             yield Request(pdf_link, callback=save_pdf)
+options = webdriver.ChromeOptions()
+options.add_experimental_option("excludeSwitches", ['enable-automation'])
+prefs = {
+    "download.default_directory": down_load_dir,
+    "download.prompt_for_download": False,
+    "download.directory_upgrade": True,
+    "plugins.always_open_pdf_externally": True
+}
+options.add_experimental_option('prefs', prefs)
+options.add_argument("--disable-blink-features=AutomationControlled")
+browser = webdriver.Chrome(options=options)
 
-import scrapy
+# 在打开网页前，设置无头模式，以避免页面跳转检测
+browser.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
+    "source": """
+    Object.defineProperty(navigator, 'webdriver', {
+      get: () => undefined
+    })
+  """
+})
+
 
 class PdfSpider(scrapy.Spider):
     name = 'pdf_spider'
-    start_urls = ['https://www.jos.org.cn//jos/article/pdf/6908?st=article_issue']  # 替换为你的目标PDF预览页的网址
+
+    def __init__(self, urls=None, *args, **kwargs):
+        super(PdfSpider, self).__init__(*args, **kwargs)
+        self.start_urls = urls if urls else []
+
+    def start_requests(self):
+        for url in self.start_urls:
+            yield scrapy.Request(url, callback=self.parse)
 
     def parse(self, response):
-        # 提取PDF文件的直接下载链接
-        pdf_url = response.css('a[href$=".pdf"]::attr(href)').get()
-        if pdf_url:
-            # 下载PDF文件
-            yield scrapy.Request(response.urljoin(pdf_url), callback=self.save_pdf)
+        # 使用浏览器打开网页
+        browser.get(response.url)
 
-    def save_pdf(self, response):
-        # 获取PDF文件名
-        filename = response.url.split('/')[-1]
-        # 保存PDF文件
-        with open(filename, 'wb') as f:
-            f.write(response.body)
-        self.log('Saved file %s' % filename)
+        # 使用显式等待等待链接出现
+        link_element = WebDriverWait(browser, 10).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR,
+                                            'div.el-col.el-col-24.el-col-xs-24.el-col-sm-12.el-col-md-12.el-col-lg-12'
+                                            '.el-col-xl-12 a'))
+        )
+        link = link_element.get_attribute('href')
+
+        # 下载PDF文件
+        browser.get(link)
+
+        # 关闭浏览器
+        browser.quit()
